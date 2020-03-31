@@ -17,6 +17,7 @@ public class Bug {
     @ColumnInfo(name = "bug_price")
     private String price;
 
+
     public Bug(@NonNull String name, @NonNull String price) {
         this.name = name;
         this.price = price;
