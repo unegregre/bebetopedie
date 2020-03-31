@@ -14,10 +14,16 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
 
     class BugViewHolder extends RecyclerView.ViewHolder {
         private final TextView bugItemView;
+        private final TextView bugPriceView;
+        private final TextView bugTimeView;
+        private final TextView bugPeriodView;
 
         private BugViewHolder(View itemView) {
             super(itemView);
             bugItemView = itemView.findViewById(R.id.textView);
+            bugPriceView = itemView.findViewById(R.id.priceView);
+            bugTimeView = itemView.findViewById(R.id.timeView);
+            bugPeriodView = itemView.findViewById(R.id.periodView);
         }
     }
 
@@ -39,9 +45,15 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
         if (mBugs != null) {
             Bug current = mBugs.get(position);
             holder.bugItemView.setText(current.getName());
+            holder.bugPriceView.setText(current.getPrice());
+            holder.bugTimeView.setText("None");
+            holder.bugPeriodView.setText("None");
         } else {
             // Covers the case of data not being ready yet.
             holder.bugItemView.setText("No Bug");
+            holder.bugPriceView.setText("0");
+            holder.bugTimeView.setText("None");
+            holder.bugPeriodView.setText("None");
         }
     }
 
