@@ -16,10 +16,11 @@ import java.util.concurrent.Executors;
  * app, consider exporting the schema to help you with migrations.
  */
 
-@Database(entities = {Bug.class}, version = 2, exportSchema = false)
+@Database(entities = {Bug.class, Fish.class}, version = 2, exportSchema = false)
 public abstract class BebeteDatabase extends RoomDatabase {
 
     public abstract BugDao bugDao();
+    public abstract  FishDao fishDao();
 
     // marking the instance as volatile to ensure atomic access to the variable
     private static volatile BebeteDatabase INSTANCE;
@@ -32,7 +33,7 @@ public abstract class BebeteDatabase extends RoomDatabase {
             synchronized (BebeteDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                            BebeteDatabase.class, "bug_database")
+                            BebeteDatabase.class, "acnh_database")
                             .addCallback(sRoomDatabaseCallback)
                             .fallbackToDestructiveMigration()
                             .build();
@@ -59,13 +60,21 @@ public abstract class BebeteDatabase extends RoomDatabase {
             databaseWriteExecutor.execute(() -> {
                 // Populate the database in the background.
                 // If you want to start with more bugs, just add them.
-                BugDao dao = INSTANCE.bugDao();
-                dao.deleteAll();
+                BugDao bug_dao = INSTANCE.bugDao();
+                bug_dao.deleteAll();
 
                 Bug bug = new Bug("Papillon","200", "12h", "Printemps");
-                dao.insert(bug);
+                bug_dao.insert(bug);
                 bug = new Bug("Fourmi","100", "12h", "Printemps");
-                dao.insert(bug);
+                bug_dao.insert(bug);
+
+                FishDao fish_dao = INSTANCE.fishDao();
+                fish_dao.deleteAll();
+
+                Fish fish = new Fish("Carpe","300", "11h", "Printemps","Etang");
+                fish_dao.insert(fish);
+                fish = new Fish("Bar", "100", "13h", "Ete", "Océan");
+                fish_dao.insert(fish);
             });
         }
     };

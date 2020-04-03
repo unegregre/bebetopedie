@@ -8,6 +8,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.gregre.bbtopdie.bug.BugListAdapter;
 import com.gregre.bbtopdie.bug.BugViewModel;
 import com.gregre.bbtopdie.db.Bug;
+import com.gregre.bbtopdie.db.Fish;
+import com.gregre.bbtopdie.fish.FishListAdapter;
+import com.gregre.bbtopdie.fish.FishViewModel;
 
 import java.util.List;
 
@@ -24,19 +27,26 @@ public class MainActivity extends AppCompatActivity {
     public static final int NEW_BUG_ACTIVITY_REQUEST_CODE = 1;
 
     private BugViewModel mBugViewModel;
+    private FishViewModel mFishViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerview);
-        final BugListAdapter adapter = new BugListAdapter(this);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        RecyclerView bugRecyclerView = findViewById(R.id.bug_recyclerview);
+        final BugListAdapter bugAdapter = new BugListAdapter(this);
+        bugRecyclerView.setAdapter(bugAdapter);
+        bugRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        RecyclerView fishRecyclerView = findViewById(R.id.fish_recyclerview);
+        final FishListAdapter fishAdapter = new FishListAdapter(this);
+        fishRecyclerView.setAdapter(fishAdapter);
+        fishRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         // Get a new or existing ViewModel from the ViewModelProvider.
         mBugViewModel = new ViewModelProvider(this).get(BugViewModel.class);
+        mFishViewModel = new ViewModelProvider(this).get(FishViewModel.class);
 
         // Add an observer on the LiveData returned by getAlphabetizedBugs.
         // The onChanged() method fires when the observed data changes and the activity is
@@ -45,7 +55,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(@Nullable final List<Bug> bugs) {
                 // Update the cached copy of the bugs in the adapter.
-                adapter.setBugs(bugs);
+                bugAdapter.setBugs(bugs);
+            }
+        });
+        mFishViewModel.getAllFishes().observe(this, new Observer<List<Fish>>() {
+            @Override
+            public void onChanged(@Nullable final List<Fish> fishes) {
+                fishAdapter.setFishes(fishes);
             }
         });
 

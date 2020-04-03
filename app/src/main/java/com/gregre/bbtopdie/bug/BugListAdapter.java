@@ -39,7 +39,7 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
 
     @Override
     public BugViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.recyclerview_item, parent, false);
+        View itemView = mInflater.inflate(R.layout.bug_recyclerview_item, parent, false);
         return new BugViewHolder(itemView);
     }
 
