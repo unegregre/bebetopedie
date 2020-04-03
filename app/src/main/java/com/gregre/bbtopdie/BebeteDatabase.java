@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
  * app, consider exporting the schema to help you with migrations.
  */
 
-@Database(entities = {Bug.class}, version = 1, exportSchema = false)
+@Database(entities = {Bug.class}, version = 2, exportSchema = false)
 abstract class BebeteDatabase extends RoomDatabase {
 
     abstract BugDao bugDao();
@@ -34,6 +34,7 @@ abstract class BebeteDatabase extends RoomDatabase {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
                             BebeteDatabase.class, "bug_database")
                             .addCallback(sRoomDatabaseCallback)
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }
@@ -61,9 +62,9 @@ abstract class BebeteDatabase extends RoomDatabase {
                 BugDao dao = INSTANCE.bugDao();
                 dao.deleteAll();
 
-                Bug bug = new Bug("Papillon","200");
+                Bug bug = new Bug("Papillon","200", "12h", "Printemps");
                 dao.insert(bug);
-                bug = new Bug("Fourmi","100");
+                bug = new Bug("Fourmi","100", "12h", "Printemps");
                 dao.insert(bug);
             });
         }

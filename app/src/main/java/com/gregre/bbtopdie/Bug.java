@@ -17,13 +17,26 @@ public class Bug {
     @ColumnInfo(name = "bug_price")
     private String price;
 
+    @NonNull
+    @ColumnInfo(name = "bug_time")
+    private String time;
 
-    public Bug(@NonNull String name, @NonNull String price) {
+    @NonNull
+    @ColumnInfo(name = "bug_period")
+    private String period;
+
+    public Bug(@NonNull String name, @NonNull String price, @NonNull String time, @NonNull String period) {
         this.name = name;
         this.price = price;
+        this.time = time;
+        this.period = period;
     }
 
     String getName(){return this.name;}
 
     String getPrice(){return this.price;}
+
+    String getTime(){return this.time;}
+
+    String getPeriod(){return this.period;}
 }

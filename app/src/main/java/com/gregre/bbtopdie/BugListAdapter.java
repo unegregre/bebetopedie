@@ -46,8 +46,8 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
             Bug current = mBugs.get(position);
             holder.bugItemView.setText(current.getName());
             holder.bugPriceView.setText(current.getPrice());
-            holder.bugTimeView.setText("None");
-            holder.bugPeriodView.setText("None");
+            holder.bugTimeView.setText(current.getTime());
+            holder.bugPeriodView.setText(current.getPeriod());
         } else {
             // Covers the case of data not being ready yet.
             holder.bugItemView.setText("No Bug");

@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_BUG_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Bug bug = new Bug(data.getStringExtra(NewBugActivity.EXTRA_REPLY),"0");
+            Bug bug = new Bug(data.getStringExtra(NewBugActivity.EXTRA_REPLY),"0", "None", "None");
             mBugViewModel.insert(bug);
         } else {
             Toast.makeText(
