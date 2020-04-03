@@ -1,4 +1,4 @@
-package com.gregre.bbtopdie;
+package com.gregre.bbtopdie.db;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;

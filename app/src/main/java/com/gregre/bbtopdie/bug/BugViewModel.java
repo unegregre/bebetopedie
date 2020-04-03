@@ -1,8 +1,10 @@
-package com.gregre.bbtopdie;
+package com.gregre.bbtopdie.bug;
 
 import android.app.Application;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+
+import com.gregre.bbtopdie.db.Bug;
 
 import java.util.List;
 
@@ -26,11 +28,11 @@ public class BugViewModel extends AndroidViewModel {
         mAllBugs = mRepository.getAllBugs();
     }
 
-    LiveData<List<Bug>> getAllBugs() {
+    public LiveData<List<Bug>> getAllBugs() {
         return mAllBugs;
     }
 
-    void insert(Bug bug) {
+    public void insert(Bug bug) {
         mRepository.insert(bug);
     }
 }

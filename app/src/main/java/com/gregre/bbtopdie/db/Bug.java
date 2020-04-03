@@ -1,4 +1,4 @@
-package com.gregre.bbtopdie;
+package com.gregre.bbtopdie.db;
 
 import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
@@ -32,11 +32,11 @@ public class Bug {
         this.period = period;
     }
 
-    String getName(){return this.name;}
+    public String getName(){return this.name;}
 
-    String getPrice(){return this.price;}
+    public String getPrice(){return this.price;}
 
-    String getTime(){return this.time;}
+    public String getTime(){return this.time;}
 
-    String getPeriod(){return this.period;}
+    public String getPeriod(){return this.period;}
 }

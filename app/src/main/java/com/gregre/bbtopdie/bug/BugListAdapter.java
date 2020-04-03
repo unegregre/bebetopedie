@@ -1,4 +1,4 @@
-package com.gregre.bbtopdie;
+package com.gregre.bbtopdie.bug;
 
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
@@ -6,6 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.gregre.bbtopdie.R;
+import com.gregre.bbtopdie.db.Bug;
 
 import java.util.List;
 
@@ -30,7 +33,7 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
     private final LayoutInflater mInflater;
     private List<Bug> mBugs; // Cached copy of bugs
 
-    BugListAdapter(Context context) {
+    public BugListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
     }
 
@@ -57,7 +60,7 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
         }
     }
 
-    void setBugs(List<Bug> bugs) {
+    public void setBugs(List<Bug> bugs) {
         mBugs = bugs;
         notifyDataSetChanged();
     }

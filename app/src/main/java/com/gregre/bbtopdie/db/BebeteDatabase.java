@@ -1,4 +1,4 @@
-package com.gregre.bbtopdie;
+package com.gregre.bbtopdie.db;
 
 import androidx.sqlite.db.SupportSQLiteDatabase;
 import androidx.room.Database;
@@ -17,17 +17,17 @@ import java.util.concurrent.Executors;
  */
 
 @Database(entities = {Bug.class}, version = 2, exportSchema = false)
-abstract class BebeteDatabase extends RoomDatabase {
+public abstract class BebeteDatabase extends RoomDatabase {
 
-    abstract BugDao bugDao();
+    public abstract BugDao bugDao();
 
     // marking the instance as volatile to ensure atomic access to the variable
     private static volatile BebeteDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;
-    static final ExecutorService databaseWriteExecutor =
+    public static final ExecutorService databaseWriteExecutor =
             Executors.newFixedThreadPool(NUMBER_OF_THREADS);
 
-    static BebeteDatabase getDatabase(final Context context) {
+    public static BebeteDatabase getDatabase(final Context context) {
         if (INSTANCE == null) {
             synchronized (BebeteDatabase.class) {
                 if (INSTANCE == null) {

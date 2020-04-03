@@ -5,6 +5,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.gregre.bbtopdie.bug.BugListAdapter;
+import com.gregre.bbtopdie.bug.BugViewModel;
+import com.gregre.bbtopdie.db.Bug;
 
 import java.util.List;
 

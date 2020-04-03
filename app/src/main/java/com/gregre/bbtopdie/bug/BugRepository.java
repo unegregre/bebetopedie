@@ -1,7 +1,11 @@
-package com.gregre.bbtopdie;
+package com.gregre.bbtopdie.bug;
 
 import android.app.Application;
 import androidx.lifecycle.LiveData;
+
+import com.gregre.bbtopdie.db.BebeteDatabase;
+import com.gregre.bbtopdie.db.Bug;
+import com.gregre.bbtopdie.db.BugDao;
 
 import java.util.List;
 
