@@ -5,15 +5,25 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.gregre.bbtopdie.bug.BugFragment;
+import com.gregre.bbtopdie.fish.FishFragment;
+
 public class ViewPagerAdapter extends FragmentStateAdapter {
-    private static final int CARD_ITEM_SIZE = 3;
+    private static final int TAB_COUNT = 3;
     public ViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
     @NonNull @Override public Fragment createFragment(int position) {
-        return BugFragment.newInstance(position);
+        switch(position) {
+            case 0:
+                return BugFragment.newInstance(position);
+            case 1:
+                return FishFragment.newInstance(position);
+            default:
+                return BugFragment.newInstance(position);
+        }
     }
     @Override public int getItemCount() {
-        return CARD_ITEM_SIZE;
+        return TAB_COUNT;
     }
 }

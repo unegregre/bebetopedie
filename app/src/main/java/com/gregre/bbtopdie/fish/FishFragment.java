@@ -1,10 +1,9 @@
-package com.gregre.bbtopdie;
+package com.gregre.bbtopdie.fish;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,15 +14,17 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.gregre.bbtopdie.R;
 import com.gregre.bbtopdie.bug.BugListAdapter;
 import com.gregre.bbtopdie.bug.BugViewModel;
 import com.gregre.bbtopdie.db.Bug;
+import com.gregre.bbtopdie.db.Fish;
 
 import java.util.List;
 
-public class BugFragment extends Fragment {
+public class FishFragment extends Fragment{
 
-    private BugViewModel mBugViewModel;
+    private FishViewModel mFishViewModel;
 
     private static final String ARG_COUNT = "param1";
     private Integer counter;
@@ -32,11 +33,11 @@ public class BugFragment extends Fragment {
             R.color.blue_300, R.color.blue_500, R.color.blue_700, R.color.green_100, R.color.green_300,
             R.color.green_500, R.color.green_700
     };
-    public BugFragment() {
+    public FishFragment() {
         // Required empty public constructor
     }
-    public static BugFragment newInstance(Integer counter) {
-        BugFragment fragment = new BugFragment();
+    public static FishFragment newInstance(Integer counter) {
+        FishFragment fragment = new FishFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COUNT, counter);
         fragment.setArguments(args);
@@ -53,28 +54,28 @@ public class BugFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bug, container, false);
+        return inflater.inflate(R.layout.fragment_fish, container, false);
     }
     @Override public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         view.setBackgroundColor(ContextCompat.getColor(getContext(), COLOR_MAP[counter]));
 
-        RecyclerView bugRecyclerView = view.findViewById(R.id.bug_recyclerview);
-        final BugListAdapter bugAdapter = new BugListAdapter(this.getContext());
-        bugRecyclerView.setAdapter(bugAdapter);
-        bugRecyclerView.setLayoutManager(new LinearLayoutManager(bugRecyclerView.getContext()));
+        RecyclerView fishRecyclerView = view.findViewById(R.id.fish_recyclerview);
+        final FishListAdapter fishAdapter = new FishListAdapter(this.getContext());
+        fishRecyclerView.setAdapter(fishAdapter);
+        fishRecyclerView.setLayoutManager(new LinearLayoutManager(fishRecyclerView.getContext()));
 
         // Get a new or existing ViewModel from the ViewModelProvider.
-        mBugViewModel = new ViewModelProvider(this).get(BugViewModel.class);
+        mFishViewModel = new ViewModelProvider(this).get(FishViewModel.class);
 
         // Add an observer on the LiveData returned by getAlphabetizedBugs.
         // The onChanged() method fires when the observed data changes and the activity is
         // in the foreground.
-        mBugViewModel.getAllBugs().observe(getViewLifecycleOwner(), new Observer<List<Bug>>() {
+        mFishViewModel.getAllFishes().observe(getViewLifecycleOwner(), new Observer<List<Fish>>() {
             @Override
-            public void onChanged(@Nullable final List<Bug> bugs) {
+            public void onChanged(@Nullable final List<Fish> fishes) {
                 // Update the cached copy of the bugs in the adapter.
-                bugAdapter.setBugs(bugs);
+                fishAdapter.setFishes(fishes);
             }
         });
     }
