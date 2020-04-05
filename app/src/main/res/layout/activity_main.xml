@@ -8,36 +8,28 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-<!--    <com.google.android.material.tabs.TabLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Monday" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tuesday" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Wednesday" />
-    </com.google.android.material.tabs.TabLayout>-->
-
-    <LinearLayout
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/bug_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".50"
+            android:layout_weight=".30"
             android:padding="@dimen/big_padding"
             tools:listitem="@layout/bug_recyclerview_item" />
 
@@ -45,11 +37,11 @@
             android:id="@+id/fish_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".50"
+            android:layout_weight=".30"
             android:padding="@dimen/big_padding"
             tools:listitem="@layout/fish_recyclerview_item" />
 
-    </LinearLayout>
+    </LinearLayout>-->
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"

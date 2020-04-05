@@ -20,6 +20,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -29,26 +30,28 @@ public class MainActivity extends AppCompatActivity {
     private BugViewModel mBugViewModel;
     private FishViewModel mFishViewModel;
 
+    private ViewPager2 viewPager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView bugRecyclerView = findViewById(R.id.bug_recyclerview);
+        /*RecyclerView bugRecyclerView = findViewById(R.id.bug_recyclerview);
         final BugListAdapter bugAdapter = new BugListAdapter(this);
         bugRecyclerView.setAdapter(bugAdapter);
-        bugRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        bugRecyclerView.setLayoutManager(new LinearLayoutManager(bugRecyclerView.getContext()));*/
 
-        RecyclerView fishRecyclerView = findViewById(R.id.fish_recyclerview);
+        /*RecyclerView fishRecyclerView = findViewById(R.id.fish_recyclerview);
         final FishListAdapter fishAdapter = new FishListAdapter(this);
         fishRecyclerView.setAdapter(fishAdapter);
-        fishRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        fishRecyclerView.setLayoutManager(new LinearLayoutManager(this));*/
 
-        // Get a new or existing ViewModel from the ViewModelProvider.
-        mBugViewModel = new ViewModelProvider(this).get(BugViewModel.class);
-        mFishViewModel = new ViewModelProvider(this).get(FishViewModel.class);
+        /*// Get a new or existing ViewModel from the ViewModelProvider.
+        mBugViewModel = new ViewModelProvider(this).get(BugViewModel.class);*/
+        /*mFishViewModel = new ViewModelProvider(this).get(FishViewModel.class);*/
 
-        // Add an observer on the LiveData returned by getAlphabetizedBugs.
+        /*// Add an observer on the LiveData returned by getAlphabetizedBugs.
         // The onChanged() method fires when the observed data changes and the activity is
         // in the foreground.
         mBugViewModel.getAllBugs().observe(this, new Observer<List<Bug>>() {
@@ -57,23 +60,29 @@ public class MainActivity extends AppCompatActivity {
                 // Update the cached copy of the bugs in the adapter.
                 bugAdapter.setBugs(bugs);
             }
-        });
-        mFishViewModel.getAllFishes().observe(this, new Observer<List<Fish>>() {
+        });*/
+        /*mFishViewModel.getAllFishes().observe(this, new Observer<List<Fish>>() {
             @Override
             public void onChanged(@Nullable final List<Fish> fishes) {
                 fishAdapter.setFishes(fishes);
             }
-        });
+        });*/
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, NewBugActivity.class);
-                startActivityForResult(intent, NEW_BUG_ACTIVITY_REQUEST_CODE);
-            }
+        fab.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, NewBugActivity.class);
+            startActivityForResult(intent, NEW_BUG_ACTIVITY_REQUEST_CODE);
         });
+
+        viewPager = findViewById(R.id.view_pager);
+        viewPager.setAdapter(createCardAdapter());
     }
+
+    private ViewPagerAdapter createCardAdapter() {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(this);
+        return adapter;
+    }
+
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
