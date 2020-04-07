@@ -49,8 +49,16 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
             Fish current = mFishes.get(position);
             holder.fishItemView.setText(current.getName());
             holder.fishPriceView.setText(String.valueOf(current.getPrice()));
-            holder.fishTimeView.setText(current.getTime());
-            holder.fishPeriodView.setText(current.getPeriod());
+            if(current.getTime_1() == 0) {
+                holder.fishTimeView.setText("Toute la journée");
+            } else {
+                holder.fishTimeView.setText(current.getTime_1() + "h - " + current.getTime_2() + "h");
+            }
+            if(current.getPeriod_1() == 0) {
+                holder.fishPeriodView.setText("Toute l'année");
+            } else {
+                holder.fishPeriodView.setText(String.valueOf(periodToString(current.getPeriod_1())) + " - " + periodToString(current.getPeriod_2()));
+            }
             holder.fishPlaceView.setText(current.getPlace());
         } else {
             // Covers the case of data not being ready yet.
@@ -65,6 +73,37 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
     public void setFishes(List<Fish> fishes) {
         mFishes = fishes;
         notifyDataSetChanged();
+    }
+
+    public String periodToString(int period) {
+        switch (period) {
+            case 1:
+                return "Janvier";
+            case 2:
+                return "Février";
+            case 3:
+                return "Mars";
+            case 4:
+                return "Avril";
+            case 5:
+                return "Mai";
+            case 6:
+                return "Juin";
+            case 7:
+                return "Juillet";
+            case 8:
+                return "Août";
+            case 9:
+                return "Septembre";
+            case 10:
+                return "Octobre";
+            case 11:
+                return "Novembre";
+            case 12:
+                return "Décembre";
+            default:
+                return "";
+        }
     }
 
     // getItemCount() is called many times, and when it is first called,

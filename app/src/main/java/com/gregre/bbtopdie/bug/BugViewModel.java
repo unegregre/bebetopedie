@@ -28,7 +28,7 @@ public class BugViewModel extends AndroidViewModel {
         super(application);
         mRepository = new BugRepository(application);
         mAllBugs = mRepository.getAllBugs();
-        mBugsNow = mRepository.getBugsNow();
+        mBugsNow = mRepository.getBugsNow(150);
     }
 
     public LiveData<List<Bug>> getAllBugs() {

@@ -18,22 +18,32 @@ public class Fish {
     private int price;
 
     @NonNull
-    @ColumnInfo(name = "fish_time")
-    private String time;
+    @ColumnInfo(name = "fish_time_1")
+    private int time_1;
 
     @NonNull
-    @ColumnInfo(name = "fish_period")
-    private String period;
+    @ColumnInfo(name = "fish_time_2")
+    private int time_2;
+
+    @NonNull
+    @ColumnInfo(name = "fish_period_1")
+    private int period_1;
+
+    @NonNull
+    @ColumnInfo(name = "fish_period_2")
+    private int period_2;
 
     @NonNull
     @ColumnInfo(name = "fish_place")
     private String place;
 
-    public Fish(@NonNull String name, @NonNull int price, @NonNull String time, @NonNull String period, @NonNull String place) {
+    public Fish(@NonNull String name, @NonNull int price, @NonNull int time_1, @NonNull int time_2, @NonNull int period_1, @NonNull int period_2, @NonNull String place) {
         this.name = name;
         this.price = price;
-        this.time = time;
-        this.period = period;
+        this.time_1 = time_1;
+        this.time_2 = time_2;
+        this.period_1 = period_1;
+        this.period_2 = period_2;
         this.place = place;
     }
 
@@ -41,9 +51,13 @@ public class Fish {
 
     public int getPrice(){return this.price;}
 
-    public String getTime(){return this.time;}
+    public int getTime_1(){return this.time_1;}
 
-    public String getPeriod(){return this.period;}
+    public int getTime_2(){return this.time_2;}
+
+    public int getPeriod_1(){return this.period_1;}
+
+    public int getPeriod_2() {return this.period_2;}
 
     public String getPlace(){return this.place;}
 

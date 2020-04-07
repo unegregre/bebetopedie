@@ -27,8 +27,8 @@ public interface BugDao {
     @Query("SELECT * from bug_table ORDER BY bug_name ASC")
     LiveData<List<Bug>> getAlphabetizedBugs();
 
-    @Query("SELECT * from bug_table WHERE bug_price < 150")
-    LiveData<List<Bug>> getBugsNow();
+    @Query("SELECT * from bug_table WHERE bug_price < :price")
+    LiveData<List<Bug>> getBugsNow(int price);
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Bug bug);

@@ -18,25 +18,39 @@ public class Bug {
     private int price;
 
     @NonNull
-    @ColumnInfo(name = "bug_time")
-    private String time;
+    @ColumnInfo(name = "bug_time_1")
+    private int time_1;
 
     @NonNull
-    @ColumnInfo(name = "bug_period")
-    private String period;
+    @ColumnInfo(name = "bug_time_2")
+    private int time_2;
 
-    public Bug(@NonNull String name, @NonNull int price, @NonNull String time, @NonNull String period) {
+    @NonNull
+    @ColumnInfo(name = "bug_period_1")
+    private int period_1;
+
+    @NonNull
+    @ColumnInfo(name = "bug_period_2")
+    private int period_2;
+
+    public Bug(@NonNull String name, @NonNull int price, @NonNull int time_1, @NonNull int time_2, @NonNull int period_1, @NonNull int period_2) {
         this.name = name;
         this.price = price;
-        this.time = time;
-        this.period = period;
+        this.time_1 = time_1;
+        this.time_2 = time_2;
+        this.period_1 = period_1;
+        this.period_2 = period_2;
     }
 
     public String getName(){return this.name;}
 
     public int getPrice(){return this.price;}
 
-    public String getTime(){return this.time;}
+    public int getTime_1(){return this.time_1;}
 
-    public String getPeriod(){return this.period;}
+    public int getTime_2(){return this.time_2;}
+
+    public int getPeriod_1(){return this.period_1;}
+
+    public int getPeriod_2() {return this.period_2;}
 }

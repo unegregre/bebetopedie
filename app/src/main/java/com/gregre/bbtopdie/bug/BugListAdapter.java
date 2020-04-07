@@ -1,5 +1,6 @@
 package com.gregre.bbtopdie.bug;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -48,14 +49,53 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
             Bug current = mBugs.get(position);
             holder.bugItemView.setText(current.getName());
             holder.bugPriceView.setText(String.valueOf(current.getPrice()));
-            holder.bugTimeView.setText(current.getTime());
-            holder.bugPeriodView.setText(current.getPeriod());
+            if(current.getTime_1() == 0) {
+                holder.bugTimeView.setText("Toute la journée");
+            } else {
+                holder.bugTimeView.setText(current.getTime_1() + "h - " + current.getTime_2() + "h");
+            }
+            if(current.getPeriod_1() == 0) {
+                holder.bugPeriodView.setText("Toute l'année");
+            } else {
+                holder.bugPeriodView.setText(String.valueOf(periodToString(current.getPeriod_1())) + " - " + periodToString(current.getPeriod_2()));
+            }
         } else {
             // Covers the case of data not being ready yet.
             holder.bugItemView.setText("No Bug");
             holder.bugPriceView.setText("0");
             holder.bugTimeView.setText("None");
             holder.bugPeriodView.setText("None");
+        }
+    }
+
+    public String periodToString(int period) {
+        switch (period) {
+            case 1:
+                return "Janvier";
+            case 2:
+                return "Février";
+            case 3:
+                return "Mars";
+            case 4:
+                return "Avril";
+            case 5:
+                return "Mai";
+            case 6:
+                return "Juin";
+            case 7:
+                return "Juillet";
+            case 8:
+                return "Août";
+            case 9:
+                return "Septembre";
+            case 10:
+                return "Octobre";
+            case 11:
+                return "Novembre";
+            case 12:
+                return "Décembre";
+            default:
+                return "";
         }
     }
 
