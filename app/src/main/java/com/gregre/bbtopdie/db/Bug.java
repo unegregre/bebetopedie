@@ -15,7 +15,7 @@ public class Bug {
 
     @NonNull
     @ColumnInfo(name = "bug_price")
-    private String price;
+    private int price;
 
     @NonNull
     @ColumnInfo(name = "bug_time")
@@ -25,7 +25,7 @@ public class Bug {
     @ColumnInfo(name = "bug_period")
     private String period;
 
-    public Bug(@NonNull String name, @NonNull String price, @NonNull String time, @NonNull String period) {
+    public Bug(@NonNull String name, @NonNull int price, @NonNull String time, @NonNull String period) {
         this.name = name;
         this.price = price;
         this.time = time;
@@ -34,7 +34,7 @@ public class Bug {
 
     public String getName(){return this.name;}
 
-    public String getPrice(){return this.price;}
+    public int getPrice(){return this.price;}
 
     public String getTime(){return this.time;}
 

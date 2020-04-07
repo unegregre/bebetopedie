@@ -15,7 +15,7 @@ public class Fish {
 
     @NonNull
     @ColumnInfo(name = "fish_price")
-    private String price;
+    private int price;
 
     @NonNull
     @ColumnInfo(name = "fish_time")
@@ -29,7 +29,7 @@ public class Fish {
     @ColumnInfo(name = "fish_place")
     private String place;
 
-    public Fish(@NonNull String name, @NonNull String price, @NonNull String time, @NonNull String period, @NonNull String place) {
+    public Fish(@NonNull String name, @NonNull int price, @NonNull String time, @NonNull String period, @NonNull String place) {
         this.name = name;
         this.price = price;
         this.time = time;
@@ -39,7 +39,7 @@ public class Fish {
 
     public String getName(){return this.name;}
 
-    public String getPrice(){return this.price;}
+    public int getPrice(){return this.price;}
 
     public String getTime(){return this.time;}
 

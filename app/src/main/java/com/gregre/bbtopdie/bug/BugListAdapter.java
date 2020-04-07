@@ -12,7 +12,6 @@ import com.gregre.bbtopdie.db.Bug;
 
 import java.util.List;
 
-
 public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewHolder> {
 
     class BugViewHolder extends RecyclerView.ViewHolder {
@@ -48,7 +47,7 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
         if (mBugs != null) {
             Bug current = mBugs.get(position);
             holder.bugItemView.setText(current.getName());
-            holder.bugPriceView.setText(current.getPrice());
+            holder.bugPriceView.setText(String.valueOf(current.getPrice()));
             holder.bugTimeView.setText(current.getTime());
             holder.bugPeriodView.setText(current.getPeriod());
         } else {

@@ -15,9 +15,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.gregre.bbtopdie.R;
-import com.gregre.bbtopdie.bug.BugListAdapter;
-import com.gregre.bbtopdie.bug.BugViewModel;
-import com.gregre.bbtopdie.db.Bug;
 import com.gregre.bbtopdie.db.Fish;
 
 import java.util.List;

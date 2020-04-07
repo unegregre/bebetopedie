@@ -14,6 +14,9 @@ public interface FishDao {
     @Query("SELECT * from fish_table ORDER BY fish_name ASC")
     LiveData<List<Fish>> getAlphabetizedFish();
 
+    @Query("SELECT * from fish_table WHERE fish_price < 150")
+    LiveData<List<Fish>> getFishesNow();
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Fish fish);
 

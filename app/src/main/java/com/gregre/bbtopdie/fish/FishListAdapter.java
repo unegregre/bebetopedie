@@ -1,12 +1,11 @@
 package com.gregre.bbtopdie.fish;
 
 import android.content.Context;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.gregre.bbtopdie.R;
 import com.gregre.bbtopdie.db.Fish;
@@ -32,7 +31,7 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
     }
 
     private final LayoutInflater mInflater;
-    private List<Fish> mFishes; // Cached copy of fishs
+    private List<Fish> mFishes; // Cached copy of fishes
 
     public FishListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
@@ -41,7 +40,7 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
     @Override
     public FishListAdapter.FishViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = mInflater.inflate(R.layout.fish_recyclerview_item, parent, false);
-        return new FishListAdapter.FishViewHolder(itemView);
+        return new FishViewHolder(itemView);
     }
 
     @Override
@@ -49,7 +48,7 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
         if (mFishes != null) {
             Fish current = mFishes.get(position);
             holder.fishItemView.setText(current.getName());
-            holder.fishPriceView.setText(current.getPrice());
+            holder.fishPriceView.setText(String.valueOf(current.getPrice()));
             holder.fishTimeView.setText(current.getTime());
             holder.fishPeriodView.setText(current.getPeriod());
             holder.fishPlaceView.setText(current.getPlace());

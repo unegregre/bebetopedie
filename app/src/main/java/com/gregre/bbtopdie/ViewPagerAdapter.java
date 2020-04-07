@@ -16,11 +16,11 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
     @NonNull @Override public Fragment createFragment(int position) {
         switch(position) {
             case 0:
-                return BugFragment.newInstance(position);
+                return TimeFragment.newInstance(position);
             case 1:
-                return FishFragment.newInstance(position);
-            default:
                 return BugFragment.newInstance(position);
+            default:
+                return FishFragment.newInstance(position);
         }
     }
     @Override public int getItemCount() {

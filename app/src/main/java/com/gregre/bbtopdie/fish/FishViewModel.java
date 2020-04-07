@@ -18,14 +18,21 @@ public class FishViewModel extends AndroidViewModel {
     // - Repository is completely separated from the UI through the ViewModel.
     private LiveData<List<Fish>> mAllFishes;
 
+    private LiveData<List<Fish>> mFishesNow;
+
     public FishViewModel(Application application) {
         super(application);
         mRepository = new FishRepository(application);
         mAllFishes = mRepository.getAllFishes();
+        mFishesNow = mRepository.getFishesNow();
     }
 
     public LiveData<List<Fish>> getAllFishes() {
         return mAllFishes;
+    }
+
+    public LiveData<List<Fish>> getFishesNow() {
+        return mFishesNow;
     }
 
     public void insert(Fish fish) {
