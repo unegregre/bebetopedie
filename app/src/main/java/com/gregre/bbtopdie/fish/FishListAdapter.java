@@ -48,7 +48,7 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
         if (mFishes != null) {
             Fish current = mFishes.get(position);
             holder.fishItemView.setText(current.getName());
-            holder.fishPriceView.setText(String.valueOf(current.getPrice()));
+            holder.fishPriceView.setText(current.getPrice() + " cloch.");
             if(current.getTime_1() == 0) {
                 holder.fishTimeView.setText("Toute la journée");
             } else {

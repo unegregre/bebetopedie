@@ -17,4 +17,13 @@
     <color name="green_300">#57BB8A</color>
     <color name="green_500">#673AB7</color>
     <color name="green_700">#0B8043</color>
+
+    <!-- ACNH colors -->
+    <color name="NH_yellow">#fdd10a</color>
+    <color name="NH_red">#e01a25</color>
+    <color name="NH_blue">#55c3f1</color>
+    <color name="NH_green">#8fc31f</color>
+    <color name="NH_pink">#d95097</color>
+
+    <color name="transparent_grey">#66252525</color>
 </resources>

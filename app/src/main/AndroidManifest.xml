@@ -8,11 +8,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity
-            android:name=".TabActivity"
-            android:label="@string/title_activity_tab"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        android:theme="@style/app_theme">
         <activity android:name=".NewBugActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

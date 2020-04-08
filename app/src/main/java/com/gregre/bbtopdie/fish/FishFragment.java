@@ -24,12 +24,7 @@ public class FishFragment extends Fragment{
     private FishViewModel mFishViewModel;
 
     private static final String ARG_COUNT = "param1";
-    private Integer counter;
-    private int[] COLOR_MAP = {
-            R.color.red_100, R.color.red_300, R.color.red_500, R.color.red_700, R.color.blue_100,
-            R.color.blue_300, R.color.blue_500, R.color.blue_700, R.color.green_100, R.color.green_300,
-            R.color.green_500, R.color.green_700
-    };
+
     public FishFragment() {
         // Required empty public constructor
     }
@@ -43,9 +38,6 @@ public class FishFragment extends Fragment{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            counter = getArguments().getInt(ARG_COUNT);
-        }
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,7 +47,6 @@ public class FishFragment extends Fragment{
     }
     @Override public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.setBackgroundColor(ContextCompat.getColor(getContext(), COLOR_MAP[counter]));
 
         RecyclerView fishRecyclerView = view.findViewById(R.id.fish_recyclerview);
         final FishListAdapter fishAdapter = new FishListAdapter(this.getContext());

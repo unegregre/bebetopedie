@@ -65,7 +65,6 @@ public class TimeFragment extends Fragment {
     }
     @Override public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        view.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorPrimaryDark));
 
         Calendar cal = Calendar.getInstance();
         int hour = cal.get(Calendar.HOUR_OF_DAY);
