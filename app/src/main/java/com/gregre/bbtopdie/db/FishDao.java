@@ -14,8 +14,19 @@ public interface FishDao {
     @Query("SELECT * from fish_table ORDER BY fish_name ASC")
     LiveData<List<Fish>> getAlphabetizedFish();
 
-    @Query("SELECT * from fish_table WHERE fish_price < 150")
-    LiveData<List<Fish>> getFishesNow();
+    @Query("SELECT * from fish_table WHERE " +
+            "(( fish_time_1 = 0)" +
+            "OR" +
+            "(fish_time_1 < fish_time_2 AND :hour BETWEEN fish_time_1 AND fish_time_2) " +
+            "OR " +
+            "(fish_time_1 > fish_time_2 AND :hour NOT BETWEEN fish_time_1 AND fish_time_2)) " +
+            "AND " +
+            "((fish_period_1 = 0)" +
+            "OR" +
+            "(fish_period_1 < fish_period_2 AND :month BETWEEN fish_period_1 AND fish_period_2) " +
+            "OR " +
+            "(fish_period_1 > fish_period_2 AND :month NOT BETWEEN fish_period_1 AND fish_period_2))")
+    LiveData<List<Fish>> getFishesNow(int hour, int month);
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Fish fish);

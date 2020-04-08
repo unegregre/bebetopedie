@@ -23,6 +23,8 @@ import com.gregre.bbtopdie.db.Fish;
 import com.gregre.bbtopdie.fish.FishListAdapter;
 import com.gregre.bbtopdie.fish.FishViewModel;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 
@@ -65,6 +67,10 @@ public class TimeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         view.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorPrimaryDark));
 
+        Calendar cal = Calendar.getInstance();
+        int hour = cal.get(Calendar.HOUR_OF_DAY);
+        int month = cal.get(Calendar.MONTH);
+
         RecyclerView bugRecyclerView = view.findViewById(R.id.bug_recyclerview);
         final BugListAdapter bugAdapter = new BugListAdapter(this.getContext());
         bugRecyclerView.setAdapter(bugAdapter);
@@ -76,7 +82,7 @@ public class TimeFragment extends Fragment {
         // Add an observer on the LiveData returned by getAlphabetizedBugs.
         // The onChanged() method fires when the observed data changes and the activity is
         // in the foreground.
-        mBugViewModel.getBugsNow().observe(getViewLifecycleOwner(), new Observer<List<Bug>>() {
+        mBugViewModel.getBugsNow(hour, month).observe(getViewLifecycleOwner(), new Observer<List<Bug>>() {
             @Override
             public void onChanged(@Nullable final List<Bug> bugs) {
                 // Update the cached copy of the bugs in the adapter.
@@ -95,7 +101,7 @@ public class TimeFragment extends Fragment {
         // Add an observer on the LiveData returned by getAlphabetizedBugs.
         // The onChanged() method fires when the observed data changes and the activity is
         // in the foreground.
-        mFishViewModel.getFishesNow().observe(getViewLifecycleOwner(), new Observer<List<Fish>>() {
+        mFishViewModel.getFishesNow(hour, month).observe(getViewLifecycleOwner(), new Observer<List<Fish>>() {
             @Override
             public void onChanged(@Nullable final List<Fish> fishes) {
                 // Update the cached copy of the bugs in the adapter.

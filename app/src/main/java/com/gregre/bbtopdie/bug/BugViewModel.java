@@ -22,21 +22,18 @@ public class BugViewModel extends AndroidViewModel {
     // - Repository is completely separated from the UI through the ViewModel.
     private LiveData<List<Bug>> mAllBugs;
 
-    private LiveData<List<Bug>> mBugsNow;
-
     public BugViewModel(Application application) {
         super(application);
         mRepository = new BugRepository(application);
         mAllBugs = mRepository.getAllBugs();
-        mBugsNow = mRepository.getBugsNow(150);
     }
 
     public LiveData<List<Bug>> getAllBugs() {
         return mAllBugs;
     }
 
-    public LiveData<List<Bug>> getBugsNow() {
-        return mBugsNow;
+    public LiveData<List<Bug>> getBugsNow(int hour, int month) {
+        return mRepository.getBugsNow(hour, month);
     }
 
     public void insert(Bug bug) {

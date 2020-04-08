@@ -35,7 +35,7 @@ class BugRepository {
         return mAllBugs;
     }
 
-    LiveData<List<Bug>> getBugsNow(int price) { return mBugDao.getBugsNow(price); }
+    LiveData<List<Bug>> getBugsNow(int hour, int month) { return mBugDao.getBugsNow(hour, month); }
 
     // You must call this on a non-UI thread or your app will throw an exception. Room ensures
     // that you're not doing any long running operations on the main thread, blocking the UI.
