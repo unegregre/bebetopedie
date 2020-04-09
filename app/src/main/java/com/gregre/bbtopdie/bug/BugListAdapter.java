@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gregre.bbtopdie.R;
@@ -20,13 +21,15 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
         private final TextView bugPriceView;
         private final TextView bugTimeView;
         private final TextView bugPeriodView;
+        private final ImageView imageView;
 
         private BugViewHolder(View itemView) {
             super(itemView);
-            bugItemView = itemView.findViewById(R.id.textView);
-            bugPriceView = itemView.findViewById(R.id.priceView);
-            bugTimeView = itemView.findViewById(R.id.timeView);
-            bugPeriodView = itemView.findViewById(R.id.periodView);
+            bugItemView = itemView.findViewById(R.id.bugTextView);
+            bugPriceView = itemView.findViewById(R.id.bugPriceView);
+            bugTimeView = itemView.findViewById(R.id.bugTimeView);
+            bugPeriodView = itemView.findViewById(R.id.bugPeriodView);
+            imageView = itemView.findViewById(R.id.bugImageView);
         }
     }
 
@@ -48,7 +51,7 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
         if (mBugs != null) {
             Bug current = mBugs.get(position);
             holder.bugItemView.setText(current.getName());
-            holder.bugPriceView.setText(String.valueOf(current.getPrice()));
+            holder.bugPriceView.setText(current.getPrice() + " cloch.");
             if(current.getTime_1() == 0) {
                 holder.bugTimeView.setText("Toute la journée");
             } else {
@@ -57,8 +60,10 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
             if(current.getPeriod_1() == 0) {
                 holder.bugPeriodView.setText("Toute l'année");
             } else {
-                holder.bugPeriodView.setText(String.valueOf(periodToString(current.getPeriod_1())) + " - " + periodToString(current.getPeriod_2()));
+                holder.bugPeriodView.setText(periodToString(current.getPeriod_1()) + " - " + periodToString(current.getPeriod_2()));
             }
+
+            holder.imageView.setImageResource(R.drawable.greatwhiteshark);
         } else {
             // Covers the case of data not being ready yet.
             holder.bugItemView.setText("No Bug");

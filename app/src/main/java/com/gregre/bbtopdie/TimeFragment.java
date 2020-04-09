@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -73,7 +74,7 @@ public class TimeFragment extends Fragment {
         RecyclerView bugRecyclerView = view.findViewById(R.id.bug_recyclerview);
         final BugListAdapter bugAdapter = new BugListAdapter(this.getContext());
         bugRecyclerView.setAdapter(bugAdapter);
-        bugRecyclerView.setLayoutManager(new LinearLayoutManager(bugRecyclerView.getContext()));
+        bugRecyclerView.setLayoutManager(new GridLayoutManager(bugRecyclerView.getContext(),2));
 
         // Get a new or existing ViewModel from the ViewModelProvider.
         mBugViewModel = new ViewModelProvider(this).get(BugViewModel.class);
@@ -92,7 +93,7 @@ public class TimeFragment extends Fragment {
         RecyclerView fishRecyclerView = view.findViewById(R.id.fish_recyclerview);
         final FishListAdapter fishAdapter = new FishListAdapter(this.getContext());
         fishRecyclerView.setAdapter(fishAdapter);
-        fishRecyclerView.setLayoutManager(new LinearLayoutManager(fishRecyclerView.getContext()));
+        fishRecyclerView.setLayoutManager(new GridLayoutManager(fishRecyclerView.getContext(),2));
 
         // Get a new or existing ViewModel from the ViewModelProvider.
         mFishViewModel = new ViewModelProvider(this).get(FishViewModel.class);

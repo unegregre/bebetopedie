@@ -1,99 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="3dp"
+    android:layout_margin="4dp"
+    android:padding="4dp"
     android:gravity="center_horizontal|center_vertical"
     android:background="@drawable/box_background">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.30"
-        android:gravity="center_horizontal|center_vertical"
-        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            app:srcCompat="@drawable/greatwhiteshark" />
+    <ImageView
+        android:id="@+id/fishImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/fishTextView"
-            style="@style/bug_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/fishTextView"
+        style="@style/bug_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-    </LinearLayout>
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0.20"
         android:gravity="center_vertical|right"
-        android:orientation="vertical">
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal">
 
-        <TextView
-            style="@style/bug_attribute"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Horaire :"/>
+            android:gravity="center_vertical|right"
+            android:orientation="vertical">
 
-        <TextView
-            style="@style/bug_attribute"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Période :" />
+            <TextView
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Horaire :"/>
 
-        <TextView
-            style="@style/bug_attribute"
+            <TextView
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Période :" />
+
+            <TextView
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lieu :" />
+            <TextView
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prix :" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lieu :" />
-        <TextView
-            style="@style/bug_attribute"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Prix :" />
+            android:gravity="center_vertical"
+            android:layout_marginBottom="2dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fishTimeView"
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/fishPeriodView"
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/fishPlaceView"
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/fishPriceView"
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight=".50"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/fishTimeView"
-            style="@style/bug_attribute"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/fishPeriodView"
-            style="@style/bug_attribute"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-
-        <TextView
-            android:id="@+id/fishPlaceView"
-            style="@style/bug_attribute"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/fishPriceView"
-            style="@style/bug_attribute"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
-
-
 
 </LinearLayout>

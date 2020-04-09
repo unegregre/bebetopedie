@@ -1,41 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:padding="4dp"
+    android:gravity="center_horizontal|center_vertical"
     android:background="@drawable/box_background">
 
+
+    <ImageView
+        android:id="@+id/bugImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/bugTextView"
         style="@style/bug_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight=".40" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight=".40"
-        android:orientation="vertical">
+        android:gravity="center_vertical|right"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/periodView"
-            style="@style/bug_attribute"
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|right"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/timeView"
-            style="@style/bug_attribute"
+            <TextView
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Horaire :"/>
+
+            <TextView
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Période :" />
+
+            <TextView
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prix :" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="2dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/bugTimeView"
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/bugPeriodView"
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/bugPriceView"
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
     </LinearLayout>
-
-    <TextView
-    android:id="@+id/priceView"
-    style="@style/bug_attribute"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_weight=".20"/>
 
 </LinearLayout>

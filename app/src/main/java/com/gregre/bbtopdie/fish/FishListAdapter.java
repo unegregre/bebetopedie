@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gregre.bbtopdie.R;
@@ -19,6 +20,7 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
         private final TextView fishTimeView;
         private final TextView fishPeriodView;
         private final TextView fishPlaceView;
+        private final ImageView imageView;
 
         private FishViewHolder(View itemView) {
             super(itemView);
@@ -27,6 +29,7 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
             fishTimeView = itemView.findViewById(R.id.fishTimeView);
             fishPeriodView = itemView.findViewById(R.id.fishPeriodView);
             fishPlaceView = itemView.findViewById(R.id.fishPlaceView);
+            imageView = itemView.findViewById(R.id.fishImageView);
         }
     }
 
@@ -60,6 +63,7 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
                 holder.fishPeriodView.setText(String.valueOf(periodToString(current.getPeriod_1())) + " - " + periodToString(current.getPeriod_2()));
             }
             holder.fishPlaceView.setText(current.getPlace());
+            holder.imageView.setImageResource(R.drawable.greatwhiteshark);
         } else {
             // Covers the case of data not being ready yet.
             holder.fishItemView.setText("No Fish");

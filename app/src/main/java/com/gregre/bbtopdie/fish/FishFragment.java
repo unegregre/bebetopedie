@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,7 +52,7 @@ public class FishFragment extends Fragment{
         RecyclerView fishRecyclerView = view.findViewById(R.id.fish_recyclerview);
         final FishListAdapter fishAdapter = new FishListAdapter(this.getContext());
         fishRecyclerView.setAdapter(fishAdapter);
-        fishRecyclerView.setLayoutManager(new LinearLayoutManager(fishRecyclerView.getContext()));
+        fishRecyclerView.setLayoutManager(new GridLayoutManager(fishRecyclerView.getContext(), 2));
 
         // Get a new or existing ViewModel from the ViewModelProvider.
         mFishViewModel = new ViewModelProvider(this).get(FishViewModel.class);

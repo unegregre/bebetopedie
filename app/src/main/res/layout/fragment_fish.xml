@@ -9,6 +9,6 @@
         android:id="@+id/fish_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/big_padding"
+        android:padding="@dimen/small_padding"
         tools:listitem="@layout/fish_recyclerview_item" />
 </FrameLayout>
