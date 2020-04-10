@@ -1,0 +1,85 @@
+id: 1,name: Bitterling,price: 900,loc: River,shadow: 1,time_st: 0, time_end: 0, month_st: 11, month_end: 3
+id: 2,name: Pale chub,price: 200,loc: River,shadow: 1,time_st: 9, time_end: 16, month_st: 0, month_end: 0
+id: 3,name: Crucian carp,price: 160,loc: River,shadow: 2,time_st: 0, time_end: 0, month_st: 0, month_end: 0
+id: 4,name: Dace,price: 192,loc: River,shadow: 3,time_st: 16, time_end: 9, month_st: 0, month_end: 0
+id: 5,name: Carp,price: 300,loc: Pond,shadow: 4,time_st: 0, time_end: 0, month_st: 0, month_end: 0
+id: 6,name: Koi,price: 4000,loc: Pond,shadow: 4,time_st: 16, time_end: 9, month_st: 0, month_end: 0
+id: 7,name: Goldfish,price: 1300,loc: Pond,shadow: 1,time_st: 0, time_end: 0, month_st: 0, month_end: 0
+id: 8,name: Pop-eyed goldfish,price: 1300,loc: Pond,shadow: 1,time_st: 9, time_end: 16, month_st: 0, month_end: 0
+id: 9,name: Ranchu goldfish,price: 4500,loc: Pond,shadow: 2,time_st: 9, time_end: 16, month_st: 0, month_end: 0
+id: 10,name: Killifish,price: 300,loc: Pond,shadow: 1,time_st: 0, time_end: 0, month_st: 4, month_end: 8
+id: 11,name: Crawfish,price: 200,loc: Pond,shadow: 2,time_st: 0, time_end: 0, month_st: 4, month_end: 9
+id: 12,name: Soft-shelled turtle,price: 3750,loc: River,shadow: 4,time_st: 16, time_end: 9, month_st: 8, month_end: 9
+id: 13,name: Snapping Turtle,price: 5000,loc: River,shadow: 5,time_st: 21, time_end: 4, month_st: 4, month_end: 10
+id: 14,name: Tadpole,price: 100,loc: Pond,shadow: 1,time_st: 0, time_end: 0, month_st: 3, month_end: 7
+id: 15,name: Frog,price: 120,loc: Pond,shadow: 2,time_st: 0, time_end: 0, month_st: 5, month_end: 8
+id: 16,name: Freshwater goby,price: 400,loc: River,shadow: 2,time_st: 16, time_end: 9, month_st: 0, month_end: 0
+id: 17,name: Loach,price: 400,loc: River,shadow: 2,time_st: 0, time_end: 0, month_st: 3, month_end: 5
+id: 18,name: Catfish,price: 800,loc: Pond,shadow: 4,time_st: 16, time_end: 9, month_st: 5, month_end: 10
+id: 19,name: Giant snakehead,price: 5500,loc: Pond,shadow: 5,time_st: 9, time_end: 16, month_st: 6, month_end: 8
+id: 20,name: Bluegill,price: 180,loc: River,shadow: 2,time_st: 9, time_end: 16, month_st: 0, month_end: 0
+id: 21,name: Yellow perch,price: 300,loc: River,shadow: 3,time_st: 0, time_end: 0, month_st: 10, month_end: 3
+id: 22,name: Black bass,price: 320,loc: River,shadow: 4,time_st: 0, time_end: 0, month_st: 0, month_end: 0
+id: 23,name: Tilapia,price: 800,loc: River,shadow: 3,time_st: 0, time_end: 0, month_st: 6, month_end: 10
+id: 24,name: Pike,price: 1800,loc: River,shadow: 5,time_st: 0, time_end: 0, month_st: 9, month_end: 12
+id: 25,name: Pond smelt,price: 500,loc: River,shadow: 2,time_st: 0, time_end: 0, month_st: 12, month_end: 2
+id: 26,name: Sweetfish,price: 900,loc: River,shadow: 3,time_st: 0, time_end: 0, month_st: 7, month_end: 9
+id: 27,name: Cherry salmon,price: 800,loc: River (Clifftop),shadow: 3,time_st: 16, time_end: 9, month_st: 3, month_end: 6
+id: 28,name: Cherry salmon,price: 800,loc: River (Clifftop),shadow: 3,time_st: 16, time_end: 9, month_st: 9, month_end: 11
+id: 29,name: Char,price: 3800,loc: River (Clifftop)  Pond,shadow: 3,time_st: 16, time_end: 9, month_st: 3, month_end: 6
+id: 30,name: Char,price: 3800,loc: River (Clifftop)  Pond,shadow: 3,time_st: 16, time_end: 9, month_st: 9, month_end: 11
+id: 31,name: Golden trout,price: 15000,loc: River (Clifftop),shadow: 3,time_st: 16, time_end: 9, month_st: 3, month_end: 5
+id: 32,name: Golden trout,price: 15000,loc: River (Clifftop),shadow: 3,time_st: 16, time_end: 9, month_st: 9, month_end: 11
+id: 33,name: Stringfish,price: 15000,loc: River (Clifftop),shadow: 5,time_st: 16, time_end: 9, month_st: 12, month_end: 3
+id: 34,name: Salmon,price: 700,loc: River (Mouth),shadow: 4,time_st: 0, time_end: 0, month_st: 9, month_end: 9
+id: 35,name: King salmon,price: 1800,loc: River (Mouth),shadow: 6,time_st: 0, time_end: 0, month_st: 9, month_end: 9
+id: 36,name: Mitten crab,price: 2000,loc: River,shadow: 2,time_st: 16, time_end: 9, month_st: 9, month_end: 11
+id: 37,name: Guppy,price: 1300,loc: River,shadow: 1,time_st: 9, time_end: 16, month_st: 4, month_end: 11
+id: 38,name: Nibble fish,price: 1500,loc: River,shadow: 1,time_st: 9, time_end: 16, month_st: 5, month_end: 9
+id: 39,name: Angelfish,price: 3000,loc: River,shadow: 2,time_st: 16, time_end: 9, month_st: 5, month_end: 10
+id: 40,name: Betta,price: 2500,loc: River,shadow: 2,time_st: 9, time_end: 16, month_st: 5, month_end: 10
+id: 41,name: Neon tetra,price: 500,loc: River,shadow: 1,time_st: 9, time_end: 16, month_st: 4, month_end: 11
+id: 42,name: Rainbowfish,price: 800,loc: River,shadow: 1,time_st: 9, time_end: 16, month_st: 5, month_end: 10
+id: 43,name: Piranha,price: 2500,loc: River,shadow: 2,time_st: 9, time_end: 16, month_st: 6, month_end: 9
+id: 44,name: Piranha,price: 2500,loc: River,shadow: 2,time_st: 21, time_end: 4, month_st: 6, month_end: 9
+id: 45,name: Arowana,price: 10000,loc: River,shadow: 4,time_st: 16, time_end: 9, month_st: 6, month_end: 9
+id: 46,name: Dorado,price: 15000,loc: River,shadow: 5,time_st: 4, time_end: 21, month_st: 6, month_end: 9
+id: 47,name: Gar,price: 6000,loc: Pond,shadow: 6,time_st: 16, time_end: 9, month_st: 6, month_end: 9
+id: 48,name: Arapaima,price: 10000,loc: River,shadow: 6,time_st: 16, time_end: 9, month_st: 6, month_end: 9
+id: 49,name: Saddled bichir,price: 4000,loc: River,shadow: 4,time_st: 21, time_end: 4, month_st: 6, month_end: 9
+id: 50,name: Sturgeon,price: 10000,loc: River (Mouth),shadow: 6,time_st: 0, time_end: 0, month_st: 9, month_end: 3
+id: 51,name: Sea butterfly,price: 1000,loc: Sea,shadow: 1,time_st: 0, time_end: 0, month_st: 12, month_end: 3
+id: 52,name: Sea horse,price: 1100,loc: Sea,shadow: 1,time_st: 0, time_end: 0, month_st: 4, month_end: 11
+id: 53,name: Clown fish,price: 650,loc: Sea,shadow: 1,time_st: 0, time_end: 0, month_st: 4, month_end: 9
+id: 54,name: Surgeonfish,price: 1000,loc: Sea,shadow: 2,time_st: 0, time_end: 0, month_st: 4, month_end: 9
+id: 55,name: Butterfly fish,price: 1000,loc: Sea,shadow: 2,time_st: 0, time_end: 0, month_st: 4, month_end: 9
+id: 56,name: Napoleonfish,price: 10000,loc: Sea,shadow: 6,time_st: 4, time_end: 21, month_st: 7, month_end: 8
+id: 57,name: Zebra turkeyfish,price: 500,loc: Sea,shadow: 3,time_st: 0, time_end: 0, month_st: 4, month_end: 11
+id: 58,name: Blowfish,price: 5000,loc: Sea,shadow: 3,time_st: 21, time_end: 4, month_st: 11, month_end: 2
+id: 59,name: Puffer fish,price: 250,loc: Sea,shadow: 3,time_st: 0, time_end: 0, month_st: 7, month_end: 9
+id: 60,name: Anchovy,price: 200,loc: Sea,shadow: 2,time_st: 4, time_end: 21, month_st: 0, month_end: 0
+id: 61,name: Horse mackerel,price: 150,loc: Sea,shadow: 2,time_st: 0, time_end: 0, month_st: 0, month_end: 0
+id: 62,name: Barred knifejaw,price: 5000,loc: Sea,shadow: 3,time_st: 0, time_end: 0, month_st: 3, month_end: 11
+id: 63,name: Sea bass,price: 400,loc: Sea,shadow: 5,time_st: 0, time_end: 0, month_st: 0, month_end: 0
+id: 64,name: Red snapper,price: 3000,loc: Sea,shadow: 4,time_st: 0, time_end: 0, month_st: 0, month_end: 0
+id: 65,name: Dab,price: 300,loc: Sea,shadow: 3,time_st: 0, time_end: 0, month_st: 10, month_end: 4
+id: 66,name: Olive flounder,price: 800,loc: Sea,shadow: 5,time_st: 0, time_end: 0, month_st: 0, month_end: 0
+id: 67,name: Squid,price: 500,loc: Sea,shadow: 3,time_st: 0, time_end: 0, month_st: 12, month_end: 8
+id: 68,name: Moray eel,price: 2000,loc: Sea,shadow: Narrow,time_st: 0, time_end: 0, month_st: 8, month_end: 10
+id: 69,name: Ribbon eel,price: 600,loc: Sea,shadow: Narrow,time_st: 0, time_end: 0, month_st: 6, month_end: 10
+id: 70,name: Tuna,price: 7000,loc: Pier,shadow: 6,time_st: 0, time_end: 0, month_st: 11, month_end: 4
+id: 71,name: Blue marlin,price: 10000,loc: Pier,shadow: 6,time_st: 0, time_end: 0, month_st: 11, month_end: 4
+id: 72,name: Blue marlin,price: 10000,loc: Pier,shadow: 6,time_st: 0, time_end: 0, month_st: 7, month_end: 9
+id: 73,name: Giant trevally,price: 4500,loc: Pier,shadow: 5,time_st: 0, time_end: 0, month_st: 5, month_end: 10
+id: 74,name: Mahi-mahi,price: 6000,loc: Pier,shadow: 5,time_st: 0, time_end: 0, month_st: 5, month_end: 10
+id: 75,name: Ocean sunfish,price: 4000,loc: Sea,shadow: 6 (Fin),time_st: 4, time_end: 21, month_st: 7, month_end: 9
+id: 76,name: Ray,price: 3000,loc: Sea,shadow: 5,time_st: 4, time_end: 21, month_st: 8, month_end: 11
+id: 77,name: Saw shark,price: 12000,loc: Sea,shadow: 6 (Fin),time_st: 16, time_end: 9, month_st: 6, month_end: 9
+id: 78,name: Hammerhead shark,price: 8000,loc: Sea,shadow: 6 (Fin),time_st: 16, time_end: 9, month_st: 6, month_end: 9
+id: 79,name: Great white shark,price: 15000,loc: Sea,shadow: 6 (Fin),time_st: 16, time_end: 9, month_st: 6, month_end: 9
+id: 80,name: Whale shark,price: 13000,loc: Sea,shadow: 6 (Fin),time_st: 0, time_end: 0, month_st: 6, month_end: 9
+id: 81,name: Suckerfish,price: 1500,loc: Sea,shadow: 4 (Fin),time_st: 0, time_end: 0, month_st: 6, month_end: 9
+id: 82,name: Football fish,price: 2500,loc: Sea,shadow: 4,time_st: 16, time_end: 9, month_st: 11, month_end: 3
+id: 83,name: Oarfish,price: 9000,loc: Sea,shadow: 6,time_st: 0, time_end: 0, month_st: 12, month_end: 5
+id: 84,name: Barreleye,price: 15000,loc: Sea,shadow: 2,time_st: 21, time_end: 4, month_st: 0, month_end: 0
+id: 85,name: Coelacanth,price: 15000,loc: Sea,shadow: 6,time_st: 0, time_end: 0, month_st: 0, month_end: 0

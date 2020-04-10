@@ -13,3 +13,5 @@
 /captures
 .externalNativeBuild
 .cxx
+/script/bug_img/*
+/script/fish_img/*
