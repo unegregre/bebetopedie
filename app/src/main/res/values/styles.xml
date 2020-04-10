@@ -38,10 +38,14 @@
     </style>
 
     <!-- Background repeated -->
-    <style name="app_theme" parent="Theme.MaterialComponents.Light">
+    <style name="app_theme" parent="Theme.MaterialComponents">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorOnPrimary">@color/NH_blue</item>
+        <item name="colorSecondary">@color/NH_red</item>
+        <item name="colorSecondaryVariant">@color/NH_yellow</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="colorBackgroundFloating">@color/NH_red</item>
 
         <item name="android:windowBackground">@drawable/app_background</item>
         <item name="android:listViewStyle">@style/TransparentListView</item>
@@ -54,5 +58,9 @@
 
     <style name="TransparentExpandableListView" parent="@android:style/Widget.ExpandableListView">
         <item name="android:cacheColorHint">@android:color/transparent</item>
+    </style>
+
+    <style name="fab" parent="@style/Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/NH_red</item>
     </style>
 </resources>

@@ -1,5 +1,6 @@
 package com.gregre.bbtopdie.bug;
 
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,18 +13,19 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.gregre.bbtopdie.R;
 import com.gregre.bbtopdie.db.Bug;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class BugFragment extends Fragment {
 
     private BugViewModel mBugViewModel;
-
+    private boolean allBugs;
     private static final String ARG_COUNT = "param1";
 
     public BugFragment() {
@@ -34,6 +36,7 @@ public class BugFragment extends Fragment {
         Bundle args = new Bundle();
         args.putInt(ARG_COUNT, counter);
         fragment.setArguments(args);
+        fragment.setAllBugs(true);
         return fragment;
     }
     @Override
@@ -68,7 +71,48 @@ public class BugFragment extends Fragment {
             }
         });
 
+        FloatingActionButton fab = view.findViewById(R.id.bugFab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(allBugs) {
+                    fab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_access_time_white_24dp));
 
+                } else {
+                    fab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_apps_black_24dp));
+                }
+                changeFishes(bugAdapter);
+            }
+        });
 
+    }
+
+    public void changeFishes(BugListAdapter bugAdapter) {
+        if(allBugs) {
+            Calendar cal = Calendar.getInstance();
+            int hour = cal.get(Calendar.HOUR_OF_DAY);
+            int month = cal.get(Calendar.MONTH);
+            mBugViewModel.getBugsNow(hour,month).observe(getViewLifecycleOwner(), new Observer<List<Bug>>() {
+                @Override
+                public void onChanged(@Nullable final List<Bug> bugs) {
+                    // Update the cached copy of the bugs in the adapter.
+                    bugAdapter.setBugs(bugs);
+                }
+            });
+            setAllBugs(false);
+        } else {
+            mBugViewModel.getAllBugs().observe(getViewLifecycleOwner(), new Observer<List<Bug>>() {
+                @Override
+                public void onChanged(@Nullable final List<Bug> bugs) {
+                    // Update the cached copy of the bugs in the adapter.
+                    bugAdapter.setBugs(bugs);
+                }
+            });
+            setAllBugs(true);
+        }
+    }
+
+    public void setAllBugs(boolean bool) {
+        allBugs = bool;
     }
 }

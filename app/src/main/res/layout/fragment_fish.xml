@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fish.FishFragment"
-    >
+    tools:context=".fish.FishFragment">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fish_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/small_padding"
         tools:listitem="@layout/fish_recyclerview_item" />
-</FrameLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fishFab"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/ic_apps_black_24dp"
+        android:scaleType="center"/>
+</RelativeLayout>

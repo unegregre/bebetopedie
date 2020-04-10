@@ -9,15 +9,13 @@ import com.gregre.bbtopdie.bug.BugFragment;
 import com.gregre.bbtopdie.fish.FishFragment;
 
 public class ViewPagerAdapter extends FragmentStateAdapter {
-    private static final int TAB_COUNT = 3;
+    private static final int TAB_COUNT = 2;
     public ViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
     @NonNull @Override public Fragment createFragment(int position) {
         switch(position) {
             case 0:
-                return TimeFragment.newInstance(position);
-            case 1:
                 return BugFragment.newInstance(position);
             default:
                 return FishFragment.newInstance(position);

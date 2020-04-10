@@ -26,4 +26,5 @@
     <color name="NH_pink">#d95097</color>
 
     <color name="transparent_grey">#66252525</color>
+    <color name="transparent_white">#66FFFFFF</color>
 </resources>

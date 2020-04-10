@@ -12,18 +12,19 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.gregre.bbtopdie.R;
 import com.gregre.bbtopdie.db.Fish;
 
+import java.util.Calendar;
 import java.util.List;
 
 public class FishFragment extends Fragment{
 
     private FishViewModel mFishViewModel;
-
+    private boolean allFishes;
     private static final String ARG_COUNT = "param1";
 
     public FishFragment() {
@@ -34,6 +35,7 @@ public class FishFragment extends Fragment{
         Bundle args = new Bundle();
         args.putInt(ARG_COUNT, counter);
         fragment.setArguments(args);
+        fragment.setAllFishes(true);
         return fragment;
     }
     @Override
@@ -67,5 +69,49 @@ public class FishFragment extends Fragment{
                 fishAdapter.setFishes(fishes);
             }
         });
+
+
+        FloatingActionButton fab = view.findViewById(R.id.fishFab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(allFishes) {
+                    fab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_access_time_white_24dp));
+
+                } else {
+                    fab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_apps_black_24dp));
+                }
+                changeFishes(fishAdapter);
+            }
+        });
+    }
+
+    public void changeFishes(FishListAdapter fishAdapter) {
+        if(allFishes) {
+            Calendar cal = Calendar.getInstance();
+            int hour = cal.get(Calendar.HOUR_OF_DAY);
+            int month = cal.get(Calendar.MONTH);
+            mFishViewModel.getFishesNow(hour,month).observe(getViewLifecycleOwner(), new Observer<List<Fish>>() {
+                @Override
+                public void onChanged(@Nullable final List<Fish> fishes) {
+                    // Update the cached copy of the bugs in the adapter.
+                    fishAdapter.setFishes(fishes);
+                }
+            });
+            setAllFishes(false);
+        } else {
+            mFishViewModel.getAllFishes().observe(getViewLifecycleOwner(), new Observer<List<Fish>>() {
+                @Override
+                public void onChanged(@Nullable final List<Fish> fishes) {
+                    // Update the cached copy of the bugs in the adapter.
+                    fishAdapter.setFishes(fishes);
+                }
+            });
+            setAllFishes(true);
+        }
+    }
+
+    public void setAllFishes(boolean bool) {
+        allFishes = bool;
     }
 }

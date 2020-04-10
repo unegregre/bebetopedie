@@ -17,7 +17,7 @@ import androidx.viewpager2.widget.ViewPager2;
 public class MainActivity extends AppCompatActivity {
 
     public static final int NEW_BUG_ACTIVITY_REQUEST_CODE = 1;
-    public static final int[] TABS_LABEL = {R.string.tab0, R.string.tab1, R.string.tab2};
+    public static final int[] TABS_LABEL = {R.string.tab0, R.string.tab1};
 
     private ViewPager2 viewPager;
 
@@ -25,12 +25,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        /*FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(view -> {
-            Intent intent = new Intent(MainActivity.this, NewBugActivity.class);
-            startActivityForResult(intent, NEW_BUG_ACTIVITY_REQUEST_CODE);
-        });*/
 
         viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(createCardAdapter());
@@ -48,17 +42,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    /*public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_BUG_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Bug bug = new Bug(data.getStringExtra(NewBugActivity.EXTRA_REPLY),"0", "None", "None");
-            mBugViewModel.insert(bug);
+
         } else {
             Toast.makeText(
                     getApplicationContext(),
                     R.string.empty_not_saved,
                     Toast.LENGTH_LONG).show();
         }
-    }*/
+    }
 }
