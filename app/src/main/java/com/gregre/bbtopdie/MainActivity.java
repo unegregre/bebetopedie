@@ -1,5 +1,6 @@
 package com.gregre.bbtopdie;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int NEW_BUG_ACTIVITY_REQUEST_CODE = 1;
     public static final int[] TABS_LABEL = {R.string.tab0, R.string.tab1};
+    public static final int[] TABS_ICON = {R.drawable.ic_bug_grey, R.drawable.ic_fish_grey};
 
     private ViewPager2 viewPager;
 
@@ -29,11 +31,47 @@ public class MainActivity extends AppCompatActivity {
         viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(createCardAdapter());
 
+
         // Linking with the tab
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         new TabLayoutMediator(tabLayout, viewPager,
-                (tab, position) -> tab.setText(TABS_LABEL[position])
+                (tab, position) -> {
+                    tab.setIcon(TABS_ICON[position]);
+                    }
         ).attach();
+
+        tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.NH_yellow));
+        tabLayout.getTabAt(0).getIcon().setColorFilter(getResources().getColor(R.color.NH_white), PorterDuff.Mode.SRC_IN);
+        tabLayout.getTabAt(1).getIcon().setColorFilter(getResources().getColor(R.color.NH_gray), PorterDuff.Mode.SRC_IN);
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                tabLayout.getTabAt(tab.getPosition()).getIcon().setColorFilter(getResources().getColor(R.color.NH_white), PorterDuff.Mode.SRC_IN);
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                tabLayout.getTabAt(tab.getPosition()).getIcon().setColorFilter(getResources().getColor(R.color.NH_gray), PorterDuff.Mode.SRC_IN);
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
     private ViewPagerAdapter createCardAdapter() {

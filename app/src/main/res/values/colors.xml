@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="buttonLabel">#FFFFFF</color>
 
     <color name="red_100">#F44336</color>
     <color name="red_300">#3F51B5</color>
@@ -19,12 +15,15 @@
     <color name="green_700">#0B8043</color>
 
     <!-- ACNH colors -->
+    <color name="NH_light_yellow">#f7cb68</color>
     <color name="NH_yellow">#fdd10a</color>
     <color name="NH_red">#e01a25</color>
     <color name="NH_blue">#55c3f1</color>
     <color name="NH_green">#8fc31f</color>
     <color name="NH_pink">#d95097</color>
+    <color name="NH_gray">#8a7b66</color>
+    <color name="NH_white">#f5f7e1</color>
 
-    <color name="transparent_grey">#66252525</color>
+    <color name="transparent_grey">#668a7b66</color>
     <color name="transparent_white">#66FFFFFF</color>
 </resources>
