@@ -1,85 +1,86 @@
-id: 1,name: Bouvière,price: 900,loc: Rivière,shadow: 1,time_st: 0, time_end: 0, month_st: 11, month_end: 3
-id: 2,name: Chevaine,price: 200,loc: Rivière,shadow: 1,time_st: 9, time_end: 16, month_st: 0, month_end: 0
-id: 3,name: Carassin,price: 160,loc: Rivière,shadow: 2,time_st: 0, time_end: 0, month_st: 0, month_end: 0
-id: 4,name: Vandoise,price: 192,loc: Rivière,shadow: 3,time_st: 16, time_end: 9, month_st: 0, month_end: 0
-id: 5,name: Carpe,price: 300,loc: Étang,shadow: 4,time_st: 0, time_end: 0, month_st: 0, month_end: 0
-id: 6,name: Carpe koï,price: 4000,loc: Étang,shadow: 4,time_st: 16, time_end: 9, month_st: 0, month_end: 0
-id: 7,name: Poisson rouge,price: 1300,loc: Étang,shadow: 1,time_st: 0, time_end: 0, month_st: 0, month_end: 0
-id: 8,name: Cyprin doré,price: 1300,loc: Étang,shadow: 1,time_st: 9, time_end: 16, month_st: 0, month_end: 0
-id: 9,name: Ranchu,price: 4500,loc: Étang,shadow: 2,time_st: 9, time_end: 16, month_st: 0, month_end: 0
-id: 10,name: Fondule barré,price: 300,loc: Étang,shadow: 1,time_st: 0, time_end: 0, month_st: 4, month_end: 8
-id: 11,name: Écrevisse,price: 200,loc: Étang,shadow: 2,time_st: 0, time_end: 0, month_st: 4, month_end: 9
-id: 12,name: Tortue trionyx,price: 3750,loc: Rivière,shadow: 4,time_st: 16, time_end: 9, month_st: 8, month_end: 9
-id: 13,name: Tortue serpentine,price: 5000,loc: Rivière,shadow: 5,time_st: 21, time_end: 4, month_st: 4, month_end: 10
-id: 14,name: Têtard,price: 100,loc: Étang,shadow: 1,time_st: 0, time_end: 0, month_st: 3, month_end: 7
-id: 15,name: Grenouille,price: 120,loc: Étang,shadow: 2,time_st: 0, time_end: 0, month_st: 5, month_end: 8
-id: 16,name: Gobie d'eau douce,price: 400,loc: Rivière,shadow: 2,time_st: 16, time_end: 9, month_st: 0, month_end: 0
-id: 17,name: Loche d'étang,price: 400,loc: Rivière,shadow: 2,time_st: 0, time_end: 0, month_st: 3, month_end: 5
-id: 18,name: Silure,price: 800,loc: Étang,shadow: 4,time_st: 16, time_end: 9, month_st: 5, month_end: 10
-id: 19,name: Tête de serpent,price: 5500,loc: Étang,shadow: 5,time_st: 9, time_end: 16, month_st: 6, month_end: 8
-id: 20,name: Crapet,price: 180,loc: Rivière,shadow: 2,time_st: 9, time_end: 16, month_st: 0, month_end: 0
-id: 21,name: Perche jaune,price: 300,loc: Rivière,shadow: 3,time_st: 0, time_end: 0, month_st: 10, month_end: 3
-id: 22,name: Bar,price: 320,loc: Rivière,shadow: 4,time_st: 0, time_end: 0, month_st: 0, month_end: 0
-id: 23,name: Tilapia,price: 800,loc: Rivière,shadow: 3,time_st: 0, time_end: 0, month_st: 6, month_end: 10
-id: 24,name: Brochet,price: 1800,loc: Rivière,shadow: 5,time_st: 0, time_end: 0, month_st: 9, month_end: 12
-id: 25,name: Éperlan,price: 500,loc: Rivière,shadow: 2,time_st: 0, time_end: 0, month_st: 12, month_end: 2
-id: 26,name: Ayu,price: 900,loc: Rivière,shadow: 3,time_st: 0, time_end: 0, month_st: 7, month_end: 9
-id: 27,name: Saumon masou,price: 800,loc: Rivière (falaise),shadow: 3,time_st: 16, time_end: 9, month_st: 3, month_end: 6
-id: 28,name: Saumon masou,price: 800,loc: Rivière (falaise),shadow: 3,time_st: 16, time_end: 9, month_st: 9, month_end: 11
-id: 29,name: Omble,price: 3800,loc: Rivière (falaise)  Étang,shadow: 3,time_st: 16, time_end: 9, month_st: 3, month_end: 6
-id: 30,name: Omble,price: 3800,loc: Rivière (falaise)  Étang,shadow: 3,time_st: 16, time_end: 9, month_st: 9, month_end: 11
-id: 31,name: Truite dorée,price: 15000,loc: Rivière (falaise),shadow: 3,time_st: 16, time_end: 9, month_st: 3, month_end: 5
-id: 32,name: Truite dorée,price: 15000,loc: Rivière (falaise),shadow: 3,time_st: 16, time_end: 9, month_st: 9, month_end: 11
-id: 33,name: Dai yu,price: 15000,loc: Rivière (falaise),shadow: 5,time_st: 16, time_end: 9, month_st: 12, month_end: 3
-id: 34,name: Saumon,price: 700,loc: Rivière (embouchure),shadow: 4,time_st: 0, time_end: 0, month_st: 9, month_end: 9
-id: 35,name: Saumon roi,price: 1800,loc: Rivière (embouchure),shadow: 6,time_st: 0, time_end: 0, month_st: 9, month_end: 9
-id: 36,name: Crabe chinois,price: 2000,loc: Rivière,shadow: 2,time_st: 16, time_end: 9, month_st: 9, month_end: 11
-id: 37,name: Guppy,price: 1300,loc: Rivière,shadow: 1,time_st: 9, time_end: 16, month_st: 4, month_end: 11
-id: 38,name: Poisson-docteur,price: 1500,loc: Rivière,shadow: 1,time_st: 9, time_end: 16, month_st: 5, month_end: 9
-id: 39,name: Poisson-ange,price: 3000,loc: Rivière,shadow: 2,time_st: 16, time_end: 9, month_st: 5, month_end: 10
-id: 40,name: Combattant,price: 2500,loc: Rivière,shadow: 2,time_st: 9, time_end: 16, month_st: 5, month_end: 10
-id: 41,name: Néon bleu,price: 500,loc: Rivière,shadow: 1,time_st: 9, time_end: 16, month_st: 4, month_end: 11
-id: 42,name: Poisson arc-en-ciel,price: 800,loc: Rivière,shadow: 1,time_st: 9, time_end: 16, month_st: 5, month_end: 10
-id: 43,name: Piranha,price: 2500,loc: Rivière,shadow: 2,time_st: 9, time_end: 16, month_st: 6, month_end: 9
-id: 44,name: Piranha,price: 2500,loc: Rivière,shadow: 2,time_st: 21, time_end: 4, month_st: 6, month_end: 9
-id: 45,name: Arowana,price: 10000,loc: Rivière,shadow: 4,time_st: 16, time_end: 9, month_st: 6, month_end: 9
-id: 46,name: Dorade,price: 15000,loc: Rivière,shadow: 5,time_st: 4, time_end: 21, month_st: 6, month_end: 9
-id: 47,name: Gar,price: 6000,loc: Étang,shadow: 6,time_st: 16, time_end: 9, month_st: 6, month_end: 9
-id: 48,name: Arapaïma,price: 10000,loc: Rivière,shadow: 6,time_st: 16, time_end: 9, month_st: 6, month_end: 9
-id: 49,name: Bichir,price: 4000,loc: Rivière,shadow: 4,time_st: 21, time_end: 4, month_st: 6, month_end: 9
-id: 50,name: Esturgeon,price: 10000,loc: Rivière (embouchure),shadow: 6,time_st: 0, time_end: 0, month_st: 9, month_end: 3
-id: 51,name: Clione,price: 1000,loc: Océan,shadow: 1,time_st: 0, time_end: 0, month_st: 12, month_end: 3
-id: 52,name: Hippocampe,price: 1100,loc: Océan,shadow: 1,time_st: 0, time_end: 0, month_st: 4, month_end: 11
-id: 53,name: Poisson-clown,price: 650,loc: Océan,shadow: 1,time_st: 0, time_end: 0, month_st: 4, month_end: 9
-id: 54,name: Poisson chirurgien,price: 1000,loc: Océan,shadow: 2,time_st: 0, time_end: 0, month_st: 4, month_end: 9
-id: 55,name: Poisson-papillon,price: 1000,loc: Océan,shadow: 2,time_st: 0, time_end: 0, month_st: 4, month_end: 9
-id: 56,name: Napoléon,price: 10000,loc: Océan,shadow: 6,time_st: 4, time_end: 21, month_st: 7, month_end: 8
-id: 57,name: Poisson-scorpion,price: 500,loc: Océan,shadow: 3,time_st: 0, time_end: 0, month_st: 4, month_end: 11
-id: 58,name: Poisson ballon,price: 5000,loc: Océan,shadow: 3,time_st: 21, time_end: 4, month_st: 11, month_end: 2
-id: 59,name: Poisson porc-épic,price: 250,loc: Océan,shadow: 3,time_st: 0, time_end: 0, month_st: 7, month_end: 9
-id: 60,name: Anchois,price: 200,loc: Océan,shadow: 2,time_st: 4, time_end: 21, month_st: 0, month_end: 0
-id: 61,name: Chinchard,price: 150,loc: Océan,shadow: 2,time_st: 0, time_end: 0, month_st: 0, month_end: 0
-id: 62,name: Scarus,price: 5000,loc: Océan,shadow: 3,time_st: 0, time_end: 0, month_st: 3, month_end: 11
-id: 63,name: Bar commun,price: 400,loc: Océan,shadow: 5,time_st: 0, time_end: 0, month_st: 0, month_end: 0
-id: 64,name: Vivaneau,price: 3000,loc: Océan,shadow: 4,time_st: 0, time_end: 0, month_st: 0, month_end: 0
-id: 65,name: Limande,price: 300,loc: Océan,shadow: 3,time_st: 0, time_end: 0, month_st: 10, month_end: 4
-id: 66,name: Cardeau,price: 800,loc: Océan,shadow: 5,time_st: 0, time_end: 0, month_st: 0, month_end: 0
-id: 67,name: Calmar,price: 500,loc: Océan,shadow: 3,time_st: 0, time_end: 0, month_st: 12, month_end: 8
-id: 68,name: Murène,price: 2000,loc: Océan,shadow: Narrow,time_st: 0, time_end: 0, month_st: 8, month_end: 10
-id: 69,name: Murène ruban bleue,price: 600,loc: Océan,shadow: Narrow,time_st: 0, time_end: 0, month_st: 6, month_end: 10
-id: 70,name: Thon,price: 7000,loc: Ponton,shadow: 6,time_st: 0, time_end: 0, month_st: 11, month_end: 4
-id: 71,name: Marlin bleu,price: 10000,loc: Ponton,shadow: 6,time_st: 0, time_end: 0, month_st: 11, month_end: 4
-id: 72,name: Marlin bleu,price: 10000,loc: Ponton,shadow: 6,time_st: 0, time_end: 0, month_st: 7, month_end: 9
-id: 73,name: Carangue grosse tête,price: 4500,loc: Ponton,shadow: 5,time_st: 0, time_end: 0, month_st: 5, month_end: 10
-id: 74,name: Coryphène,price: 6000,loc: Ponton,shadow: 5,time_st: 0, time_end: 0, month_st: 5, month_end: 10
-id: 75,name: Lune de mer,price: 4000,loc: Océan,shadow: 6 (Fin),time_st: 4, time_end: 21, month_st: 7, month_end: 9
-id: 76,name: Raie,price: 3000,loc: Océan,shadow: 5,time_st: 4, time_end: 21, month_st: 8, month_end: 11
-id: 77,name: Requin scie,price: 12000,loc: Océan,shadow: 6 (Fin),time_st: 16, time_end: 9, month_st: 6, month_end: 9
-id: 78,name: Requin marteau,price: 8000,loc: Océan,shadow: 6 (Fin),time_st: 16, time_end: 9, month_st: 6, month_end: 9
-id: 79,name: Grand requin blanc,price: 15000,loc: Océan,shadow: 6 (Fin),time_st: 16, time_end: 9, month_st: 6, month_end: 9
-id: 80,name: Requin baleine,price: 13000,loc: Océan,shadow: 6 (Fin),time_st: 0, time_end: 0, month_st: 6, month_end: 9
-id: 81,name: Rémora Rayé,price: 1500,loc: Océan,shadow: 4 (Fin),time_st: 0, time_end: 0, month_st: 6, month_end: 9
-id: 82,name: Poisson lanterne,price: 2500,loc: Océan,shadow: 4,time_st: 16, time_end: 9, month_st: 11, month_end: 3
-id: 83,name: Poisson-ruban,price: 9000,loc: Océan,shadow: 6,time_st: 0, time_end: 0, month_st: 12, month_end: 5
-id: 84,name: Macropinna,price: 15000,loc: Océan,shadow: 2,time_st: 21, time_end: 4, month_st: 0, month_end: 0
-id: 85,name: Coelacanthe,price: 15000,loc: Océan,shadow: 6,time_st: 0, time_end: 0, month_st: 0, month_end: 0
+fish_id,fish_name,fish_price,fish_place,fish_size,fish_time_1,fish_time_2,fish_period_1,fish_period_2
+1,"Bouvière",900,"Rivière",1,0,0,11,3
+2,"Chevaine",200,"Rivière",1,9,16,0,0
+3,"Carassin",160,"Rivière",2,0,0,0,0
+4,"Vandoise",192,"Rivière",3,16,9,0,0
+5,"Carpe",300,"Étang",4,0,0,0,0
+6,"Carpe koï",4000,"Étang",4,16,9,0,0
+7,"Poisson rouge",1300,"Étang",1,0,0,0,0
+8,"Cyprin doré",1300,"Étang",1,9,16,0,0
+9,"Ranchu",4500,"Étang",2,9,16,0,0
+10,"Fondule barré",300,"Étang",1,0,0,4,8
+11,"Écrevisse",200,"Étang",2,0,0,4,9
+12,"Tortue trionyx",3750,"Rivière",4,16,9,8,9
+13,"Tortue serpentine",5000,"Rivière",5,21,4,4,10
+14,"Têtard",100,"Étang",1,0,0,3,7
+15,"Grenouille",120,"Étang",2,0,0,5,8
+16,"Gobie d'eau douce",400,"Rivière",2,16,9,0,0
+17,"Loche d'étang",400,"Rivière",2,0,0,3,5
+18,"Silure",800,"Étang",4,16,9,5,10
+19,"Tête de serpent",5500,"Étang",5,9,16,6,8
+20,"Crapet",180,"Rivière",2,9,16,0,0
+21,"Perche jaune",300,"Rivière",3,0,0,10,3
+22,"Bar",320,"Rivière",4,0,0,0,0
+23,"Tilapia",800,"Rivière",3,0,0,6,10
+24,"Brochet",1800,"Rivière",5,0,0,9,12
+25,"Éperlan",500,"Rivière",2,0,0,12,2
+26,"Ayu",900,"Rivière",3,0,0,7,9
+27,"Saumon masou",800,"Rivière (falaise)",3,16,9,3,6
+28,"Saumon masou",800,"Rivière (falaise)",3,16,9,9,11
+29,"Omble",3800,"Rivière (falaise) + Étang",3,16,9,3,6
+30,"Omble",3800,"Rivière (falaise) + Étang",3,16,9,9,11
+31,"Truite dorée",15000,"Rivière (falaise)",3,16,9,3,5
+32,"Truite dorée",15000,"Rivière (falaise)",3,16,9,9,11
+33,"Dai yu",15000,"Rivière (falaise)",5,16,9,12,3
+34,"Saumon",700,"Rivière (embouchure)",4,0,0,9,9
+35,"Saumon roi",1800,"Rivière (embouchure)",6,0,0,9,9
+36,"Crabe chinois",2000,"Rivière",2,16,9,9,11
+37,"Guppy",1300,"Rivière",1,9,16,4,11
+38,"Poisson-docteur",1500,"Rivière",1,9,16,5,9
+39,"Poisson-ange",3000,"Rivière",2,16,9,5,10
+40,"Combattant",2500,"Rivière",2,9,16,5,10
+41,"Néon bleu",500,"Rivière",1,9,16,4,11
+42,"Poisson arc-en-ciel",800,"Rivière",1,9,16,5,10
+43,"Piranha",2500,"Rivière",2,9,16,6,9
+44,"Piranha",2500,"Rivière",2,21,4,6,9
+45,"Arowana",10000,"Rivière",4,16,9,6,9
+46,"Dorade",15000,"Rivière",5,4,21,6,9
+47,"Gar",6000,"Étang",6,16,9,6,9
+48,"Arapaïma",10000,"Rivière",6,16,9,6,9
+49,"Bichir",4000,"Rivière",4,21,4,6,9
+50,"Esturgeon",10000,"Rivière (embouchure)",6,0,0,9,3
+51,"Clione",1000,"Océan",1,0,0,12,3
+52,"Hippocampe",1100,"Océan",1,0,0,4,11
+53,"Poisson-clown",650,"Océan",1,0,0,4,9
+54,"Poisson chirurgien",1000,"Océan",2,0,0,4,9
+55,"Poisson-papillon",1000,"Océan",2,0,0,4,9
+56,"Napoléon",10000,"Océan",6,4,21,7,8
+57,"Poisson-scorpion",500,"Océan",3,0,0,4,11
+58,"Poisson ballon",5000,"Océan",3,21,4,11,2
+59,"Poisson porc-épic",250,"Océan",3,0,0,7,9
+60,"Anchois",200,"Océan",2,4,21,0,0
+61,"Chinchard",150,"Océan",2,0,0,0,0
+62,"Scarus",5000,"Océan",3,0,0,3,11
+63,"Bar commun",400,"Océan",5,0,0,0,0
+64,"Vivaneau",3000,"Océan",4,0,0,0,0
+65,"Limande",300,"Océan",3,0,0,10,4
+66,"Cardeau",800,"Océan",5,0,0,0,0
+67,"Calmar",500,"Océan",3,0,0,12,8
+68,"Murène",2000,"Océan",Narrow,0,0,8,10
+69,"Murène ruban bleue",600,"Océan",Narrow,0,0,6,10
+70,"Thon",7000,"Ponton",6,0,0,11,4
+71,"Marlin bleu",10000,"Ponton",6,0,0,11,4
+72,"Marlin bleu",10000,"Ponton",6,0,0,7,9
+73,"Carangue grosse tête",4500,"Ponton",5,0,0,5,10
+74,"Coryphène",6000,"Ponton",5,0,0,5,10
+75,"Lune de mer",4000,"Océan",6 (Fin),4,21,7,9
+76,"Raie",3000,"Océan",5,4,21,8,11
+77,"Requin scie",12000,"Océan",6 (Fin),16,9,6,9
+78,"Requin marteau",8000,"Océan",6 (Fin),16,9,6,9
+79,"Grand requin blanc",15000,"Océan",6 (Fin),16,9,6,9
+80,"Requin baleine",13000,"Océan",6 (Fin),0,0,6,9
+81,"Rémora Rayé",1500,"Océan",4 (Fin),0,0,6,9
+82,"Poisson lanterne",2500,"Océan",4,16,9,11,3
+83,"Poisson-ruban",9000,"Océan",6,0,0,12,5
+84,"Macropinna",15000,"Océan",2,21,4,0,0
+85,"Coelacanthe",15000,"Océan",6,0,0,0,0

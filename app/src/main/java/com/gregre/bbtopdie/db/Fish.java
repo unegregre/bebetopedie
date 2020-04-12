@@ -22,6 +22,15 @@ public class Fish {
     private int price;
 
     @NonNull
+    @ColumnInfo(name = "fish_place")
+    private String place;
+
+
+    @NonNull
+    @ColumnInfo(name = "fish_size")
+    private int size;
+
+    @NonNull
     @ColumnInfo(name = "fish_time_1")
     private int time_1;
 
@@ -37,11 +46,20 @@ public class Fish {
     @ColumnInfo(name = "fish_period_2")
     private int period_2;
 
-    @NonNull
-    @ColumnInfo(name = "fish_place")
-    private String place;
 
-    public Fish(@NonNull int id, @NonNull String name, @NonNull int price, @NonNull int time_1, @NonNull int time_2, @NonNull int period_1, @NonNull int period_2, @NonNull String place) {
+    /*
+      fish_id       INTEGER  NOT NULL PRIMARY KEY
+  ,fish_name     VARCHAR(20) NOT NULL
+  ,fish_price    INTEGER  NOT NULL
+  ,fish_place    VARCHAR(25) NOT NULL
+  ,fish_size     VARCHAR(7) NOT NULL
+  ,fish_time_1   INTEGER  NOT NULL
+  ,fish_time_2   INTEGER  NOT NULL
+  ,fish_period_1 INTEGER  NOT NULL
+  ,fish_period_2 INTEGER  NOT NULL
+     */
+
+    public Fish(@NonNull int id, @NonNull String name, @NonNull int price,  @NonNull String place, @NonNull int size, @NonNull int time_1, @NonNull int time_2, @NonNull int period_1, @NonNull int period_2) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -50,6 +68,7 @@ public class Fish {
         this.period_1 = period_1;
         this.period_2 = period_2;
         this.place = place;
+        this.size = size;
     }
 
     public int getId(){return this.id;}
@@ -67,5 +86,7 @@ public class Fish {
     public int getPeriod_2() {return this.period_2;}
 
     public String getPlace(){return this.place;}
+
+    public int getSize(){return this.size;}
 
 }

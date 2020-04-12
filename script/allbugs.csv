@@ -1,87 +1,174 @@
-id: 1,name: Piéride de la rave,price: 160,loc: Flying,time_st: 4, time_end: 19, month_st: 9, month_end: 6
-id: 2,name: Citrin,price: 160,loc: Flying,time_st: 4, time_end: 19, month_st: 3, month_end: 6
-id: 3,name: Citrin,price: 160,loc: Flying,time_st: 4, time_end: 19, month_st: 9, month_end: 10
-id: 4,name: Machaon,price: 240,loc: Flying,time_st: 4, time_end: 19, month_st: 3, month_end: 9
-id: 5,name: Papilio bianor,price: 2500,loc: Flying by Hybrid Flowers,time_st: 4, time_end: 19, month_st: 3, month_end: 6
-id: 6,name: Graphium sarpedon,price: 300,loc: Flying,time_st: 4, time_end: 19, month_st: 4, month_end: 8
-id: 7,name: Grand planeur,price: 1000,loc: Flying,time_st: 8, time_end: 19, month_st: 0, month_end: 0
-id: 8,name: Grand papillon pourpre,price: 3000,loc: Flying,time_st: 4, time_end: 19, month_st: 5, month_end: 8
-id: 9,name: Monarque,price: 140,loc: Flying,time_st: 4, time_end: 17, month_st: 9, month_end: 11
-id: 10,name: Morpho bleu,price: 4000,loc: Flying,time_st: 17, time_end: 8, month_st: 12, month_end: 3
-id: 11,name: Morpho bleu,price: 4000,loc: Flying,time_st: 17, time_end: 8, month_st: 6, month_end: 9
-id: 12,name: Agrias,price: 3000,loc: Flying,time_st: 8, time_end: 17, month_st: 4, month_end: 9
-id: 13,name: Troides brookiana,price: 2500,loc: Flying,time_st: 8, time_end: 17, month_st: 12, month_end: 2
-id: 14,name: Troides brookiana,price: 2500,loc: Flying,time_st: 8, time_end: 17, month_st: 4, month_end: 9
-id: 15,name: Troides alexandrae,price: 4000,loc: Flying,time_st: 8, time_end: 16, month_st: 5, month_end: 9
-id: 16,name: Papillon de nuit,price: 130,loc: Flying by Light,time_st: 19, time_end: 4, month_st: 0, month_end: 0
-id: 17,name: Attacus Atlas,price: 3000,loc: On Trees,time_st: 19, time_end: 4, month_st: 4, month_end: 9
-id: 18,name: Chrysiridia rhipheus,price: 2500,loc: Flying,time_st: 8, time_end: 16, month_st: 4, month_end: 9
-id: 19,name: Acrida cinerea,price: 200,loc: On the Ground,time_st: 8, time_end: 19, month_st: 4, month_end: 11
-id: 20,name: Criquet pélerin,price: 600,loc: On the Ground,time_st: 8, time_end: 19, month_st: 8, month_end: 11
-id: 21,name: Rice grasshopper,price: 160,loc: On the Ground,time_st: 8, time_end: 19, month_st: 8, month_end: 11
-id: 22,name: Sauterelle,price: 160,loc: On the Ground,time_st: 8, time_end: 17, month_st: 7, month_end: 9
-id: 23,name: Criquet,price: 130,loc: On the Ground,time_st: 17, time_end: 8, month_st: 9, month_end: 11
-id: 24,name: Grillon du midi,price: 430,loc: On the Ground,time_st: 17, time_end: 8, month_st: 9, month_end: 10
-id: 25,name: Mante religieuse,price: 430,loc: On Flowers,time_st: 8, time_end: 17, month_st: 3, month_end: 11
-id: 26,name: Mante orchidée,price: 2400,loc: On Flowers (White),time_st: 8, time_end: 17, month_st: 3, month_end: 11
-id: 27,name: Abeille naine,price: 200,loc: Flying,time_st: 8, time_end: 17, month_st: 3, month_end: 7
-id: 28,name: Guêpe,price: 2500,loc: Shaking Trees,time_st: 0, time_end: 0, month_st: 0, month_end: 0
-id: 29,name: Cigale cercope,price: 250,loc: On Trees,time_st: 8, time_end: 17, month_st: 7, month_end: 8
-id: 30,name: Cigale hyalessa,price: 300,loc: On Trees,time_st: 8, time_end: 17, month_st: 7, month_end: 8
-id: 31,name: Cigale géante,price: 500,loc: On Trees,time_st: 8, time_end: 17, month_st: 7, month_end: 8
-id: 32,name: Cigale cicadelle,price: 400,loc: On Trees,time_st: 8, time_end: 17, month_st: 8, month_end: 9
-id: 33,name: Cigale higurashi,price: 550,loc: On Trees,time_st: 4, time_end: 8, month_st: 7, month_end: 8
-id: 34,name: Cigale higurashi,price: 550,loc: On Trees,time_st: 16, time_end: 19, month_st: 7, month_end: 8
-id: 35,name: Mue de cigale,price: 10,loc: On Trees,time_st: 0, time_end: 0, month_st: 7, month_end: 8
-id: 36,name: Demoiselle,price: 180,loc: Flying,time_st: 8, time_end: 19, month_st: 9, month_end: 10
-id: 37,name: Anax napolitain,price: 230,loc: Flying,time_st: 8, time_end: 17, month_st: 4, month_end: 10
-id: 38,name: Cordulégastre,price: 4500,loc: Flying,time_st: 8, time_end: 17, month_st: 5, month_end: 10
-id: 39,name: Sympetrum,price: 500,loc: Flying,time_st: 0, time_end: 0, month_st: 11, month_end: 2
-id: 40,name: Luciole,price: 300,loc: Flying,time_st: 19, time_end: 4, month_st: 6, month_end: 6
-id: 41,name: Taupe-grillon,price: 500,loc: Underground,time_st: 0, time_end: 0, month_st: 11, month_end: 5
-id: 42,name: Patineur,price: 130,loc: On Ponds and Rivers,time_st: 8, time_end: 19, month_st: 5, month_end: 9
-id: 43,name: Dytique,price: 800,loc: On Ponds and Rivers,time_st: 8, time_end: 19, month_st: 5, month_end: 9
-id: 44,name: Punaise d'eau géante,price: 2000,loc: On Ponds and Rivers,time_st: 19, time_end: 8, month_st: 4, month_end: 9
-id: 45,name: Punaise,price: 120,loc: On Flowers,time_st: 0, time_end: 0, month_st: 3, month_end: 10
-id: 46,name: Catacanthus,price: 1000,loc: On Flowers,time_st: 19, time_end: 8, month_st: 3, month_end: 10
-id: 47,name: Coccinelle,price: 200,loc: On Flowers,time_st: 8, time_end: 17, month_st: 3, month_end: 6
-id: 48,name: Coccinelle,price: 200,loc: On Flowers,time_st: 8, time_end: 17, month_st: 10, month_end: 10
-id: 49,name: Cicindèle,price: 1500,loc: On the Ground,time_st: 0, time_end: 0, month_st: 2, month_end: 10
-id: 50,name: Bupreste,price: 2400,loc: On Tree Stumps,time_st: 0, time_end: 0, month_st: 4, month_end: 8
-id: 51,name: Mormolyce,price: 450,loc: On Tree Stumps,time_st: 0, time_end: 0, month_st: 5, month_end: 6
-id: 52,name: Mormolyce,price: 450,loc: On Tree Stumps,time_st: 0, time_end: 0, month_st: 9, month_end: 11
-id: 53,name: Capricorne des agrumes,price: 350,loc: On Tree Stumps,time_st: 0, time_end: 0, month_st: 0, month_end: 0
-id: 54,name: Rosalia batesi,price: 3000,loc: On Tree Stumps,time_st: 0, time_end: 0, month_st: 5, month_end: 9
-id: 55,name: Scarabée bleu,price: 800,loc: On Trees (Coconut?),time_st: 0, time_end: 0, month_st: 7, month_end: 8
-id: 56,name: Bousier,price: 3000,loc: On the Ground (rolling snowballs),time_st: 0, time_end: 0, month_st: 12, month_end: 2
-id: 57,name: Geotrupidae,price: 300,loc: On the Ground,time_st: 0, time_end: 0, month_st: 7, month_end: 9
-id: 58,name: Scarabée,price: 10000,loc: On Trees,time_st: 23, time_end: 8, month_st: 7, month_end: 8
-id: 59,name: Cétoine dorée,price: 200,loc: On Trees,time_st: 0, time_end: 0, month_st: 6, month_end: 8
-id: 60,name: Scarabée Goliath,price: 8000,loc: On Trees (Coconut),time_st: 17, time_end: 8, month_st: 6, month_end: 9
-id: 61,name: Lucane inclinatus,price: 2000,loc: On Trees,time_st: 0, time_end: 0, month_st: 7, month_end: 8
-id: 62,name: Lucane miyama,price: 1000,loc: On Trees,time_st: 0, time_end: 0, month_st: 7, month_end: 8
-id: 63,name: Lucane cerf-volant,price: 10000,loc: On Trees,time_st: 23, time_end: 8, month_st: 7, month_end: 8
-id: 64,name: Lucane copris irisé,price: 6000,loc: On Trees,time_st: 19, time_end: 8, month_st: 6, month_end: 9
-id: 65,name: Lucane cyclommatus,price: 8000,loc: On Trees (Coconut),time_st: 17, time_end: 8, month_st: 7, month_end: 8
-id: 66,name: Lucane lamprima,price: 12000,loc: On Trees (Coconut),time_st: 17, time_end: 8, month_st: 7, month_end: 8
-id: 67,name: Lucane girafe,price: 12000,loc: On Trees (Coconut?),time_st: 17, time_end: 8, month_st: 7, month_end: 8
-id: 68,name: Scarabée kabuto,price: 1350,loc: On Trees,time_st: 17, time_end: 8, month_st: 7, month_end: 8
-id: 69,name: Scarabée Atlas,price: 8000,loc: On Trees (Coconut),time_st: 17, time_end: 8, month_st: 7, month_end: 8
-id: 70,name: Scarabée éléphant,price: 8000,loc: On Trees (Coconut),time_st: 17, time_end: 8, month_st: 7, month_end: 8
-id: 71,name: Scarabée Hercule,price: 12000,loc: On Trees (Coconut),time_st: 17, time_end: 8, month_st: 7, month_end: 8
-id: 72,name: Phasme,price: 600,loc: On Trees,time_st: 4, time_end: 8, month_st: 7, month_end: 11
-id: 73,name: Phasme,price: 600,loc: On Trees,time_st: 17, time_end: 19, month_st: 7, month_end: 11
-id: 74,name: Phyllie,price: 600,loc: Under Trees Disguised as Leafs,time_st: 0, time_end: 0, month_st: 7, month_end: 9
-id: 75,name: Psyché,price: 600,loc: Shaking Trees,time_st: 0, time_end: 0, month_st: 0, month_end: 0
-id: 76,name: Fourmi,price: 80,loc: On rotten food,time_st: 0, time_end: 0, month_st: 0, month_end: 0
-id: 77,name: Bernard-l'ermite,price: 1000,loc: Beach disguised as Shells,time_st: 19, time_end: 8, month_st: 0, month_end: 0
-id: 78,name: Ligie,price: 200,loc: On Beach Rocks,time_st: 0, time_end: 0, month_st: 0, month_end: 0
-id: 79,name: Mouche,price: 60,loc: On Trash Items,time_st: 0, time_end: 0, month_st: 0, month_end: 0
-id: 80,name: Moustique,price: 130,loc: Flying,time_st: 17, time_end: 4, month_st: 6, month_end: 9
-id: 81,name: Puce,price: 70,loc: Villager's Heads,time_st: 0, time_end: 0, month_st: 4, month_end: 11
-id: 82,name: Escargot,price: 250,loc: On Rocks (Rain),time_st: 0, time_end: 0, month_st: 0, month_end: 0
-id: 83,name: Cloporte,price: 250,loc: Hitting Rocks,time_st: 23, time_end: 16, month_st: 9, month_end: 6
-id: 84,name: Mille-pattes,price: 300,loc: Hitting Rocks,time_st: 16, time_end: 23, month_st: 9, month_end: 6
-id: 85,name: Araignée,price: 480,loc: Shaking Trees,time_st: 19, time_end: 8, month_st: 0, month_end: 0
-id: 86,name: Tarentule,price: 8000,loc: On the Ground,time_st: 19, time_end: 4, month_st: 11, month_end: 4
-id: 87,name: Scorpion,price: 8000,loc: On the Ground,time_st: 19, time_end: 4, month_st: 5, month_end: 10
+bug = new Bug(1,"Piéride de la rave",160,"Dans l'air",4,19,9,6);
+bug_dao.insert(bug);
+bug = new Bug(2,"Citrin",160,"Dans l'air",4,19,3,6);
+bug_dao.insert(bug);
+bug = new Bug(3,"Citrin",160,"Dans l'air",4,19,9,10);
+bug_dao.insert(bug);
+bug = new Bug(4,"Machaon",240,"Dans l'air",4,19,3,9);
+bug_dao.insert(bug);
+bug = new Bug(5,"Papilio bianor",2500,"Dans l'air by Hybrid Flowers",4,19,3,6);
+bug_dao.insert(bug);
+bug = new Bug(6,"Graphium sarpedon",300,"Dans l'air",4,19,4,8);
+bug_dao.insert(bug);
+bug = new Bug(7,"Grand planeur",1000,"Dans l'air",8,19,0,0);
+bug_dao.insert(bug);
+bug = new Bug(8,"Grand papillon pourpre",3000,"Dans l'air",4,19,5,8);
+bug_dao.insert(bug);
+bug = new Bug(9,"Monarque",140,"Dans l'air",4,17,9,11);
+bug_dao.insert(bug);
+bug = new Bug(10,"Morpho bleu",4000,"Dans l'air",17,8,12,3);
+bug_dao.insert(bug);
+bug = new Bug(11,"Morpho bleu",4000,"Dans l'air",17,8,6,9);
+bug_dao.insert(bug);
+bug = new Bug(12,"Agrias",3000,"Dans l'air",8,17,4,9);
+bug_dao.insert(bug);
+bug = new Bug(13,"Troides brookiana",2500,"Dans l'air",8,17,12,2);
+bug_dao.insert(bug);
+bug = new Bug(14,"Troides brookiana",2500,"Dans l'air",8,17,4,9);
+bug_dao.insert(bug);
+bug = new Bug(15,"Troides alexandrae",4000,"Dans l'air",8,16,5,9);
+bug_dao.insert(bug);
+bug = new Bug(16,"Papillon de nuit",130,"Dans l'air by Light",19,4,0,0);
+bug_dao.insert(bug);
+bug = new Bug(17,"Attacus Atlas",3000,"Sur les arbres",19,4,4,9);
+bug_dao.insert(bug);
+bug = new Bug(18,"Chrysiridia rhipheus",2500,"Dans l'air",8,16,4,9);
+bug_dao.insert(bug);
+bug = new Bug(19,"Acrida cinerea",200,"Sur le sol",8,19,4,11);
+bug_dao.insert(bug);
+bug = new Bug(20,"Criquet pélerin",600,"Sur le sol",8,19,8,11);
+bug_dao.insert(bug);
+bug = new Bug(21,"Rice grasshopper",160,"Sur le sol",8,19,8,11);
+bug_dao.insert(bug);
+bug = new Bug(22,"Sauterelle",160,"Sur le sol",8,17,7,9);
+bug_dao.insert(bug);
+bug = new Bug(23,"Criquet",130,"Sur le sol",17,8,9,11);
+bug_dao.insert(bug);
+bug = new Bug(24,"Grillon du midi",430,"Sur le sol",17,8,9,10);
+bug_dao.insert(bug);
+bug = new Bug(25,"Mante religieuse",430,"Sur les fleurs",8,17,3,11);
+bug_dao.insert(bug);
+bug = new Bug(26,"Mante orchidée",2400,"Sur les fleurs (White)",8,17,3,11);
+bug_dao.insert(bug);
+bug = new Bug(27,"Abeille naine",200,"Dans l'air",8,17,3,7);
+bug_dao.insert(bug);
+bug = new Bug(28,"Guêpe",2500,"Dans les arbres",0,0,0,0);
+bug_dao.insert(bug);
+bug = new Bug(29,"Cigale cercope",250,"Sur les arbres",8,17,7,8);
+bug_dao.insert(bug);
+bug = new Bug(30,"Cigale hyalessa",300,"Sur les arbres",8,17,7,8);
+bug_dao.insert(bug);
+bug = new Bug(31,"Cigale géante",500,"Sur les arbres",8,17,7,8);
+bug_dao.insert(bug);
+bug = new Bug(32,"Cigale cicadelle",400,"Sur les arbres",8,17,8,9);
+bug_dao.insert(bug);
+bug = new Bug(33,"Cigale higurashi",550,"Sur les arbres",4,8,7,8);
+bug_dao.insert(bug);
+bug = new Bug(34,"Cigale higurashi",550,"Sur les arbres",16,19,7,8);
+bug_dao.insert(bug);
+bug = new Bug(35,"Mue de cigale",10,"Sur les arbres",0,0,7,8);
+bug_dao.insert(bug);
+bug = new Bug(36,"Demoiselle",180,"Dans l'air",8,19,9,10);
+bug_dao.insert(bug);
+bug = new Bug(37,"Anax napolitain",230,"Dans l'air",8,17,4,10);
+bug_dao.insert(bug);
+bug = new Bug(38,"Cordulégastre",4500,"Dans l'air",8,17,5,10);
+bug_dao.insert(bug);
+bug = new Bug(39,"Sympetrum",500,"Dans l'air",0,0,11,2);
+bug_dao.insert(bug);
+bug = new Bug(40,"Luciole",300,"Dans l'air",19,4,6,6);
+bug_dao.insert(bug);
+bug = new Bug(41,"Taupe-grillon",500,"Sous terre",0,0,11,5);
+bug_dao.insert(bug);
+bug = new Bug(42,"Patineur",130,"Dans l'eau",8,19,5,9);
+bug_dao.insert(bug);
+bug = new Bug(43,"Dytique",800,"Dans l'eau",8,19,5,9);
+bug_dao.insert(bug);
+bug = new Bug(44,"Punaise d'eau géante",2000,"Dans l'eau",19,8,4,9);
+bug_dao.insert(bug);
+bug = new Bug(45,"Punaise",120,"Sur les fleurs",0,0,3,10);
+bug_dao.insert(bug);
+bug = new Bug(46,"Catacanthus",1000,"Sur les fleurs",19,8,3,10);
+bug_dao.insert(bug);
+bug = new Bug(47,"Coccinelle",200,"Sur les fleurs",8,17,3,6);
+bug_dao.insert(bug);
+bug = new Bug(48,"Coccinelle",200,"Sur les fleurs",8,17,10,10);
+bug_dao.insert(bug);
+bug = new Bug(49,"Cicindèle",1500,"Sur le sol",0,0,2,10);
+bug_dao.insert(bug);
+bug = new Bug(50,"Bupreste",2400,"Sur les souches",0,0,4,8);
+bug_dao.insert(bug);
+bug = new Bug(51,"Mormolyce",450,"Sur les souches",0,0,5,6);
+bug_dao.insert(bug);
+bug = new Bug(52,"Mormolyce",450,"Sur les souches",0,0,9,11);
+bug_dao.insert(bug);
+bug = new Bug(53,"Capricorne des agrumes",350,"Sur les souches",0,0,0,0);
+bug_dao.insert(bug);
+bug = new Bug(54,"Rosalia batesi",3000,"Sur les souches",0,0,5,9);
+bug_dao.insert(bug);
+bug = new Bug(55,"Scarabée bleu",800,"Sur les arbres (cocotier?)",0,0,7,8);
+bug_dao.insert(bug);
+bug = new Bug(56,"Bousier",3000,"Sur le sol (rolling snowballs)",0,0,12,2);
+bug_dao.insert(bug);
+bug = new Bug(57,"Geotrupidae",300,"Sur le sol",0,0,7,9);
+bug_dao.insert(bug);
+bug = new Bug(58,"Scarabée",10000,"Sur les arbres",23,8,7,8);
+bug_dao.insert(bug);
+bug = new Bug(59,"Cétoine dorée",200,"Sur les arbres",0,0,6,8);
+bug_dao.insert(bug);
+bug = new Bug(60,"Scarabée Goliath",8000,"Sur les arbres (cocotier)",17,8,6,9);
+bug_dao.insert(bug);
+bug = new Bug(61,"Lucane inclinatus",2000,"Sur les arbres",0,0,7,8);
+bug_dao.insert(bug);
+bug = new Bug(62,"Lucane miyama",1000,"Sur les arbres",0,0,7,8);
+bug_dao.insert(bug);
+bug = new Bug(63,"Lucane cerf-volant",10000,"Sur les arbres",23,8,7,8);
+bug_dao.insert(bug);
+bug = new Bug(64,"Lucane copris irisé",6000,"Sur les arbres",19,8,6,9);
+bug_dao.insert(bug);
+bug = new Bug(65,"Lucane cyclommatus",8000,"Sur les arbres (cocotier)",17,8,7,8);
+bug_dao.insert(bug);
+bug = new Bug(66,"Lucane lamprima",12000,"Sur les arbres (cocotier)",17,8,7,8);
+bug_dao.insert(bug);
+bug = new Bug(67,"Lucane girafe",12000,"Sur les arbres (cocotier?)",17,8,7,8);
+bug_dao.insert(bug);
+bug = new Bug(68,"Scarabée kabuto",1350,"Sur les arbres",17,8,7,8);
+bug_dao.insert(bug);
+bug = new Bug(69,"Scarabée Atlas",8000,"Sur les arbres (cocotier)",17,8,7,8);
+bug_dao.insert(bug);
+bug = new Bug(70,"Scarabée éléphant",8000,"Sur les arbres (cocotier)",17,8,7,8);
+bug_dao.insert(bug);
+bug = new Bug(71,"Scarabée Hercule",12000,"Sur les arbres (cocotier)",17,8,7,8);
+bug_dao.insert(bug);
+bug = new Bug(72,"Phasme",600,"Sur les arbres",4,8,7,11);
+bug_dao.insert(bug);
+bug = new Bug(73,"Phasme",600,"Sur les arbres",17,19,7,11);
+bug_dao.insert(bug);
+bug = new Bug(74,"Phyllie",600,"Sur le sol",0,0,7,9);
+bug_dao.insert(bug);
+bug = new Bug(75,"Psyché",600,"Dans les arbres",0,0,0,0);
+bug_dao.insert(bug);
+bug = new Bug(76,"Fourmi",80,"Navets pourris",0,0,0,0);
+bug_dao.insert(bug);
+bug = new Bug(77,"Bernard-l'ermite",1000,"Sur la plage",19,8,0,0);
+bug_dao.insert(bug);
+bug = new Bug(78,"Ligie",200,"Sur la plage",0,0,0,0);
+bug_dao.insert(bug);
+bug = new Bug(79,"Mouche",60,"Sur les déchets",0,0,0,0);
+bug_dao.insert(bug);
+bug = new Bug(80,"Moustique",130,"Dans l'air",17,4,6,9);
+bug_dao.insert(bug);
+bug = new Bug(81,"Puce",70,"Sur les animaux",0,0,4,11);
+bug_dao.insert(bug);
+bug = new Bug(82,"Escargot",250,"Sur les rochers (Pluie)",0,0,0,0);
+bug_dao.insert(bug);
+bug = new Bug(83,"Cloporte",250,"Sous les rochers",23,16,9,6);
+bug_dao.insert(bug);
+bug = new Bug(84,"Mille-pattes",300,"Sous les rochers",16,23,9,6);
+bug_dao.insert(bug);
+bug = new Bug(85,"Araignée",480,"Dans les arbres",19,8,0,0);
+bug_dao.insert(bug);
+bug = new Bug(86,"Tarentule",8000,"Sur le sol",19,4,11,4);
+bug_dao.insert(bug);
+bug = new Bug(87,"Scorpion",8000,"Sur le sol",19,4,5,10);
+bug_dao.insert(bug);

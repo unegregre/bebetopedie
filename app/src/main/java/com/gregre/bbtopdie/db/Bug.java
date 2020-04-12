@@ -22,6 +22,10 @@ public class Bug {
     private int price;
 
     @NonNull
+    @ColumnInfo(name = "bug_place")
+    private String place;
+
+    @NonNull
     @ColumnInfo(name = "bug_time_1")
     private int time_1;
 
@@ -37,10 +41,13 @@ public class Bug {
     @ColumnInfo(name = "bug_period_2")
     private int period_2;
 
-    public Bug(@NonNull int id, @NonNull String name, @NonNull int price, @NonNull int time_1, @NonNull int time_2, @NonNull int period_1, @NonNull int period_2) {
+    //Bug bug = new Bug(1,"Piéride de la rave",160,"Dans l'air",4,19,9,6);
+
+    public Bug(@NonNull int id, @NonNull String name, @NonNull int price, @NonNull String place, @NonNull int time_1, @NonNull int time_2, @NonNull int period_1, @NonNull int period_2) {
         this.id = id;
         this.name = name;
         this.price = price;
+        this.place = place;
         this.time_1 = time_1;
         this.time_2 = time_2;
         this.period_1 = period_1;
@@ -52,6 +59,8 @@ public class Bug {
     public String getName(){return this.name;}
 
     public int getPrice(){return this.price;}
+
+    public String getPlace(){return this.place;}
 
     public int getTime_1(){return this.time_1;}
 

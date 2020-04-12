@@ -1,0 +1,132 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 7,
+    "identityHash": "0d3887441c260b2e9d2caaca73de96e9",
+    "entities": [
+      {
+        "tableName": "bug_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`bug_id` INTEGER NOT NULL, `bug_name` TEXT NOT NULL, `bug_price` INTEGER NOT NULL, `bug_time_1` INTEGER NOT NULL, `bug_time_2` INTEGER NOT NULL, `bug_period_1` INTEGER NOT NULL, `bug_period_2` INTEGER NOT NULL, PRIMARY KEY(`bug_id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "bug_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "bug_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "bug_price",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "time_1",
+            "columnName": "bug_time_1",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "time_2",
+            "columnName": "bug_time_2",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "period_1",
+            "columnName": "bug_period_1",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "period_2",
+            "columnName": "bug_period_2",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "bug_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "fish_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`fish_id` INTEGER NOT NULL, `fish_name` TEXT NOT NULL, `fish_price` INTEGER NOT NULL, `fish_time_1` INTEGER NOT NULL, `fish_time_2` INTEGER NOT NULL, `fish_period_1` INTEGER NOT NULL, `fish_period_2` INTEGER NOT NULL, `fish_place` TEXT NOT NULL, PRIMARY KEY(`fish_id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "fish_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "fish_name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "fish_price",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "time_1",
+            "columnName": "fish_time_1",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "time_2",
+            "columnName": "fish_time_2",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "period_1",
+            "columnName": "fish_period_1",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "period_2",
+            "columnName": "fish_period_2",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "place",
+            "columnName": "fish_place",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "fish_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0d3887441c260b2e9d2caaca73de96e9')"
+    ]
+  }
+}
