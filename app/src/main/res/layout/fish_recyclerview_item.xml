@@ -12,15 +12,15 @@
 
     <ImageView
         android:id="@+id/fishImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="150px"
+        android:layout_height="150px"
+        android:layout_marginBottom="-10dp"/>
 
     <TextView
         android:id="@+id/fishTextView"
         style="@style/bug_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
 
     <LinearLayout
         android:layout_width="wrap_content"

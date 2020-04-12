@@ -111,13 +111,13 @@ for f in fish:
         # image & code generation
         code = "id: " + str(id) + "," + name + "," + price + "," + loc + "," + shadow + ","
         code_bis = ""
-        urllib.request.urlretrieve(cols[1].find_all("a", href=True)[0]['href'], "./fish_img/" + str(id) + ".jpg")
+        urllib.request.urlretrieve(cols[1].find_all("a", href=True)[0]['href'], "./fish_img/fish" + str(id) + ".jpg")
 
         # duplicate if needed
         if flag_hours == 1 or flag_months == 1:
             id += 1
             code_bis = "id: " + str(id) + "," + name + "," + price + "," + loc + "," + shadow + ","
-            urllib.request.urlretrieve(cols[1].find_all("a", href=True)[0]['href'], "./fish_img/" + str(id) + ".jpg")
+            urllib.request.urlretrieve(cols[1].find_all("a", href=True)[0]['href'], "./fish_img/fish" + str(id) + ".jpg")
 
         if flag_hours == 1:
             code += hours1

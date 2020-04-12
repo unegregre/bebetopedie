@@ -11,8 +11,8 @@ import java.util.List;
 @Dao
 public interface FishDao {
 
-    @Query("SELECT * from fish_table ORDER BY fish_name ASC")
-    LiveData<List<Fish>> getAlphabetizedFish();
+    @Query("SELECT * from fish_table ORDER BY fish_id ASC")
+    LiveData<List<Fish>> getAllFishes();
 
     @Query("SELECT * from fish_table WHERE " +
             "(( fish_time_1 = 0)" +

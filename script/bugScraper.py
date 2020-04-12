@@ -107,13 +107,13 @@ for f in bugs:
         # image & code generation
         code = "id: " + str(id) + "," + name + "," + price + "," + loc + ","
         code_bis = ""
-        urllib.request.urlretrieve(cols[1].find_all("a", href=True)[0]['href'], "./bug_img/" + str(id) + ".jpg")
+        urllib.request.urlretrieve(cols[1].find_all("a", href=True)[0]['href'], "./bug_img/bug" + str(id) + ".jpg")
 
         # duplicate if needed
         if flag_hours == 1 or flag_months == 1:
             id += 1
             code_bis = "id: " + str(id) + "," + name + "," + price + "," + loc + ","
-            urllib.request.urlretrieve(cols[1].find_all("a", href=True)[0]['href'], "./bug_img/" + str(id) + ".jpg")
+            urllib.request.urlretrieve(cols[1].find_all("a", href=True)[0]['href'], "./bug_img/bug" + str(id) + ".jpg")
 
         if flag_hours == 1:
             code += hours1

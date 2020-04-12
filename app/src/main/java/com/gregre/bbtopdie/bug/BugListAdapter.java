@@ -1,8 +1,8 @@
 package com.gregre.bbtopdie.bug;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.gregre.bbtopdie.R;
 import com.gregre.bbtopdie.db.Bug;
 
+import java.lang.reflect.Field;
 import java.util.List;
 
 public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewHolder> {
@@ -63,13 +64,26 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
                 holder.bugPeriodView.setText(periodToString(current.getPeriod_1()) + " - " + periodToString(current.getPeriod_2()));
             }
 
-            holder.imageView.setImageResource(R.drawable.greatwhiteshark);
+            int resID = getResId("bug" + current.getId(), R.drawable.class);
+            holder.imageView.setImageResource(resID);
+
         } else {
             // Covers the case of data not being ready yet.
             holder.bugItemView.setText("No Bug");
             holder.bugPriceView.setText("0");
             holder.bugTimeView.setText("None");
             holder.bugPeriodView.setText("None");
+        }
+    }
+
+    public static int getResId(String resName, Class<?> c) {
+
+        try {
+            Field idField = c.getDeclaredField(resName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
         }
     }
 

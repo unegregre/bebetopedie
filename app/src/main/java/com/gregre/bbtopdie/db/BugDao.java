@@ -24,8 +24,8 @@ public interface BugDao {
     // Always holds/caches latest version of data. Notifies its active observers when the
     // data has changed. Since we are getting all the contents of the database,
     // we are notified whenever any of the database contents have changed.
-    @Query("SELECT * from bug_table ORDER BY bug_name ASC")
-    LiveData<List<Bug>> getAlphabetizedBugs();
+    @Query("SELECT * from bug_table ORDER BY bug_id ASC")
+    LiveData<List<Bug>> getAllBugs();
 
     @Query("SELECT * from bug_table WHERE " +
             "(( bug_time_1 = 0)" +

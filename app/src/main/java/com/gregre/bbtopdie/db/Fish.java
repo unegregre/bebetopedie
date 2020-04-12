@@ -10,6 +10,10 @@ public class Fish {
 
     @PrimaryKey
     @NonNull
+    @ColumnInfo(name = "fish_id")
+    private int id;
+
+    @NonNull
     @ColumnInfo(name = "fish_name")
     private String name;
 
@@ -37,7 +41,8 @@ public class Fish {
     @ColumnInfo(name = "fish_place")
     private String place;
 
-    public Fish(@NonNull String name, @NonNull int price, @NonNull int time_1, @NonNull int time_2, @NonNull int period_1, @NonNull int period_2, @NonNull String place) {
+    public Fish(@NonNull int id, @NonNull String name, @NonNull int price, @NonNull int time_1, @NonNull int time_2, @NonNull int period_1, @NonNull int period_2, @NonNull String place) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.time_1 = time_1;
@@ -46,6 +51,8 @@ public class Fish {
         this.period_2 = period_2;
         this.place = place;
     }
+
+    public int getId(){return this.id;}
 
     public String getName(){return this.name;}
 

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.gregre.bbtopdie.R;
 import com.gregre.bbtopdie.db.Fish;
 
+import java.lang.reflect.Field;
 import java.util.List;
 
 public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishViewHolder> {
@@ -63,7 +64,10 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
                 holder.fishPeriodView.setText(String.valueOf(periodToString(current.getPeriod_1())) + " - " + periodToString(current.getPeriod_2()));
             }
             holder.fishPlaceView.setText(current.getPlace());
-            holder.imageView.setImageResource(R.drawable.greatwhiteshark);
+
+            int resID = getResId("fish" + current.getId(), R.drawable.class);
+            holder.imageView.setImageResource(resID);
+
         } else {
             // Covers the case of data not being ready yet.
             holder.fishItemView.setText("No Fish");
@@ -71,6 +75,17 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
             holder.fishTimeView.setText("None");
             holder.fishPeriodView.setText("None");
             holder.fishPlaceView.setText("None");
+        }
+    }
+
+    public static int getResId(String resName, Class<?> c) {
+
+        try {
+            Field idField = c.getDeclaredField(resName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
         }
     }
 

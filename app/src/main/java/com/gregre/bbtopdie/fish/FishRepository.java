@@ -22,7 +22,7 @@ public class FishRepository {
     FishRepository(Application application) {
         BebeteDatabase db = BebeteDatabase.getDatabase(application);
         mFishDao = db.fishDao();
-        mAllFishes = mFishDao.getAlphabetizedFish();
+        mAllFishes = mFishDao.getAllFishes();
     }
 
     // Room executes all queries on a separate thread.

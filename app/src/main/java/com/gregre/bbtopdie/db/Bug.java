@@ -10,6 +10,10 @@ public class Bug {
 
     @PrimaryKey
     @NonNull
+    @ColumnInfo(name = "bug_id")
+    private int id;
+
+    @NonNull
     @ColumnInfo(name = "bug_name")
     private String name;
 
@@ -33,7 +37,8 @@ public class Bug {
     @ColumnInfo(name = "bug_period_2")
     private int period_2;
 
-    public Bug(@NonNull String name, @NonNull int price, @NonNull int time_1, @NonNull int time_2, @NonNull int period_1, @NonNull int period_2) {
+    public Bug(@NonNull int id, @NonNull String name, @NonNull int price, @NonNull int time_1, @NonNull int time_2, @NonNull int period_1, @NonNull int period_2) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.time_1 = time_1;
@@ -41,6 +46,8 @@ public class Bug {
         this.period_1 = period_1;
         this.period_2 = period_2;
     }
+
+    public int getId() {return this.id;}
 
     public String getName(){return this.name;}
 

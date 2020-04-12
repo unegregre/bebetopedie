@@ -18,7 +18,6 @@ import androidx.viewpager2.widget.ViewPager2;
 public class MainActivity extends AppCompatActivity {
 
     public static final int NEW_BUG_ACTIVITY_REQUEST_CODE = 1;
-    public static final int[] TABS_LABEL = {R.string.tab0, R.string.tab1};
     public static final int[] TABS_ICON = {R.drawable.ic_bug_grey, R.drawable.ic_fish_grey};
 
     private ViewPager2 viewPager;
@@ -30,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(createCardAdapter());
-
 
         // Linking with the tab
         TabLayout tabLayout = findViewById(R.id.tab_layout);

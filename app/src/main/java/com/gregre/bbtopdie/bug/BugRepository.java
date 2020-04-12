@@ -26,7 +26,7 @@ class BugRepository {
     BugRepository(Application application) {
         BebeteDatabase db = BebeteDatabase.getDatabase(application);
         mBugDao = db.bugDao();
-        mAllBugs = mBugDao.getAlphabetizedBugs();
+        mAllBugs = mBugDao.getAllBugs();
     }
 
     // Room executes all queries on a separate thread.
