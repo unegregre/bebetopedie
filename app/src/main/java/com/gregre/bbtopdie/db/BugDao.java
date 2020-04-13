@@ -30,15 +30,15 @@ public interface BugDao {
     @Query("SELECT * from bug_table WHERE " +
             "(( bug_time_1 = 0)" +
             "OR" +
-            "(bug_time_1 < bug_time_2 AND :hour BETWEEN bug_time_1 AND bug_time_2) " +
+            "(bug_time_1 < bug_time_2 AND :hour BETWEEN (bug_time_1 - 1) AND bug_time_2) " +
             "OR " +
-            "(bug_time_1 > bug_time_2 AND :hour NOT BETWEEN bug_time_2 AND bug_time_1)) " +
+            "(bug_time_1 > bug_time_2 AND :hour NOT BETWEEN bug_time_2 AND (bug_time_1 - 1))) " +
             "AND " +
             "((bug_period_1 = 0)" +
             "OR" +
-            "(bug_period_1 < bug_period_2 AND :month BETWEEN bug_period_1 AND bug_period_2) " +
+            "(bug_period_1 < bug_period_2 AND :month BETWEEN (bug_period_1 - 1) AND bug_period_2) " +
             "OR " +
-            "(bug_period_1 > bug_period_2 AND :month NOT BETWEEN bug_period_2 AND bug_period_1))")
+            "(bug_period_1 > bug_period_2 AND :month NOT BETWEEN bug_period_2 AND (bug_period_1 - 1)))")
     LiveData<List<Bug>> getBugsNow(int hour, int month);
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
