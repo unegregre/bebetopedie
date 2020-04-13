@@ -1,7 +1,6 @@
 package com.gregre.bbtopdie.fish;
 
 import android.content.res.ColorStateList;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +16,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.tabs.TabLayout;
 import com.gregre.bbtopdie.MainActivity;
 import com.gregre.bbtopdie.R;
 import com.gregre.bbtopdie.db.Fish;
