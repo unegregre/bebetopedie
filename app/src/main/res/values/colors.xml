@@ -24,6 +24,8 @@
     <color name="NH_gray">#8a7b66</color>
     <color name="NH_white">#f5f7e1</color>
 
-    <color name="transparent_grey">#668a7b66</color>
+    <color name="transparent_grey">#888a7b66</color>
     <color name="transparent_white">#66FFFFFF</color>
+
+    <color name="transparent">#00FFFFFF</color>
 </resources>

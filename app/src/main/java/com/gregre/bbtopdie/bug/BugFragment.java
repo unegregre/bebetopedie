@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.gregre.bbtopdie.MainActivity;
 import com.gregre.bbtopdie.R;
 import com.gregre.bbtopdie.db.Bug;
 
@@ -76,11 +77,14 @@ public class BugFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if(allBugs) {
-                    fab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_access_time_white_24dp));
-
-                } else {
                     fab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_apps_black_24dp));
+                    fab.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.NH_blue)));
+                } else {
+                    fab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_access_time_white_24dp));
+                    fab.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.NH_red)));
                 }
+                MainActivity main = (MainActivity) getActivity();
+                main.changeTabsIcon(0,allBugs);
                 changeFishes(bugAdapter);
             }
         });

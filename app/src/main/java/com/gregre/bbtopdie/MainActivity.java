@@ -1,15 +1,15 @@
 package com.gregre.bbtopdie;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-import com.gregre.bbtopdie.bug.BugViewModel;
-import com.gregre.bbtopdie.db.Bug;
-import com.gregre.bbtopdie.fish.FishViewModel;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
@@ -18,13 +18,21 @@ import androidx.viewpager2.widget.ViewPager2;
 public class MainActivity extends AppCompatActivity {
 
     public static final int NEW_BUG_ACTIVITY_REQUEST_CODE = 1;
-    public static final int[] TABS_ICON = {R.drawable.ic_bug_grey, R.drawable.ic_fish_grey};
+    public static final int[] TABS_ICON = {R.drawable.ic_bug_yellow,R.drawable.ic_time_bug, R.drawable.ic_fish_yellow,R.drawable.ic_time_fish};
+    public static final int[] TABS_LABEL = {R.string.tab0,R.string.tab1};
 
     private ViewPager2 viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        try
+        {
+            this.getSupportActionBar().hide();
+        }
+        catch (NullPointerException e){}
+
         setContentView(R.layout.activity_main);
 
         viewPager = findViewById(R.id.view_pager);
@@ -34,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> {
-                    tab.setIcon(TABS_ICON[position]);
+                    tab.setIcon(TABS_ICON[position * 2]);
+                    tab.setText(TABS_LABEL[position]);
                     }
         ).attach();
 
@@ -58,18 +67,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     private ViewPagerAdapter createCardAdapter() {
@@ -88,6 +85,21 @@ public class MainActivity extends AppCompatActivity {
                     getApplicationContext(),
                     R.string.empty_not_saved,
                     Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void changeTabsIcon(int index, boolean isAll) {
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        TabLayout.Tab tab = tabLayout.getTabAt(index);
+        if(isAll) {
+            tab.setIcon(TABS_ICON[index * 2 + 1]);
+        } else {
+            tab.setIcon(TABS_ICON[index * 2]);
+        }
+        if(tab.isSelected()) {
+            tab.getIcon().setColorFilter(getResources().getColor(R.color.NH_white), PorterDuff.Mode.SRC_IN);
+        } else {
+            tab.getIcon().setColorFilter(getResources().getColor(R.color.NH_gray), PorterDuff.Mode.SRC_IN);
         }
     }
 }

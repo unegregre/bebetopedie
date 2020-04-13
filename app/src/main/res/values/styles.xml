@@ -1,32 +1,26 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
-    </style>
-
-
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
-    </style>
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-
     <!-- The default font for RecyclerView items is too small.
     The margin is a simple delimiter between the words. -->
     <style name="bug_title">
+        <item name="fontFamily">@font/arvo_regular</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_marginBottom">2dp</item>
-        <item name="android:paddingLeft">8dp</item>
         <item name="android:textColor">@color/NH_yellow</item>
         <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
     </style>
 
+    <style name="bug_attribute_title">
+        <item name="fontFamily">@font/arvo_bold</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
     <style name="bug_attribute">
+        <item name="fontFamily">@font/arvo_regular</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:paddingLeft">8dp</item>
         <item name="android:textColor">@color/NH_white</item>
@@ -39,14 +33,11 @@
 
     <!-- Background repeated -->
     <style name="app_theme" parent="Theme.MaterialComponents">
-        <item name="android:headerBackground">@color/NH_green</item>
         <item name="colorPrimary">@color/NH_white</item>
+        <item name="colorOnSurface">@color/NH_gray</item>
         <item name="colorPrimaryDark">@color/NH_green</item>
-        <item name="colorOnPrimary">@color/NH_blue</item>
         <item name="colorSecondary">@color/NH_red</item>
-        <item name="colorSecondaryVariant">@color/NH_yellow</item>
         <item name="colorOnSecondary">@color/NH_white</item>
-        <item name="colorBackgroundFloating">@color/NH_red</item>
 
         <item name="android:windowBackground">@drawable/app_background</item>
         <item name="android:listViewStyle">@style/TransparentListView</item>
@@ -61,14 +52,12 @@
         <item name="android:cacheColorHint">@android:color/transparent</item>
     </style>
 
-    <style name="fab" parent="@style/Widget.MaterialComponents.FloatingActionButton">
-        <item name="backgroundTint">@color/NH_red</item>
-    </style>
 
     <style name="Base.Widget.Design.TabLayout" parent="android:Widget">
         <item name="tabBackground">@drawable/tab_background</item>
         <item name="tabIndicatorColor">@color/NH_yellow</item>
         <item name="tabIndicatorHeight">4dp</item>
     </style>
+
 
 </resources>

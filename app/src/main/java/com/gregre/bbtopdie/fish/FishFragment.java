@@ -1,5 +1,7 @@
 package com.gregre.bbtopdie.fish;
 
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.tabs.TabLayout;
+import com.gregre.bbtopdie.MainActivity;
 import com.gregre.bbtopdie.R;
 import com.gregre.bbtopdie.db.Fish;
 
@@ -70,17 +74,20 @@ public class FishFragment extends Fragment{
             }
         });
 
-
         FloatingActionButton fab = view.findViewById(R.id.fishFab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(allFishes) {
-                    fab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_access_time_white_24dp));
+                    fab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_apps_black_24dp));
+                    fab.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.NH_blue)));
 
                 } else {
-                    fab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_apps_black_24dp));
+                    fab.setImageDrawable(ContextCompat.getDrawable(getContext(), R.drawable.ic_access_time_white_24dp));
+                    fab.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.NH_red)));
                 }
+                MainActivity main = (MainActivity) getActivity();
+                main.changeTabsIcon(1,allFishes);
                 changeFishes(fishAdapter);
             }
         });
@@ -90,7 +97,10 @@ public class FishFragment extends Fragment{
         if(allFishes) {
             Calendar cal = Calendar.getInstance();
             int hour = cal.get(Calendar.HOUR_OF_DAY);
-            int month = cal.get(Calendar.MONTH);
+            int month = cal.get(Calendar.MONTH) + 1;
+            System.out.println("MOIS : "+ month);
+            System.out.println("MOIS : "+ month);
+            System.out.println("MOIS : "+ month);
             mFishViewModel.getFishesNow(hour,month).observe(getViewLifecycleOwner(), new Observer<List<Fish>>() {
                 @Override
                 public void onChanged(@Nullable final List<Fish> fishes) {
