@@ -96,9 +96,6 @@ public class FishFragment extends Fragment{
             Calendar cal = Calendar.getInstance();
             int hour = cal.get(Calendar.HOUR_OF_DAY);
             int month = cal.get(Calendar.MONTH) + 1;
-            System.out.println("MOIS : "+ month);
-            System.out.println("MOIS : "+ month);
-            System.out.println("MOIS : "+ month);
             mFishViewModel.getFishesNow(hour,month).observe(getViewLifecycleOwner(), new Observer<List<Fish>>() {
                 @Override
                 public void onChanged(@Nullable final List<Fish> fishes) {

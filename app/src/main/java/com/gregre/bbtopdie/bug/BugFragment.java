@@ -85,17 +85,17 @@ public class BugFragment extends Fragment {
                 }
                 MainActivity main = (MainActivity) getActivity();
                 main.changeTabsIcon(0,allBugs);
-                changeFishes(bugAdapter);
+                changeBugs(bugAdapter);
             }
         });
 
     }
 
-    public void changeFishes(BugListAdapter bugAdapter) {
+    public void changeBugs(BugListAdapter bugAdapter) {
         if(allBugs) {
             Calendar cal = Calendar.getInstance();
             int hour = cal.get(Calendar.HOUR_OF_DAY);
-            int month = cal.get(Calendar.MONTH);
+            int month = cal.get(Calendar.MONTH) + 1;
             mBugViewModel.getBugsNow(hour,month).observe(getViewLifecycleOwner(), new Observer<List<Bug>>() {
                 @Override
                 public void onChanged(@Nullable final List<Bug> bugs) {
