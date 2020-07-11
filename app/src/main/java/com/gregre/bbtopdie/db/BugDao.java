@@ -41,11 +41,12 @@ public interface BugDao {
 //            "(bug_period_1 > bug_period_2 AND :month NOT BETWEEN bug_period_2 AND (bug_period_1 - 1)))")
 //    LiveData<List<Bug>> getBugsNow(int hour, int month);
 
+    //TODO : a better query because this one doesn't work
     @Query("SELECT * from bug_table WHERE " +
-            "bug_period_north LIKE ';' + :month + ';'" +
+            "bug_period_north LIKE :month " +
             "AND " +
-            "bug_time LIKE ';' + :hour + ';'")
-    LiveData<List<Bug>> getBugsNow(int hour, int month);
+            "bug_time LIKE :hour")
+    LiveData<List<Bug>> getBugsNow(String hour, String month);
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Bug bug);
