@@ -53,15 +53,19 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
             Bug current = mBugs.get(position);
             holder.bugItemView.setText(current.getName());
             holder.bugPriceView.setText(current.getPrice() + " cloch.");
-            if(current.getTime_1() == 0) {
+            if(current.isIs_all_day()) {
                 holder.bugTimeView.setText("Toute la journée");
             } else {
-                holder.bugTimeView.setText(current.getTime_1() + "h - " + current.getTime_2() + "h");
+                //TODO
+                String time = current.getTime();
+
+                holder.bugTimeView.setText(0 + "h - " + 0 + "h");
             }
-            if(current.getPeriod_1() == 0) {
+            if(current.isIs_all_year()) {
                 holder.bugPeriodView.setText("Toute l'année");
             } else {
-                holder.bugPeriodView.setText(periodToString(current.getPeriod_1()) + " - " + periodToString(current.getPeriod_2()));
+                //TODO
+                holder.bugPeriodView.setText(periodToString(1) + " - " + periodToString(1));
             }
 
             int resID = getResId("bug" + current.getId(), R.drawable.class);
