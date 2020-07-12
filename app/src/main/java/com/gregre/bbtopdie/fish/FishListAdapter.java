@@ -90,7 +90,7 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
 
                 holder.fishPeriodView.setText(period);
             }
-            holder.fishPlaceView.setText(current.getLocation());
+            holder.fishPlaceView.setText(locationTranslation(current.getLocation()));
 
             int resID = getResId(current.getName(), R.drawable.class);
             holder.imageView.setImageResource(resID);
@@ -119,6 +119,29 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
     public void setFishes(List<Fish> fishes) {
         mFishes = fishes;
         notifyDataSetChanged();
+    }
+
+    public String locationTranslation(String loc_en) {
+        switch (loc_en) {
+            case "Pond":
+                return "Étang";
+            case "River":
+                return "Rivière";
+            case "River (Clifftop)":
+                return "Rivière (hauteurs)";
+            case "River (Clifftop) & Pond":
+                return "Rivière (hauteurs) & étang";
+            case "River (mouth)":
+                return "Rivière (embouchure)";
+            case "Sea":
+                return "Océan";
+            case "Pier":
+                return "Ponton";
+            case "Sea (when raining or snowing)":
+                return "Océan (pluie ou neige)";
+            default:
+                return "";
+        }
     }
 
     public String monthToString(int period) {
