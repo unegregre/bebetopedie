@@ -14,6 +14,8 @@ import com.gregre.bbtopdie.db.Bug;
 
 import java.lang.reflect.Field;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewHolder> {
 
@@ -51,24 +53,45 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
     public void onBindViewHolder(BugViewHolder holder, int position) {
         if (mBugs != null) {
             Bug current = mBugs.get(position);
-            holder.bugItemView.setText(current.getName());
+            holder.bugItemView.setText(current.getName_fr());
             holder.bugPriceView.setText(current.getPrice() + " cloch.");
             if(current.isIs_all_day()) {
                 holder.bugTimeView.setText("Toute la journée");
             } else {
-                //TODO
                 String time = current.getTime();
 
-                holder.bugTimeView.setText(0 + "h - " + 0 + "h");
+                Pattern p = Pattern.compile("([0-9]+)pm");
+                Matcher m = p.matcher(time);
+
+                while (m.find()) {
+                    int hour_pm = Integer.parseInt(m.group(1))+12;
+                    time = m.replaceFirst(hour_pm+"h");
+                    m = p.matcher(time);
+                }
+                p = Pattern.compile("am");
+                m = p.matcher(time);
+                time = m.replaceAll("h");
+
+                holder.bugTimeView.setText(time);
             }
             if(current.isIs_all_year()) {
                 holder.bugPeriodView.setText("Toute l'année");
             } else {
-                //TODO
-                holder.bugPeriodView.setText(periodToString(1) + " - " + periodToString(1));
+                String period = current.getPeriod_north();
+
+                Pattern p = Pattern.compile("([0-9]+)");
+                Matcher m = p.matcher(period);
+
+                while (m.find()) {
+                    int month = Integer.parseInt(m.group(1));
+                    period = m.replaceFirst(monthToString(month));
+                    m = p.matcher(period);
+                }
+
+                holder.bugPeriodView.setText(period);
             }
 
-            int resID = getResId("bug" + current.getId(), R.drawable.class);
+            int resID = getResId(current.getName(), R.drawable.class);
             holder.imageView.setImageResource(resID);
 
         } else {
@@ -90,7 +113,7 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
         }
     }
 
-    public String periodToString(int period) {
+    public String monthToString(int period) {
         switch (period) {
             case 1:
                 return "Janvier";

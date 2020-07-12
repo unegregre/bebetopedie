@@ -19,6 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -28,7 +30,7 @@ import javax.net.ssl.HttpsURLConnection;
  * app, consider exporting the schema to help you with migrations.
  */
 
-@Database(entities = {Bug.class, Fish.class}, version = 11, exportSchema = false)
+@Database(entities = {Bug.class, Fish.class}, version = 13, exportSchema = false)
 public abstract class BebeteDatabase extends RoomDatabase {
 
     public abstract BugDao bugDao();
@@ -79,7 +81,7 @@ public abstract class BebeteDatabase extends RoomDatabase {
                 BugDao bug_dao = INSTANCE.bugDao();
                 bug_dao.deleteAll();
 
-            // Create URL
+                // Create URL
                 URL endpoint = null;
                 try {
                     endpoint = new URL("https://acnhapi.com/v1/bugs/");
@@ -87,12 +89,6 @@ public abstract class BebeteDatabase extends RoomDatabase {
                     // Create connection
                     HttpsURLConnection myConnection =
                             (HttpsURLConnection) endpoint.openConnection();
-//
-//                    myConnection.setRequestProperty("User-Agent", "my-rest-app-v0.1");
-//                    myConnection.setRequestProperty("Accept",
-//                            "application/vnd.github.v3+json");
-//                    myConnection.setRequestProperty("Contact-Me",
-//                            "hathibelagal@example.com");
 
                     if (myConnection.getResponseCode() == 200) {
                         // Success
@@ -106,8 +102,11 @@ public abstract class BebeteDatabase extends RoomDatabase {
                         int id = -1;
                         String name = null;
                         String name_fr = null;
+                        String month_northern = null;
                         List<Integer> month_array_northern = null;
+                        String month_southern = null;
                         List<Integer> month_array_southern = null;
+                        String time = null;
                         List<Integer> time_array = null;
                         boolean isAllDay = false;
                         boolean isAllYear = false;
@@ -115,7 +114,7 @@ public abstract class BebeteDatabase extends RoomDatabase {
                         String rarity = null;
                         int price = -1;
                         String icon_uri = null;
-                        String key = null;
+                        String key;
                         boolean fullEntry = false;
 
                         while (jsonReader.hasNext()) { // Loop through all keys
@@ -132,8 +131,18 @@ public abstract class BebeteDatabase extends RoomDatabase {
                                 id = jsonReader.nextInt();
                             } else if (key.equals("file-name")) {
                                 name = jsonReader.nextString();
+                                if(name.equals("char")) {
+                                    // TODO : remove from bug and add only in fish
+                                    name = "char_fish"; // because APPARENTLY there is a FISH CALLED CHAR
+                                } else {
+                                    Pattern p = Pattern.compile("-");
+                                    Matcher m = p.matcher(name);
+                                    name = m.replaceAll("_");
+                                }
                             } else if (key.equals("name-EUfr")) {
                                 name_fr = jsonReader.nextString();
+                            } else if (key.equals("month-northern")) {
+                                month_northern = jsonReader.nextString();
                             } else if (key.equals("month-array-northern")) {
                                 month_array_northern = new ArrayList<>();
                                 jsonReader.beginArray();
@@ -141,6 +150,8 @@ public abstract class BebeteDatabase extends RoomDatabase {
                                     month_array_northern.add(jsonReader.nextInt());
                                 }
                                 jsonReader.endArray();
+                            } else if (key.equals("month-southern")) {
+                                month_southern = jsonReader.nextString();
                             } else if (key.equals("month-array-southern")) {
                                 month_array_southern = new ArrayList<>();
                                 jsonReader.beginArray();
@@ -148,6 +159,8 @@ public abstract class BebeteDatabase extends RoomDatabase {
                                     month_array_southern.add(jsonReader.nextInt());
                                 }
                                 jsonReader.endArray();
+                            } else if (key.equals("time")) {
+                                time = jsonReader.nextString();
                             } else if(key.equals("time-array")) {
                                 time_array = new ArrayList<>();
                                 jsonReader.beginArray();
@@ -175,7 +188,7 @@ public abstract class BebeteDatabase extends RoomDatabase {
                             if(fullEntry) {
                                 name_fr = capitalize(name_fr);
 
-                                Bug bug = new Bug(id, name_fr, month_array_northern,month_array_southern,time_array, isAllDay, isAllYear, location, rarity, price, icon_uri);
+                                Bug bug = new Bug(id, name, name_fr, month_northern, month_array_northern, month_southern, month_array_southern, time, time_array, isAllDay, isAllYear, location, rarity, price, icon_uri);
                                 bug_dao.insert(bug);
 
                                 fullEntry = false;

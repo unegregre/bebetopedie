@@ -110,6 +110,12 @@ for f in bugs:
         urllib.request.urlretrieve(cols[1].find_all("a", href=True)[0]['href'], "./bug_img/bug" + str(id) + ".jpg")
 
         # duplicate if needed
+        code += hours1
+        code_bis += hours1
+        code += ", month_st: " + str(m_st_1) + ", month_end: " + str(m_end_1)
+        code_bis += ", month_st: " + str(m_st_1) + ", month_end: " + str(m_end_1)
+        file.write(code + '\n')
+"""
         if flag_hours == 1 or flag_months == 1:
             id += 1
             code_bis = "id: " + str(id) + "," + name + "," + price + "," + loc + ","
@@ -119,16 +125,16 @@ for f in bugs:
             code += hours1
             code_bis += hours2
         else:
-            code += hours1
-            code_bis += hours1
-
+	    code += hours1
+	    code_bis += hours1
         if flag_months == 1:
             code += ", month_st: " + str(m_st_1) + ", month_end: " + str(m_end_1)
             code_bis += ", month_st: " + str(m_st_2) + ", month_end: " + str(m_end_2)
         else:
-            code += ", month_st: " + str(m_st_1) + ", month_end: " + str(m_end_1)
-            code_bis += ", month_st: " + str(m_st_1) + ", month_end: " + str(m_end_1)
+    		code += ", month_st: " + str(m_st_1) + ", month_end: " + str(m_end_1)
+    		code_bis += ", month_st: " + str(m_st_1) + ", month_end: " + str(m_end_1)
 
         file.write(code + '\n')
         if flag_hours == 1 or flag_months == 1:
             file.write(code_bis + '\n')
+"""

@@ -1,0 +1,87 @@
+id: 1,name: Common butterfly,price: 160,loc: Flying,time_st: 4, time_end: 19, month_st: 9, month_end: 6
+id: 2,name: Yellow butterfly,price: 160,loc: Flying,time_st: 4, time_end: 19, month_st: 3, month_end: 6
+id: 3,name: Yellow butterfly,price: 160,loc: Flying,time_st: 4, time_end: 19, month_st: 9, month_end: 10
+id: 4,name: Tiger butterfly,price: 240,loc: Flying,time_st: 4, time_end: 19, month_st: 3, month_end: 9
+id: 5,name: Peacock butterfly,price: 2500,loc: Flying by Hybrid Flowers,time_st: 4, time_end: 19, month_st: 3, month_end: 6
+id: 6,name: Common bluebottle,price: 300,loc: Flying,time_st: 4, time_end: 19, month_st: 4, month_end: 8
+id: 7,name: Paper kite butterfly,price: 1000,loc: Flying,time_st: 8, time_end: 19, month_st: 0, month_end: 0
+id: 8,name: Great purple emperor,price: 3000,loc: Flying,time_st: 4, time_end: 19, month_st: 5, month_end: 8
+id: 9,name: Monarch butterfly,price: 140,loc: Flying,time_st: 4, time_end: 17, month_st: 9, month_end: 11
+id: 10,name: Emperor butterfly,price: 4000,loc: Flying,time_st: 17, time_end: 8, month_st: 12, month_end: 3
+id: 11,name: Emperor butterfly,price: 4000,loc: Flying,time_st: 17, time_end: 8, month_st: 6, month_end: 9
+id: 12,name: Agrias butterfly,price: 3000,loc: Flying,time_st: 8, time_end: 17, month_st: 4, month_end: 9
+id: 13,name: Rajah Brooke's birdwing,price: 2500,loc: Flying,time_st: 8, time_end: 17, month_st: 12, month_end: 2
+id: 14,name: Rajah Brooke's birdwing,price: 2500,loc: Flying,time_st: 8, time_end: 17, month_st: 4, month_end: 9
+id: 15,name: Queen Alexandra's birdwing,price: 4000,loc: Flying,time_st: 8, time_end: 16, month_st: 5, month_end: 9
+id: 16,name: Moth,price: 130,loc: Flying by Light,time_st: 19, time_end: 4, month_st: 0, month_end: 0
+id: 17,name: Atlas moth,price: 3000,loc: On Trees,time_st: 19, time_end: 4, month_st: 4, month_end: 9
+id: 18,name: Madagascan sunset moth,price: 2500,loc: Flying,time_st: 8, time_end: 16, month_st: 4, month_end: 9
+id: 19,name: Long locust,price: 200,loc: On the Ground,time_st: 8, time_end: 19, month_st: 4, month_end: 11
+id: 20,name: Migratory locust,price: 600,loc: On the Ground,time_st: 8, time_end: 19, month_st: 8, month_end: 11
+id: 21,name: Rice grasshopper,price: 160,loc: On the Ground,time_st: 8, time_end: 19, month_st: 8, month_end: 11
+id: 22,name: Grasshopper,price: 160,loc: On the Ground,time_st: 8, time_end: 17, month_st: 7, month_end: 9
+id: 23,name: Cricket,price: 130,loc: On the Ground,time_st: 17, time_end: 8, month_st: 9, month_end: 11
+id: 24,name: Bell cricket,price: 430,loc: On the Ground,time_st: 17, time_end: 8, month_st: 9, month_end: 10
+id: 25,name: Mantis,price: 430,loc: On Flowers,time_st: 8, time_end: 17, month_st: 3, month_end: 11
+id: 26,name: Orchid mantis,price: 2400,loc: On Flowers (White),time_st: 8, time_end: 17, month_st: 3, month_end: 11
+id: 27,name: Honeybee,price: 200,loc: Flying,time_st: 8, time_end: 17, month_st: 3, month_end: 7
+id: 28,name: Wasp,price: 2500,loc: Shaking Trees,time_st: 0, time_end: 0, month_st: 0, month_end: 0
+id: 29,name: Brown cicada,price: 250,loc: On Trees,time_st: 8, time_end: 17, month_st: 7, month_end: 8
+id: 30,name: Robust cicada,price: 300,loc: On Trees,time_st: 8, time_end: 17, month_st: 7, month_end: 8
+id: 31,name: Giant cicada,price: 500,loc: On Trees,time_st: 8, time_end: 17, month_st: 7, month_end: 8
+id: 32,name: Walker cicada,price: 400,loc: On Trees,time_st: 8, time_end: 17, month_st: 8, month_end: 9
+id: 33,name: Evening cicada,price: 550,loc: On Trees,time_st: 4, time_end: 8, month_st: 7, month_end: 8
+id: 34,name: Evening cicada,price: 550,loc: On Trees,time_st: 16, time_end: 19, month_st: 7, month_end: 8
+id: 35,name: Cicada shell,price: 10,loc: On Trees,time_st: 0, time_end: 0, month_st: 7, month_end: 8
+id: 36,name: Red dragonfly,price: 180,loc: Flying,time_st: 8, time_end: 19, month_st: 9, month_end: 10
+id: 37,name: Darner dragonfly,price: 230,loc: Flying,time_st: 8, time_end: 17, month_st: 4, month_end: 10
+id: 38,name: Banded dragonfly,price: 4500,loc: Flying,time_st: 8, time_end: 17, month_st: 5, month_end: 10
+id: 39,name: Damselfly,price: 500,loc: Flying,time_st: 0, time_end: 0, month_st: 11, month_end: 2
+id: 40,name: Firefly,price: 300,loc: Flying,time_st: 19, time_end: 4, month_st: 6, month_end: 6
+id: 41,name: Mole cricket,price: 500,loc: Underground,time_st: 0, time_end: 0, month_st: 11, month_end: 5
+id: 42,name: Pondskater,price: 130,loc: On Ponds and Rivers,time_st: 8, time_end: 19, month_st: 5, month_end: 9
+id: 43,name: Diving beetle,price: 800,loc: On Ponds and Rivers,time_st: 8, time_end: 19, month_st: 5, month_end: 9
+id: 44,name: Giant water bug,price: 2000,loc: On Ponds and Rivers,time_st: 19, time_end: 8, month_st: 4, month_end: 9
+id: 45,name: Stinkbug,price: 120,loc: On Flowers,time_st: 0, time_end: 0, month_st: 3, month_end: 10
+id: 46,name: Man-faced stink bug,price: 1000,loc: On Flowers,time_st: 19, time_end: 8, month_st: 3, month_end: 10
+id: 47,name: Ladybug,price: 200,loc: On Flowers,time_st: 8, time_end: 17, month_st: 3, month_end: 6
+id: 48,name: Ladybug,price: 200,loc: On Flowers,time_st: 8, time_end: 17, month_st: 10, month_end: 10
+id: 49,name: Tiger beetle,price: 1500,loc: On the Ground,time_st: 0, time_end: 0, month_st: 2, month_end: 10
+id: 50,name: Jewel beetle,price: 2400,loc: On Tree Stumps,time_st: 0, time_end: 0, month_st: 4, month_end: 8
+id: 51,name: Violin beetle,price: 450,loc: On Tree Stumps,time_st: 0, time_end: 0, month_st: 5, month_end: 6
+id: 52,name: Violin beetle,price: 450,loc: On Tree Stumps,time_st: 0, time_end: 0, month_st: 9, month_end: 11
+id: 53,name: Citrus long-horned beetle,price: 350,loc: On Tree Stumps,time_st: 0, time_end: 0, month_st: 0, month_end: 0
+id: 54,name: Rosalia batesi beetle,price: 3000,loc: On Tree Stumps,time_st: 0, time_end: 0, month_st: 5, month_end: 9
+id: 55,name: Blue weevil beetle,price: 800,loc: On Trees (Coconut?),time_st: 0, time_end: 0, month_st: 7, month_end: 8
+id: 56,name: Dung beetle,price: 3000,loc: On the Ground (rolling snowballs),time_st: 0, time_end: 0, month_st: 12, month_end: 2
+id: 57,name: Earth-boring dung beetle,price: 300,loc: On the Ground,time_st: 0, time_end: 0, month_st: 7, month_end: 9
+id: 58,name: Scarab beetle,price: 10000,loc: On Trees,time_st: 23, time_end: 8, month_st: 7, month_end: 8
+id: 59,name: Drone beetle,price: 200,loc: On Trees,time_st: 0, time_end: 0, month_st: 6, month_end: 8
+id: 60,name: Goliath beetle,price: 8000,loc: On Trees (Coconut),time_st: 17, time_end: 8, month_st: 6, month_end: 9
+id: 61,name: Saw stag,price: 2000,loc: On Trees,time_st: 0, time_end: 0, month_st: 7, month_end: 8
+id: 62,name: Miyama stag,price: 1000,loc: On Trees,time_st: 0, time_end: 0, month_st: 7, month_end: 8
+id: 63,name: Giant stag,price: 10000,loc: On Trees,time_st: 23, time_end: 8, month_st: 7, month_end: 8
+id: 64,name: Rainbow stag,price: 6000,loc: On Trees,time_st: 19, time_end: 8, month_st: 6, month_end: 9
+id: 65,name: Cyclommatus stag,price: 8000,loc: On Trees (Coconut),time_st: 17, time_end: 8, month_st: 7, month_end: 8
+id: 66,name: Golden stag,price: 12000,loc: On Trees (Coconut),time_st: 17, time_end: 8, month_st: 7, month_end: 8
+id: 67,name: Giraffe stag,price: 12000,loc: On Trees (Coconut?),time_st: 17, time_end: 8, month_st: 7, month_end: 8
+id: 68,name: Horned dynastid,price: 1350,loc: On Trees,time_st: 17, time_end: 8, month_st: 7, month_end: 8
+id: 69,name: Horned atlas,price: 8000,loc: On Trees (Coconut),time_st: 17, time_end: 8, month_st: 7, month_end: 8
+id: 70,name: Horned elephant,price: 8000,loc: On Trees (Coconut),time_st: 17, time_end: 8, month_st: 7, month_end: 8
+id: 71,name: Horned hercules,price: 12000,loc: On Trees (Coconut),time_st: 17, time_end: 8, month_st: 7, month_end: 8
+id: 72,name: Walking stick,price: 600,loc: On Trees,time_st: 4, time_end: 8, month_st: 7, month_end: 11
+id: 73,name: Walking stick,price: 600,loc: On Trees,time_st: 17, time_end: 19, month_st: 7, month_end: 11
+id: 74,name: Walking leaf,price: 600,loc: Under Trees Disguised as Leafs,time_st: 0, time_end: 0, month_st: 7, month_end: 9
+id: 75,name: Bagworm,price: 600,loc: Shaking Trees,time_st: 0, time_end: 0, month_st: 0, month_end: 0
+id: 76,name: Ant,price: 80,loc: On rotten food,time_st: 0, time_end: 0, month_st: 0, month_end: 0
+id: 77,name: Hermit crab,price: 1000,loc: Beach disguised as Shells,time_st: 19, time_end: 8, month_st: 0, month_end: 0
+id: 78,name: Wharf roach,price: 200,loc: On Beach Rocks,time_st: 0, time_end: 0, month_st: 0, month_end: 0
+id: 79,name: Fly,price: 60,loc: On Trash Items,time_st: 0, time_end: 0, month_st: 0, month_end: 0
+id: 80,name: Mosquito,price: 130,loc: Flying,time_st: 17, time_end: 4, month_st: 6, month_end: 9
+id: 81,name: Flea,price: 70,loc: Villager's Heads,time_st: 0, time_end: 0, month_st: 4, month_end: 11
+id: 82,name: Snail,price: 250,loc: On Rocks (Rain),time_st: 0, time_end: 0, month_st: 0, month_end: 0
+id: 83,name: Pill bug,price: 250,loc: Hitting Rocks,time_st: 23, time_end: 16, month_st: 9, month_end: 6
+id: 84,name: Centipede,price: 300,loc: Hitting Rocks,time_st: 16, time_end: 23, month_st: 9, month_end: 6
+id: 85,name: Spider,price: 480,loc: Shaking Trees,time_st: 19, time_end: 8, month_st: 0, month_end: 0
+id: 86,name: Tarantula,price: 8000,loc: On the Ground,time_st: 19, time_end: 4, month_st: 11, month_end: 4
+id: 87,name: Scorpion,price: 8000,loc: On the Ground,time_st: 19, time_end: 4, month_st: 5, month_end: 10
