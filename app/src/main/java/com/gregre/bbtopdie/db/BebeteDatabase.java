@@ -30,7 +30,7 @@ import javax.net.ssl.HttpsURLConnection;
  * app, consider exporting the schema to help you with migrations.
  */
 
-@Database(entities = {Bug.class, Fish.class}, version = 13, exportSchema = false)
+@Database(entities = {Bug.class, Fish.class}, version = 14, exportSchema = false)
 public abstract class BebeteDatabase extends RoomDatabase {
 
     public abstract BugDao bugDao();
@@ -131,14 +131,9 @@ public abstract class BebeteDatabase extends RoomDatabase {
                                 id = jsonReader.nextInt();
                             } else if (key.equals("file-name")) {
                                 name = jsonReader.nextString();
-                                if(name.equals("char")) {
-                                    // TODO : remove from bug and add only in fish
-                                    name = "char_fish"; // because APPARENTLY there is a FISH CALLED CHAR
-                                } else {
-                                    Pattern p = Pattern.compile("-");
-                                    Matcher m = p.matcher(name);
-                                    name = m.replaceAll("_");
-                                }
+                                Pattern p = Pattern.compile("-");
+                                Matcher m = p.matcher(name);
+                                name = m.replaceAll("_");
                             } else if (key.equals("name-EUfr")) {
                                 name_fr = jsonReader.nextString();
                             } else if (key.equals("month-northern")) {
@@ -390,176 +385,308 @@ public abstract class BebeteDatabase extends RoomDatabase {
                 FishDao fish_dao = INSTANCE.fishDao();
                 fish_dao.deleteAll();
 
-                Fish fish = new Fish(1,"Bouvière",900,"Rivière",1,0,0,11,3);
-                fish_dao.insert(fish);
-                fish = new Fish(2,"Chevaine",200,"Rivière",1,9,16,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(3,"Carassin",160,"Rivière",2,0,0,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(4,"Vandoise",192,"Rivière",3,16,9,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(5,"Carpe",300,"Étang",4,0,0,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(6,"Carpe koï",4000,"Étang",4,16,9,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(7,"Poisson rouge",1300,"Étang",1,0,0,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(8,"Cyprin doré",1300,"Étang",1,9,16,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(9,"Ranchu",4500,"Étang",2,9,16,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(10,"Fondule barré",300,"Étang",1,0,0,4,8);
-                fish_dao.insert(fish);
-                fish = new Fish(11,"Écrevisse",200,"Étang",2,0,0,4,9);
-                fish_dao.insert(fish);
-                fish = new Fish(12,"Tortue trionyx",3750,"Rivière",4,16,9,8,9);
-                fish_dao.insert(fish);
-                fish = new Fish(13,"Tortue serpentine",5000,"Rivière",5,21,4,4,10);
-                fish_dao.insert(fish);
-                fish = new Fish(14,"Têtard",100,"Étang",1,0,0,3,7);
-                fish_dao.insert(fish);
-                fish = new Fish(15,"Grenouille",120,"Étang",2,0,0,5,8);
-                fish_dao.insert(fish);
-                fish = new Fish(16,"Gobie d'eau douce",400,"Rivière",2,16,9,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(17,"Loche d'étang",400,"Rivière",2,0,0,3,5);
-                fish_dao.insert(fish);
-                fish = new Fish(18,"Silure",800,"Étang",4,16,9,5,10);
-                fish_dao.insert(fish);
-                fish = new Fish(19,"Tête de serpent",5500,"Étang",5,9,16,6,8);
-                fish_dao.insert(fish);
-                fish = new Fish(20,"Crapet",180,"Rivière",2,9,16,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(21,"Perche jaune",300,"Rivière",3,0,0,10,3);
-                fish_dao.insert(fish);
-                fish = new Fish(22,"Bar",320,"Rivière",4,0,0,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(23,"Tilapia",800,"Rivière",3,0,0,6,10);
-                fish_dao.insert(fish);
-                fish = new Fish(24,"Brochet",1800,"Rivière",5,0,0,9,12);
-                fish_dao.insert(fish);
-                fish = new Fish(25,"Éperlan",500,"Rivière",2,0,0,12,2);
-                fish_dao.insert(fish);
-                fish = new Fish(26,"Ayu",900,"Rivière",3,0,0,7,9);
-                fish_dao.insert(fish);
-                fish = new Fish(27,"Saumon masou",800,"Rivière (falaise)",3,16,9,3,6);
-                fish_dao.insert(fish);
-                fish = new Fish(28,"Saumon masou",800,"Rivière (falaise)",3,16,9,9,11);
-                fish_dao.insert(fish);
-                fish = new Fish(29,"Omble",3800,"Rivière (falaise)  Étang",3,16,9,3,6);
-                fish_dao.insert(fish);
-                fish = new Fish(30,"Omble",3800,"Rivière (falaise)  Étang",3,16,9,9,11);
-                fish_dao.insert(fish);
-                fish = new Fish(31,"Truite dorée",15000,"Rivière (falaise)",3,16,9,3,5);
-                fish_dao.insert(fish);
-                fish = new Fish(32,"Truite dorée",15000,"Rivière (falaise)",3,16,9,9,11);
-                fish_dao.insert(fish);
-                fish = new Fish(33,"Dai yu",15000,"Rivière (falaise)",5,16,9,12,3);
-                fish_dao.insert(fish);
-                fish = new Fish(34,"Saumon",700,"Rivière (embouchure)",4,0,0,9,9);
-                fish_dao.insert(fish);
-                fish = new Fish(35,"Saumon roi",1800,"Rivière (embouchure)",6,0,0,9,9);
-                fish_dao.insert(fish);
-                fish = new Fish(36,"Crabe chinois",2000,"Rivière",2,16,9,9,11);
-                fish_dao.insert(fish);
-                fish = new Fish(37,"Guppy",1300,"Rivière",1,9,16,4,11);
-                fish_dao.insert(fish);
-                fish = new Fish(38,"Poisson-docteur",1500,"Rivière",1,9,16,5,9);
-                fish_dao.insert(fish);
-                fish = new Fish(39,"Poisson-ange",3000,"Rivière",2,16,9,5,10);
-                fish_dao.insert(fish);
-                fish = new Fish(40,"Combattant",2500,"Rivière",2,9,16,5,10);
-                fish_dao.insert(fish);
-                fish = new Fish(41,"Néon bleu",500,"Rivière",1,9,16,4,11);
-                fish_dao.insert(fish);
-                fish = new Fish(42,"Poisson arc-en-ciel",800,"Rivière",1,9,16,5,10);
-                fish_dao.insert(fish);
-                fish = new Fish(43,"Piranha",2500,"Rivière",2,9,16,6,9);
-                fish_dao.insert(fish);
-                fish = new Fish(44,"Piranha",2500,"Rivière",2,21,4,6,9);
-                fish_dao.insert(fish);
-                fish = new Fish(45,"Arowana",10000,"Rivière",4,16,9,6,9);
-                fish_dao.insert(fish);
-                fish = new Fish(46,"Dorade",15000,"Rivière",5,4,21,6,9);
-                fish_dao.insert(fish);
-                fish = new Fish(47,"Gar",6000,"Étang",6,16,9,6,9);
-                fish_dao.insert(fish);
-                fish = new Fish(48,"Arapaïma",10000,"Rivière",6,16,9,6,9);
-                fish_dao.insert(fish);
-                fish = new Fish(49,"Bichir",4000,"Rivière",4,21,4,6,9);
-                fish_dao.insert(fish);
-                fish = new Fish(50,"Esturgeon",10000,"Rivière (embouchure)",6,0,0,9,3);
-                fish_dao.insert(fish);
-                fish = new Fish(51,"Clione",1000,"Océan",1,0,0,12,3);
-                fish_dao.insert(fish);
-                fish = new Fish(52,"Hippocampe",1100,"Océan",1,0,0,4,11);
-                fish_dao.insert(fish);
-                fish = new Fish(53,"Poisson-clown",650,"Océan",1,0,0,4,9);
-                fish_dao.insert(fish);
-                fish = new Fish(54,"Poisson chirurgien",1000,"Océan",2,0,0,4,9);
-                fish_dao.insert(fish);
-                fish = new Fish(55,"Poisson-papillon",1000,"Océan",2,0,0,4,9);
-                fish_dao.insert(fish);
-                fish = new Fish(56,"Napoléon",10000,"Océan",6,4,21,7,8);
-                fish_dao.insert(fish);
-                fish = new Fish(57,"Poisson-scorpion",500,"Océan",3,0,0,4,11);
-                fish_dao.insert(fish);
-                fish = new Fish(58,"Poisson ballon",5000,"Océan",3,21,4,11,2);
-                fish_dao.insert(fish);
-                fish = new Fish(59,"Poisson porc-épic",250,"Océan",3,0,0,7,9);
-                fish_dao.insert(fish);
-                fish = new Fish(60,"Anchois",200,"Océan",2,4,21,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(61,"Chinchard",150,"Océan",2,0,0,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(62,"Scarus",5000,"Océan",3,0,0,3,11);
-                fish_dao.insert(fish);
-                fish = new Fish(63,"Bar commun",400,"Océan",5,0,0,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(64,"Vivaneau",3000,"Océan",4,0,0,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(65,"Limande",300,"Océan",3,0,0,10,4);
-                fish_dao.insert(fish);
-                fish = new Fish(66,"Cardeau",800,"Océan",5,0,0,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(67,"Calmar",500,"Océan",3,0,0,12,8);
-                fish_dao.insert(fish);
-                fish = new Fish(68,"Murène",2000,"Océan",7,0,0,8,10);
-                fish_dao.insert(fish);
-                fish = new Fish(69,"Murène ruban bleue",600,"Océan",7,0,0,6,10);
-                fish_dao.insert(fish);
-                fish = new Fish(70,"Thon",7000,"Ponton",6,0,0,11,4);
-                fish_dao.insert(fish);
-                fish = new Fish(71,"Marlin bleu",10000,"Ponton",6,0,0,11,4);
-                fish_dao.insert(fish);
-                fish = new Fish(72,"Marlin bleu",10000,"Ponton",6,0,0,7,9);
-                fish_dao.insert(fish);
-                fish = new Fish(73,"Carangue grosse tête",4500,"Ponton",5,0,0,5,10);
-                fish_dao.insert(fish);
-                fish = new Fish(74,"Coryphène",6000,"Ponton",5,0,0,5,10);
-                fish_dao.insert(fish);
-                fish = new Fish(75,"Lune de mer",4000,"Océan",6,4,21,7,9);
-                fish_dao.insert(fish);
-                fish = new Fish(76,"Raie",3000,"Océan",5,4,21,8,11);
-                fish_dao.insert(fish);
-                fish = new Fish(77,"Requin scie",12000,"Océan",6,16,9,6,9);
-                fish_dao.insert(fish);
-                fish = new Fish(78,"Requin marteau",8000,"Océan",6,16,9,6,9);
-                fish_dao.insert(fish);
-                fish = new Fish(79,"Grand requin blanc",15000,"Océan",6,16,9,6,9);
-                fish_dao.insert(fish);
-                fish = new Fish(80,"Requin baleine",13000,"Océan",6,0,0,6,9);
-                fish_dao.insert(fish);
-                fish = new Fish(81,"Rémora Rayé",1500,"Océan",4,0,0,6,9);
-                fish_dao.insert(fish);
-                fish = new Fish(82,"Poisson lanterne",2500,"Océan",4,16,9,11,3);
-                fish_dao.insert(fish);
-                fish = new Fish(83,"Poisson-ruban",9000,"Océan",6,0,0,12,5);
-                fish_dao.insert(fish);
-                fish = new Fish(84,"Macropinna",15000,"Océan",2,21,4,0,0);
-                fish_dao.insert(fish);
-                fish = new Fish(85,"Coelacanthe",15000,"Océan (pluie)",6,0,0,0,0);
-                fish_dao.insert(fish);
+                // Create URL
+                endpoint = null;
+                try {
+                    endpoint = new URL("https://acnhapi.com/v1/fish/");
+
+                    // Create connection
+                    HttpsURLConnection myConnection =
+                            (HttpsURLConnection) endpoint.openConnection();
+
+                    if (myConnection.getResponseCode() == 200) {
+                        // Success
+                        InputStream responseBody = myConnection.getInputStream();
+                        InputStreamReader responseBodyReader =
+                                new InputStreamReader(responseBody, "UTF-8");
+                        JsonReader jsonReader = new JsonReader(responseBodyReader);
+
+                        jsonReader.beginObject(); // Start processing the JSON object
+
+                        int id = -1;
+                        String name = null;
+                        String name_fr = null;
+                        String month_northern = null;
+                        List<Integer> month_array_northern = null;
+                        String month_southern = null;
+                        List<Integer> month_array_southern = null;
+                        String time = null;
+                        List<Integer> time_array = null;
+                        boolean isAllDay = false;
+                        boolean isAllYear = false;
+                        String location = null;
+                        String rarity = null;
+                        int price = -1;
+                        String shadow = null;
+                        String icon_uri = null;
+                        String key;
+                        boolean fullEntry = false;
+
+                        while (jsonReader.hasNext()) { // Loop through all keys
+
+                            key = jsonReader.nextName(); // Fetch the next key
+
+                            if (jsonReader.peek().equals(JsonToken.BEGIN_OBJECT)) {
+                                jsonReader.beginObject();
+                                key = jsonReader.nextName(); // Fetch the next key
+
+                            }
+
+                            if (key.equals("id")) {
+                                id = jsonReader.nextInt();
+                            } else if (key.equals("file-name")) {
+                                name = jsonReader.nextString();
+                                if(name.equals("char")) {
+                                    name = "char_fish"; // because APPARENTLY there is a FISH CALLED CHAR
+                                } else {
+                                    Pattern p = Pattern.compile("-");
+                                    Matcher m = p.matcher(name);
+                                    name = m.replaceAll("_");
+                                }
+                            } else if (key.equals("name-EUfr")) {
+                                name_fr = jsonReader.nextString();
+                            } else if (key.equals("month-northern")) {
+                                month_northern = jsonReader.nextString();
+                            } else if (key.equals("month-array-northern")) {
+                                month_array_northern = new ArrayList<>();
+                                jsonReader.beginArray();
+                                while (jsonReader.hasNext()) {
+                                    month_array_northern.add(jsonReader.nextInt());
+                                }
+                                jsonReader.endArray();
+                            } else if (key.equals("month-southern")) {
+                                month_southern = jsonReader.nextString();
+                            } else if (key.equals("month-array-southern")) {
+                                month_array_southern = new ArrayList<>();
+                                jsonReader.beginArray();
+                                while (jsonReader.hasNext()) {
+                                    month_array_southern.add(jsonReader.nextInt());
+                                }
+                                jsonReader.endArray();
+                            } else if (key.equals("time")) {
+                                time = jsonReader.nextString();
+                            } else if(key.equals("time-array")) {
+                                time_array = new ArrayList<>();
+                                jsonReader.beginArray();
+                                while (jsonReader.hasNext()) {
+                                    time_array.add(jsonReader.nextInt());
+                                }
+                                jsonReader.endArray();
+                            } else if (key.equals("isAllDay")) {
+                                isAllDay = jsonReader.nextBoolean();
+                            } else if (key.equals("isAllYear")) {
+                                isAllYear = jsonReader.nextBoolean();
+                            } else if (key.equals("location")) {
+                                location = jsonReader.nextString();
+                            } else if (key.equals("rarity")) {
+                                rarity = jsonReader.nextString();
+                            } else if (key.equals("price")) {
+                                price = jsonReader.nextInt();
+                            } else if (key.equals("shadow")) {
+                                shadow = jsonReader.nextString();
+                            } else if(key.equals("icon_uri")) {
+                                icon_uri = jsonReader.nextString();
+                                fullEntry = true;
+                            } else {
+                                jsonReader.skipValue();
+                            }
+
+                            if(fullEntry) {
+                                name_fr = capitalize(name_fr);
+
+                                Fish fish = new Fish(id, name, name_fr, month_northern, month_array_northern, month_southern, month_array_southern, time, time_array, isAllDay, isAllYear, location, rarity, price, shadow, icon_uri);
+                                fish_dao.insert(fish);
+
+                                fullEntry = false;
+                            }
+
+                            if (jsonReader.peek().equals(JsonToken.END_OBJECT)) {
+                                jsonReader.endObject();
+                            }
+
+                        }
+
+                        jsonReader.close();
+                    } else {
+                        // Error handling code goes here
+                    }
+                    myConnection.disconnect();
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+//                Fish fish = new Fish(1,"Bouvière",900,"Rivière",1,0,0,11,3);
+//                fish_dao.insert(fish);
+//                fish = new Fish(2,"Chevaine",200,"Rivière",1,9,16,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(3,"Carassin",160,"Rivière",2,0,0,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(4,"Vandoise",192,"Rivière",3,16,9,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(5,"Carpe",300,"Étang",4,0,0,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(6,"Carpe koï",4000,"Étang",4,16,9,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(7,"Poisson rouge",1300,"Étang",1,0,0,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(8,"Cyprin doré",1300,"Étang",1,9,16,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(9,"Ranchu",4500,"Étang",2,9,16,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(10,"Fondule barré",300,"Étang",1,0,0,4,8);
+//                fish_dao.insert(fish);
+//                fish = new Fish(11,"Écrevisse",200,"Étang",2,0,0,4,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(12,"Tortue trionyx",3750,"Rivière",4,16,9,8,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(13,"Tortue serpentine",5000,"Rivière",5,21,4,4,10);
+//                fish_dao.insert(fish);
+//                fish = new Fish(14,"Têtard",100,"Étang",1,0,0,3,7);
+//                fish_dao.insert(fish);
+//                fish = new Fish(15,"Grenouille",120,"Étang",2,0,0,5,8);
+//                fish_dao.insert(fish);
+//                fish = new Fish(16,"Gobie d'eau douce",400,"Rivière",2,16,9,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(17,"Loche d'étang",400,"Rivière",2,0,0,3,5);
+//                fish_dao.insert(fish);
+//                fish = new Fish(18,"Silure",800,"Étang",4,16,9,5,10);
+//                fish_dao.insert(fish);
+//                fish = new Fish(19,"Tête de serpent",5500,"Étang",5,9,16,6,8);
+//                fish_dao.insert(fish);
+//                fish = new Fish(20,"Crapet",180,"Rivière",2,9,16,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(21,"Perche jaune",300,"Rivière",3,0,0,10,3);
+//                fish_dao.insert(fish);
+//                fish = new Fish(22,"Bar",320,"Rivière",4,0,0,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(23,"Tilapia",800,"Rivière",3,0,0,6,10);
+//                fish_dao.insert(fish);
+//                fish = new Fish(24,"Brochet",1800,"Rivière",5,0,0,9,12);
+//                fish_dao.insert(fish);
+//                fish = new Fish(25,"Éperlan",500,"Rivière",2,0,0,12,2);
+//                fish_dao.insert(fish);
+//                fish = new Fish(26,"Ayu",900,"Rivière",3,0,0,7,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(27,"Saumon masou",800,"Rivière (falaise)",3,16,9,3,6);
+//                fish_dao.insert(fish);
+//                fish = new Fish(28,"Saumon masou",800,"Rivière (falaise)",3,16,9,9,11);
+//                fish_dao.insert(fish);
+//                fish = new Fish(29,"Omble",3800,"Rivière (falaise)  Étang",3,16,9,3,6);
+//                fish_dao.insert(fish);
+//                fish = new Fish(30,"Omble",3800,"Rivière (falaise)  Étang",3,16,9,9,11);
+//                fish_dao.insert(fish);
+//                fish = new Fish(31,"Truite dorée",15000,"Rivière (falaise)",3,16,9,3,5);
+//                fish_dao.insert(fish);
+//                fish = new Fish(32,"Truite dorée",15000,"Rivière (falaise)",3,16,9,9,11);
+//                fish_dao.insert(fish);
+//                fish = new Fish(33,"Dai yu",15000,"Rivière (falaise)",5,16,9,12,3);
+//                fish_dao.insert(fish);
+//                fish = new Fish(34,"Saumon",700,"Rivière (embouchure)",4,0,0,9,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(35,"Saumon roi",1800,"Rivière (embouchure)",6,0,0,9,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(36,"Crabe chinois",2000,"Rivière",2,16,9,9,11);
+//                fish_dao.insert(fish);
+//                fish = new Fish(37,"Guppy",1300,"Rivière",1,9,16,4,11);
+//                fish_dao.insert(fish);
+//                fish = new Fish(38,"Poisson-docteur",1500,"Rivière",1,9,16,5,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(39,"Poisson-ange",3000,"Rivière",2,16,9,5,10);
+//                fish_dao.insert(fish);
+//                fish = new Fish(40,"Combattant",2500,"Rivière",2,9,16,5,10);
+//                fish_dao.insert(fish);
+//                fish = new Fish(41,"Néon bleu",500,"Rivière",1,9,16,4,11);
+//                fish_dao.insert(fish);
+//                fish = new Fish(42,"Poisson arc-en-ciel",800,"Rivière",1,9,16,5,10);
+//                fish_dao.insert(fish);
+//                fish = new Fish(43,"Piranha",2500,"Rivière",2,9,16,6,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(44,"Piranha",2500,"Rivière",2,21,4,6,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(45,"Arowana",10000,"Rivière",4,16,9,6,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(46,"Dorade",15000,"Rivière",5,4,21,6,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(47,"Gar",6000,"Étang",6,16,9,6,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(48,"Arapaïma",10000,"Rivière",6,16,9,6,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(49,"Bichir",4000,"Rivière",4,21,4,6,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(50,"Esturgeon",10000,"Rivière (embouchure)",6,0,0,9,3);
+//                fish_dao.insert(fish);
+//                fish = new Fish(51,"Clione",1000,"Océan",1,0,0,12,3);
+//                fish_dao.insert(fish);
+//                fish = new Fish(52,"Hippocampe",1100,"Océan",1,0,0,4,11);
+//                fish_dao.insert(fish);
+//                fish = new Fish(53,"Poisson-clown",650,"Océan",1,0,0,4,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(54,"Poisson chirurgien",1000,"Océan",2,0,0,4,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(55,"Poisson-papillon",1000,"Océan",2,0,0,4,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(56,"Napoléon",10000,"Océan",6,4,21,7,8);
+//                fish_dao.insert(fish);
+//                fish = new Fish(57,"Poisson-scorpion",500,"Océan",3,0,0,4,11);
+//                fish_dao.insert(fish);
+//                fish = new Fish(58,"Poisson ballon",5000,"Océan",3,21,4,11,2);
+//                fish_dao.insert(fish);
+//                fish = new Fish(59,"Poisson porc-épic",250,"Océan",3,0,0,7,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(60,"Anchois",200,"Océan",2,4,21,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(61,"Chinchard",150,"Océan",2,0,0,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(62,"Scarus",5000,"Océan",3,0,0,3,11);
+//                fish_dao.insert(fish);
+//                fish = new Fish(63,"Bar commun",400,"Océan",5,0,0,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(64,"Vivaneau",3000,"Océan",4,0,0,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(65,"Limande",300,"Océan",3,0,0,10,4);
+//                fish_dao.insert(fish);
+//                fish = new Fish(66,"Cardeau",800,"Océan",5,0,0,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(67,"Calmar",500,"Océan",3,0,0,12,8);
+//                fish_dao.insert(fish);
+//                fish = new Fish(68,"Murène",2000,"Océan",7,0,0,8,10);
+//                fish_dao.insert(fish);
+//                fish = new Fish(69,"Murène ruban bleue",600,"Océan",7,0,0,6,10);
+//                fish_dao.insert(fish);
+//                fish = new Fish(70,"Thon",7000,"Ponton",6,0,0,11,4);
+//                fish_dao.insert(fish);
+//                fish = new Fish(71,"Marlin bleu",10000,"Ponton",6,0,0,11,4);
+//                fish_dao.insert(fish);
+//                fish = new Fish(72,"Marlin bleu",10000,"Ponton",6,0,0,7,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(73,"Carangue grosse tête",4500,"Ponton",5,0,0,5,10);
+//                fish_dao.insert(fish);
+//                fish = new Fish(74,"Coryphène",6000,"Ponton",5,0,0,5,10);
+//                fish_dao.insert(fish);
+//                fish = new Fish(75,"Lune de mer",4000,"Océan",6,4,21,7,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(76,"Raie",3000,"Océan",5,4,21,8,11);
+//                fish_dao.insert(fish);
+//                fish = new Fish(77,"Requin scie",12000,"Océan",6,16,9,6,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(78,"Requin marteau",8000,"Océan",6,16,9,6,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(79,"Grand requin blanc",15000,"Océan",6,16,9,6,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(80,"Requin baleine",13000,"Océan",6,0,0,6,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(81,"Rémora Rayé",1500,"Océan",4,0,0,6,9);
+//                fish_dao.insert(fish);
+//                fish = new Fish(82,"Poisson lanterne",2500,"Océan",4,16,9,11,3);
+//                fish_dao.insert(fish);
+//                fish = new Fish(83,"Poisson-ruban",9000,"Océan",6,0,0,12,5);
+//                fish_dao.insert(fish);
+//                fish = new Fish(84,"Macropinna",15000,"Océan",2,21,4,0,0);
+//                fish_dao.insert(fish);
+//                fish = new Fish(85,"Coelacanthe",15000,"Océan (pluie)",6,0,0,0,0);
+//                fish_dao.insert(fish);
 
 
             });

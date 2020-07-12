@@ -13,6 +13,8 @@ import com.gregre.bbtopdie.db.Fish;
 
 import java.lang.reflect.Field;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishViewHolder> {
     class FishViewHolder extends RecyclerView.ViewHolder {
@@ -51,21 +53,46 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
     public void onBindViewHolder(FishListAdapter.FishViewHolder holder, int position) {
         if (mFishes != null) {
             Fish current = mFishes.get(position);
-            holder.fishItemView.setText(current.getName());
+            holder.fishItemView.setText(current.getName_fr());
             holder.fishPriceView.setText(current.getPrice() + " cloch.");
-            if(current.getTime_1() == 0) {
+            if(current.isIs_all_day()) {
                 holder.fishTimeView.setText("Toute la journée");
             } else {
-                holder.fishTimeView.setText(current.getTime_1() + "h - " + current.getTime_2() + "h");
+                String time = current.getTime();
+
+                Pattern p = Pattern.compile("([0-9]+)pm");
+                Matcher m = p.matcher(time);
+
+                while (m.find()) {
+                    int hour_pm = Integer.parseInt(m.group(1))+12;
+                    time = m.replaceFirst(hour_pm+"h");
+                    m = p.matcher(time);
+                }
+                p = Pattern.compile("am");
+                m = p.matcher(time);
+                time = m.replaceAll("h");
+
+                holder.fishTimeView.setText(time);
             }
-            if(current.getPeriod_1() == 0) {
+            if(current.isIs_all_year()) {
                 holder.fishPeriodView.setText("Toute l'année");
             } else {
-                holder.fishPeriodView.setText(String.valueOf(periodToString(current.getPeriod_1())) + " - " + periodToString(current.getPeriod_2()));
-            }
-            holder.fishPlaceView.setText(current.getPlace());
+                String period = current.getPeriod_north();
 
-            int resID = getResId("fish" + current.getId(), R.drawable.class);
+                Pattern p = Pattern.compile("([0-9]+)");
+                Matcher m = p.matcher(period);
+
+                while (m.find()) {
+                    int month = Integer.parseInt(m.group(1));
+                    period = m.replaceFirst(monthToString(month));
+                    m = p.matcher(period);
+                }
+
+                holder.fishPeriodView.setText(period);
+            }
+            holder.fishPlaceView.setText(current.getLocation());
+
+            int resID = getResId(current.getName(), R.drawable.class);
             holder.imageView.setImageResource(resID);
 
         } else {
@@ -94,7 +121,7 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
         notifyDataSetChanged();
     }
 
-    public String periodToString(int period) {
+    public String monthToString(int period) {
         switch (period) {
             case 1:
                 return "Janvier";

@@ -31,7 +31,11 @@ public class FishRepository {
         return mAllFishes;
     }
 
-    LiveData<List<Fish>> getFishesNow(int hour, int month) { return mFishDao.getFishesNow(hour, month); }
+    LiveData<List<Fish>> getFishesNow(int hour, int month) {
+        String h = "%;"+hour+";%";
+        String m = "%;"+month+";%";
+        return mFishDao.getFishesNow(h, m);
+    }
 
     // You must call this on a non-UI thread or your app will throw an exception. Room ensures
     // that you're not doing any long running operations on the main thread, blocking the UI.
