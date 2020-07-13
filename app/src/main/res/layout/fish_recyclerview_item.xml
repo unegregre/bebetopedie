@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_vertical|left"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="1dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -76,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="1dp"
             android:orientation="horizontal">
 
 
@@ -88,7 +88,7 @@
 
 
             <TextView
-                android:id="@+id/fishPlaceView"
+                android:id="@+id/fishLocationView"
                 style="@style/bug_attribute"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -98,7 +98,51 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:layout_marginBottom="2dp"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                style="@style/bug_attribute_title"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Rareté :" />
+
+
+            <TextView
+                android:id="@+id/fishRarityView"
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal">
+
+
+            <TextView
+                style="@style/bug_attribute_title"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="Ombre :" />
+
+
+            <TextView
+                android:id="@+id/fishShadowView"
+                style="@style/bug_attribute"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="1dp"
             android:orientation="horizontal">
 
 

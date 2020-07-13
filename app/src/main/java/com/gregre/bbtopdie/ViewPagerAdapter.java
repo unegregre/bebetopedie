@@ -7,9 +7,10 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.gregre.bbtopdie.bug.BugFragment;
 import com.gregre.bbtopdie.fish.FishFragment;
+import com.gregre.bbtopdie.sea.SeaFragment;
 
 public class ViewPagerAdapter extends FragmentStateAdapter {
-    private static final int TAB_COUNT = 2;
+    private static final int TAB_COUNT = 3;
     public ViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
@@ -17,8 +18,10 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
         switch(position) {
             case 0:
                 return BugFragment.newInstance(position);
-            default:
+            case 1:
                 return FishFragment.newInstance(position);
+            default:
+                return SeaFragment.newInstance(position);
         }
     }
     @Override public int getItemCount() {

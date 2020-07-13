@@ -1,68 +1,68 @@
-package com.gregre.bbtopdie.bug;
+package com.gregre.bbtopdie.sea;
 
 import android.content.Context;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.gregre.bbtopdie.R;
-import com.gregre.bbtopdie.db.Bug;
+import com.gregre.bbtopdie.db.SeaCreature;
 
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewHolder> {
+public class SeaListAdapter extends RecyclerView.Adapter<SeaListAdapter.SeaViewHolder> {
 
-    class BugViewHolder extends RecyclerView.ViewHolder {
-        private final TextView bugItemView;
-        private final TextView bugPriceView;
-        private final TextView bugTimeView;
-        private final TextView bugPeriodView;
-        private final TextView bugLocationView;
-        private final TextView bugRarityView;
+    class SeaViewHolder extends RecyclerView.ViewHolder {
+        private final TextView seaItemView;
+        private final TextView seaPriceView;
+        private final TextView seaTimeView;
+        private final TextView seaPeriodView;
+        private final TextView seaSpeedView;
+        private final TextView seaShadowView;
         private final ImageView imageView;
 
-        private BugViewHolder(View itemView) {
+        private SeaViewHolder(View itemView) {
             super(itemView);
-            bugItemView = itemView.findViewById(R.id.bugTextView);
-            bugPriceView = itemView.findViewById(R.id.bugPriceView);
-            bugTimeView = itemView.findViewById(R.id.bugTimeView);
-            bugPeriodView = itemView.findViewById(R.id.bugPeriodView);
-            bugLocationView = itemView.findViewById(R.id.bugLocationView);
-            bugRarityView = itemView.findViewById(R.id.bugRarityView);
-            imageView = itemView.findViewById(R.id.bugImageView);
+            seaItemView = itemView.findViewById(R.id.seaTextView);
+            seaPriceView = itemView.findViewById(R.id.seaPriceView);
+            seaTimeView = itemView.findViewById(R.id.seaTimeView);
+            seaPeriodView = itemView.findViewById(R.id.seaPeriodView);
+            seaSpeedView = itemView.findViewById(R.id.seaSpeedView);
+            seaShadowView = itemView.findViewById(R.id.seaShadowView);
+            imageView = itemView.findViewById(R.id.seaImageView);
         }
     }
 
     private final LayoutInflater mInflater;
-    private List<Bug> mBugs; // Cached copy of bugs
+    private List<SeaCreature> seaCreatures; // Cached copy of seas
 
-    public BugListAdapter(Context context) {
+    public SeaListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
     }
 
     @Override
-    public BugViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemView = mInflater.inflate(R.layout.bug_recyclerview_item, parent, false);
-        return new BugViewHolder(itemView);
+    public SeaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemView = mInflater.inflate(R.layout.sea_recyclerview_item, parent, false);
+        return new SeaViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(BugViewHolder holder, int position) {
-        if (mBugs != null) {
-            Bug current = mBugs.get(position);
-            holder.bugItemView.setText(current.getName_fr());
-            holder.bugLocationView.setText(current.getLocation());
-            holder.bugRarityView.setText(current.getRarity());
-            holder.bugPriceView.setText(current.getPrice() + " cloch.");
+    public void onBindViewHolder(SeaViewHolder holder, int position) {
+        if (seaCreatures != null) {
+            SeaCreature current = seaCreatures.get(position);
+            holder.seaItemView.setText(current.getName_fr());
+            holder.seaSpeedView.setText(current.getSpeed());
+            holder.seaShadowView.setText(current.getShadow());
+            holder.seaPriceView.setText(current.getPrice() + " cloch.");
             if(current.isIs_all_day()) {
-                holder.bugTimeView.setText("Toute la journée");
+                holder.seaTimeView.setText("Toute la journée");
             } else {
                 String time = current.getTime();
 
@@ -78,10 +78,10 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
                 m = p.matcher(time);
                 time = m.replaceAll("h");
 
-                holder.bugTimeView.setText(time);
+                holder.seaTimeView.setText(time);
             }
             if(current.isIs_all_year()) {
-                holder.bugPeriodView.setText("Toute l'année");
+                holder.seaPeriodView.setText("Toute l'année");
             } else {
                 String period = current.getPeriod_north();
 
@@ -94,7 +94,7 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
                     m = p.matcher(period);
                 }
 
-                holder.bugPeriodView.setText(period);
+                holder.seaPeriodView.setText(period);
             }
 
             int resID = getResId(current.getName(), R.drawable.class);
@@ -102,10 +102,10 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
 
         } else {
             // Covers the case of data not being ready yet.
-            holder.bugItemView.setText("No Bug");
-            holder.bugPriceView.setText("0");
-            holder.bugTimeView.setText("None");
-            holder.bugPeriodView.setText("None");
+            holder.seaItemView.setText("No Sea");
+            holder.seaPriceView.setText("0");
+            holder.seaTimeView.setText("None");
+            holder.seaPeriodView.setText("None");
         }
     }
 
@@ -150,17 +150,18 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
         }
     }
 
-    public void setBugs(List<Bug> bugs) {
-        mBugs = bugs;
+    public void setSeaCreatures(List<SeaCreature> seaCreatures) {
+        //TODO : comprendre pourquoi ici le paramètre de la fonction est vide (size = 0)
+        this.seaCreatures = seaCreatures;
         notifyDataSetChanged();
     }
 
     // getItemCount() is called many times, and when it is first called,
-    // mBugs has not been updated (means initially, it's null, and we can't return null).
+    // mSeas has not been updated (means initially, it's null, and we can't return null).
     @Override
     public int getItemCount() {
-        if (mBugs != null)
-            return mBugs.size();
+        if (seaCreatures != null)
+            return seaCreatures.size();
         else return 0;
     }
 }

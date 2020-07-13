@@ -10,20 +10,19 @@
 
 
     <ImageView
-        android:id="@+id/bugImageView"
+        android:id="@+id/seaImageView"
         android:layout_width="150px"
         android:layout_height="150px"
         android:layout_gravity="center"/>
 
     <TextView
-        android:id="@+id/bugTextView"
+        android:id="@+id/seaTextView"
         style="@style/bug_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_gravity="center_horizontal"
         android:breakStrategy="balanced"/>
-
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -45,7 +44,7 @@
                 android:text="Horaire :"/>
 
             <TextView
-                android:id="@+id/bugTimeView"
+                android:id="@+id/seaTimeView"
                 style="@style/bug_attribute"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -65,7 +64,7 @@
                 android:text="Période :" />
 
             <TextView
-                android:id="@+id/bugPeriodView"
+                android:id="@+id/seaPeriodView"
                 style="@style/bug_attribute"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -85,11 +84,11 @@
                 style="@style/bug_attribute_title"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:text="Lieu :" />
+                android:text="Vitesse :" />
 
 
             <TextView
-                android:id="@+id/bugLocationView"
+                android:id="@+id/seaSpeedView"
                 style="@style/bug_attribute"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -107,16 +106,16 @@
                 style="@style/bug_attribute_title"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:text="Rareté :" />
+                android:text="Ombre :" />
 
 
             <TextView
-                android:id="@+id/bugRarityView"
+                android:id="@+id/seaShadowView"
                 style="@style/bug_attribute"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </LinearLayout>
-
+        
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -133,7 +132,7 @@
 
 
             <TextView
-                android:id="@+id/bugPriceView"
+                android:id="@+id/seaPriceView"
                 style="@style/bug_attribute"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />

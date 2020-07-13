@@ -22,7 +22,10 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
         private final TextView fishPriceView;
         private final TextView fishTimeView;
         private final TextView fishPeriodView;
-        private final TextView fishPlaceView;
+        private final TextView fishLocationView;
+        private final TextView fishRarityView;
+        private final TextView fishShadowView;
+
         private final ImageView imageView;
 
         private FishViewHolder(View itemView) {
@@ -31,7 +34,9 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
             fishPriceView = itemView.findViewById(R.id.fishPriceView);
             fishTimeView = itemView.findViewById(R.id.fishTimeView);
             fishPeriodView = itemView.findViewById(R.id.fishPeriodView);
-            fishPlaceView = itemView.findViewById(R.id.fishPlaceView);
+            fishLocationView = itemView.findViewById(R.id.fishLocationView);
+            fishRarityView = itemView.findViewById(R.id.fishRarityView);
+            fishShadowView = itemView.findViewById(R.id.fishShadowView);
             imageView = itemView.findViewById(R.id.fishImageView);
         }
     }
@@ -54,6 +59,8 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
         if (mFishes != null) {
             Fish current = mFishes.get(position);
             holder.fishItemView.setText(current.getName_fr());
+            holder.fishRarityView.setText(current.getRarity());
+            holder.fishShadowView.setText(current.getShadow());
             holder.fishPriceView.setText(current.getPrice() + " cloch.");
             if(current.isIs_all_day()) {
                 holder.fishTimeView.setText("Toute la journée");
@@ -90,7 +97,7 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
 
                 holder.fishPeriodView.setText(period);
             }
-            holder.fishPlaceView.setText(locationTranslation(current.getLocation()));
+            holder.fishLocationView.setText(locationTranslation(current.getLocation()));
 
             int resID = getResId(current.getName(), R.drawable.class);
             holder.imageView.setImageResource(resID);
@@ -101,7 +108,7 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
             holder.fishPriceView.setText("0");
             holder.fishTimeView.setText("None");
             holder.fishPeriodView.setText("None");
-            holder.fishPlaceView.setText("None");
+            holder.fishLocationView.setText("None");
         }
     }
 

@@ -17,8 +17,8 @@ import androidx.viewpager2.widget.ViewPager2;
 public class MainActivity extends AppCompatActivity {
 
     public static final int NEW_BUG_ACTIVITY_REQUEST_CODE = 1;
-    public static final int[] TABS_ICON = {R.drawable.ic_bug_yellow,R.drawable.ic_time_bug, R.drawable.ic_fish_yellow,R.drawable.ic_time_fish};
-    public static final int[] TABS_LABEL = {R.string.tab0,R.string.tab1};
+    public static final int[] TABS_ICON = {R.drawable.ic_bug_yellow,R.drawable.ic_time_bug, R.drawable.ic_fish_yellow,R.drawable.ic_time_fish, R.drawable.ic_fish_yellow,R.drawable.ic_time_fish};
+    public static final int[] TABS_LABEL = {R.string.tab0,R.string.tab1,R.string.tab2};
 
     private ViewPager2 viewPager;
 
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.NH_yellow));
         tabLayout.getTabAt(0).getIcon().setColorFilter(getResources().getColor(R.color.NH_white), PorterDuff.Mode.SRC_IN);
         tabLayout.getTabAt(1).getIcon().setColorFilter(getResources().getColor(R.color.NH_gray), PorterDuff.Mode.SRC_IN);
+        tabLayout.getTabAt(2).getIcon().setColorFilter(getResources().getColor(R.color.NH_gray), PorterDuff.Mode.SRC_IN);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
