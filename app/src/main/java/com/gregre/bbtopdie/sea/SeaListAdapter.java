@@ -58,8 +58,8 @@ public class SeaListAdapter extends RecyclerView.Adapter<SeaListAdapter.SeaViewH
         if (seaCreatures != null) {
             SeaCreature current = seaCreatures.get(position);
             holder.seaItemView.setText(current.getName_fr());
-            holder.seaSpeedView.setText(current.getSpeed());
-            holder.seaShadowView.setText(current.getShadow());
+            holder.seaSpeedView.setText(speedToString(current.getSpeed()));
+            holder.seaShadowView.setText(shadowToString(current.getShadow()));
             holder.seaPriceView.setText(current.getPrice() + " cloch.");
             if(current.isIs_all_day()) {
                 holder.seaTimeView.setText("Toute la journée");
@@ -146,12 +146,47 @@ public class SeaListAdapter extends RecyclerView.Adapter<SeaListAdapter.SeaViewH
             case 12:
                 return "Décembre";
             default:
+                return "############";
+        }
+    }
+
+    public String speedToString(String speed) {
+        switch (speed) {
+            case "Stationary":
+                return "Stationaire";
+            case "Very slow":
+                return "Très lent";
+            case "Slow":
+                return "Lent";
+            case "Medium":
+                return "Moyenne";
+            case "Fast":
+                return "Rapide";
+            case "Very fast":
+                return "Très rapide";
+            default:
                 return "";
         }
     }
 
+    public String shadowToString(String shadow) {
+        switch (shadow) {
+            case "Smallest":
+                return "Très petite";
+            case "Small":
+                return "Petite";
+            case "Medium":
+                return "Moyenne";
+            case "Large":
+                return "Large";
+            case "Largest":
+                return "Très large";
+            default:
+                return "############";
+        }
+    }
+
     public void setSeaCreatures(List<SeaCreature> seaCreatures) {
-        //TODO : comprendre pourquoi ici le paramètre de la fonction est vide (size = 0)
         this.seaCreatures = seaCreatures;
         notifyDataSetChanged();
     }

@@ -59,8 +59,8 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
         if (mFishes != null) {
             Fish current = mFishes.get(position);
             holder.fishItemView.setText(current.getName_fr());
-            holder.fishRarityView.setText(current.getRarity());
-            holder.fishShadowView.setText(current.getShadow());
+            holder.fishRarityView.setText(rarityToString(current.getRarity()));
+            holder.fishShadowView.setText(shadowToString(current.getShadow()));
             holder.fishPriceView.setText(current.getPrice() + " cloch.");
             if(current.isIs_all_day()) {
                 holder.fishTimeView.setText("Toute la journée");
@@ -178,7 +178,50 @@ public class FishListAdapter extends RecyclerView.Adapter<FishListAdapter.FishVi
             case 12:
                 return "Décembre";
             default:
-                return "";
+                return "############";
+        }
+    }
+
+    public String rarityToString(String rarity) {
+        switch(rarity) {
+            case "Common":
+                return "Commun";
+            case "Uncommon":
+                return "Peu commun";
+            case "Rare":
+                return "Rare";
+            case "Ultra-rare":
+                return "Ultra rare";
+            default:
+                return "############";
+
+        }
+    }
+
+    public String shadowToString(String shadow) {
+        switch (shadow) {
+            case "Smallest (1)":
+                return "Minuscule (1)";
+            case "Small (2)":
+                return "Petite (2)";
+            case "Medium (3)":
+                return "Moyenne (3)";
+            case "Medium (4)":
+                return "Moyenne (4)";
+            case "Medium with fin (4)":
+                return "Moyenne avec un aileron";
+            case "Large (4)":
+                return "Large (4)";
+            case "Large (5)":
+                return "Large (5)";
+            case "Largest (6)":
+                return "Immense";
+            case "Largest with fin (6)":
+                return "Immense avec un aileron";
+            case "Narrow":
+                return "Fine";
+            default:
+                return "##############";
         }
     }
 

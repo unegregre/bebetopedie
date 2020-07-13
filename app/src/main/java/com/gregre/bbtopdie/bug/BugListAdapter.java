@@ -58,8 +58,8 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
         if (mBugs != null) {
             Bug current = mBugs.get(position);
             holder.bugItemView.setText(current.getName_fr());
-            holder.bugLocationView.setText(current.getLocation());
-            holder.bugRarityView.setText(current.getRarity());
+            holder.bugLocationView.setText(locationToString(current.getLocation()));
+            holder.bugRarityView.setText(rarityToString(current.getRarity()));
             holder.bugPriceView.setText(current.getPrice() + " cloch.");
             if(current.isIs_all_day()) {
                 holder.bugTimeView.setText("Toute la journée");
@@ -147,6 +147,68 @@ public class BugListAdapter extends RecyclerView.Adapter<BugListAdapter.BugViewH
                 return "Décembre";
             default:
                 return "";
+        }
+    }
+
+    public String locationToString(String location) {
+        switch(location) {
+            case "Flying":
+                return "Voletant";
+            case "Flying near hybrid flowers":
+                return "Voletant près des hybrides";
+            case "Flying by light":
+                return "Voletant près des lumières";
+            case "On trees":
+                return "Sur les arbres";
+            case "On the ground":
+                return "Sur le sol";
+            case "On flowers":
+                return "Sur les fleurs";
+            case "On white flowers":
+                return "Sur les fleurs blanches";
+            case "Underground":
+                return "Sous le sol";
+            case "On ponds and rivers":
+                return "Dans les étangs et rivières";
+            case "On tree stumps":
+                return "Sur les souches";
+            case "On palm trees":
+                return "Sur les cocotiers";
+            case "Under trees":
+                return "Au pied des arbres";
+            case "On rotten food":
+                return "Sur un navet pourri";
+            case "On the beach":
+                return "Sur la plage";
+            case "On beach rocks":
+                return "Sur les rochers près de l'océan";
+            case "Near trash":
+                return "Près des ordures";
+            case "On villagers":
+                return "Sur les habitants";
+            case "On rocks (when raining)":
+                return "Sur les rochers (pluie)";
+            case "Hitting rocks":
+                return "En frappant un rocher";
+            default:
+                return "En secouant un arbre";
+
+        }
+    }
+
+    public String rarityToString(String rarity) {
+        switch(rarity) {
+            case "Common":
+                return "Commun";
+            case "Uncommon":
+                return "Peu commun";
+            case "Rare":
+                return "Rare";
+            case "Ultra-rare":
+                return "Ultra rare";
+            default:
+                return "############";
+
         }
     }
 

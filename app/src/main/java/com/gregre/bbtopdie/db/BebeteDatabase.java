@@ -75,405 +75,405 @@ public abstract class BebeteDatabase extends RoomDatabase {
 
             // If you want to keep data through app restarts,
             // comment out the following block
-            databaseWriteExecutor.execute(() -> {
-                // Populate the database in the background.
-                // If you want to start with more bugs, just add them.
-
-                BugDao bug_dao = INSTANCE.bugDao();
-                bug_dao.deleteAll();
-
-                // Create URL
-                URL endpoint = null;
-                try {
-                    endpoint = new URL("https://acnhapi.com/v1/bugs/");
-
-                    // Create connection
-                    HttpsURLConnection myConnection =
-                            (HttpsURLConnection) endpoint.openConnection();
-
-                    if (myConnection.getResponseCode() == 200) {
-                        // Success
-                        InputStream responseBody = myConnection.getInputStream();
-                        InputStreamReader responseBodyReader =
-                                new InputStreamReader(responseBody, "UTF-8");
-                        JsonReader jsonReader = new JsonReader(responseBodyReader);
-
-                        jsonReader.beginObject(); // Start processing the JSON object
-
-                        int id = -1;
-                        String name = null;
-                        String name_fr = null;
-                        String month_northern = null;
-                        List<Integer> month_array_northern = null;
-                        String month_southern = null;
-                        List<Integer> month_array_southern = null;
-                        String time = null;
-                        List<Integer> time_array = null;
-                        boolean isAllDay = false;
-                        boolean isAllYear = false;
-                        String location = null;
-                        String rarity = null;
-                        int price = -1;
-                        String icon_uri = null;
-                        String key;
-                        boolean fullEntry = false;
-
-                        while (jsonReader.hasNext()) { // Loop through all keys
-
-                            key = jsonReader.nextName(); // Fetch the next key
-
-                            if (jsonReader.peek().equals(JsonToken.BEGIN_OBJECT)) {
-                                jsonReader.beginObject();
-                                key = jsonReader.nextName(); // Fetch the next key
-
-                            }
-
-                            if (key.equals("id")) {
-                                id = jsonReader.nextInt();
-                            } else if (key.equals("file-name")) {
-                                name = jsonReader.nextString();
-                                Pattern p = Pattern.compile("-");
-                                Matcher m = p.matcher(name);
-                                name = m.replaceAll("_");
-                            } else if (key.equals("name-EUfr")) {
-                                name_fr = jsonReader.nextString();
-                            } else if (key.equals("month-northern")) {
-                                month_northern = jsonReader.nextString();
-                            } else if (key.equals("month-array-northern")) {
-                                month_array_northern = new ArrayList<>();
-                                jsonReader.beginArray();
-                                while (jsonReader.hasNext()) {
-                                    month_array_northern.add(jsonReader.nextInt());
-                                }
-                                jsonReader.endArray();
-                            } else if (key.equals("month-southern")) {
-                                month_southern = jsonReader.nextString();
-                            } else if (key.equals("month-array-southern")) {
-                                month_array_southern = new ArrayList<>();
-                                jsonReader.beginArray();
-                                while (jsonReader.hasNext()) {
-                                    month_array_southern.add(jsonReader.nextInt());
-                                }
-                                jsonReader.endArray();
-                            } else if (key.equals("time")) {
-                                time = jsonReader.nextString();
-                            } else if(key.equals("time-array")) {
-                                time_array = new ArrayList<>();
-                                jsonReader.beginArray();
-                                while (jsonReader.hasNext()) {
-                                    time_array.add(jsonReader.nextInt());
-                                }
-                                jsonReader.endArray();
-                            } else if (key.equals("isAllDay")) {
-                                isAllDay = jsonReader.nextBoolean();
-                            } else if (key.equals("isAllYear")) {
-                                isAllYear = jsonReader.nextBoolean();
-                            } else if (key.equals("location")) {
-                                location = jsonReader.nextString();
-                            } else if (key.equals("rarity")) {
-                                rarity = jsonReader.nextString();
-                            } else if (key.equals("price")) {
-                                price = jsonReader.nextInt();
-                            } else if(key.equals("icon_uri")) {
-                                icon_uri = jsonReader.nextString();
-                                fullEntry = true;
-                            } else {
-                                jsonReader.skipValue();
-                            }
-
-                            if(fullEntry) {
-                                name_fr = capitalize(name_fr);
-
-                                Bug bug = new Bug(id, name, name_fr, month_northern, month_array_northern, month_southern, month_array_southern, time, time_array, isAllDay, isAllYear, location, rarity, price, icon_uri);
-                                bug_dao.insert(bug);
-
-                                fullEntry = false;
-                            }
-
-                            if (jsonReader.peek().equals(JsonToken.END_OBJECT)) {
-                                jsonReader.endObject();
-                            }
-
-                        }
-
-                        jsonReader.close();
-                    } else {
-                        // Error handling code goes here
-                    }
-                    myConnection.disconnect();
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                FishDao fish_dao = INSTANCE.fishDao();
-                fish_dao.deleteAll();
-
-                // Create URL
-                endpoint = null;
-                try {
-                    endpoint = new URL("https://acnhapi.com/v1/fish/");
-
-                    // Create connection
-                    HttpsURLConnection myConnection =
-                            (HttpsURLConnection) endpoint.openConnection();
-
-                    if (myConnection.getResponseCode() == 200) {
-                        // Success
-                        InputStream responseBody = myConnection.getInputStream();
-                        InputStreamReader responseBodyReader =
-                                new InputStreamReader(responseBody, "UTF-8");
-                        JsonReader jsonReader = new JsonReader(responseBodyReader);
-
-                        jsonReader.beginObject(); // Start processing the JSON object
-
-                        int id = -1;
-                        String name = null;
-                        String name_fr = null;
-                        String month_northern = null;
-                        List<Integer> month_array_northern = null;
-                        String month_southern = null;
-                        List<Integer> month_array_southern = null;
-                        String time = null;
-                        List<Integer> time_array = null;
-                        boolean isAllDay = false;
-                        boolean isAllYear = false;
-                        String location = null;
-                        String rarity = null;
-                        int price = -1;
-                        String shadow = null;
-                        String icon_uri = null;
-                        String key;
-                        boolean fullEntry = false;
-
-                        while (jsonReader.hasNext()) { // Loop through all keys
-
-                            key = jsonReader.nextName(); // Fetch the next key
-
-                            if (jsonReader.peek().equals(JsonToken.BEGIN_OBJECT)) {
-                                jsonReader.beginObject();
-                                key = jsonReader.nextName(); // Fetch the next key
-
-                            }
-
-                            if (key.equals("id")) {
-                                id = jsonReader.nextInt();
-                            } else if (key.equals("file-name")) {
-                                name = jsonReader.nextString();
-                                if(name.equals("char")) {
-                                    name = "char_fish"; // because APPARENTLY there is a FISH CALLED CHAR
-                                } else {
-                                    Pattern p = Pattern.compile("-");
-                                    Matcher m = p.matcher(name);
-                                    name = m.replaceAll("_");
-                                }
-                            } else if (key.equals("name-EUfr")) {
-                                name_fr = jsonReader.nextString();
-                            } else if (key.equals("month-northern")) {
-                                month_northern = jsonReader.nextString();
-                            } else if (key.equals("month-array-northern")) {
-                                month_array_northern = new ArrayList<>();
-                                jsonReader.beginArray();
-                                while (jsonReader.hasNext()) {
-                                    month_array_northern.add(jsonReader.nextInt());
-                                }
-                                jsonReader.endArray();
-                            } else if (key.equals("month-southern")) {
-                                month_southern = jsonReader.nextString();
-                            } else if (key.equals("month-array-southern")) {
-                                month_array_southern = new ArrayList<>();
-                                jsonReader.beginArray();
-                                while (jsonReader.hasNext()) {
-                                    month_array_southern.add(jsonReader.nextInt());
-                                }
-                                jsonReader.endArray();
-                            } else if (key.equals("time")) {
-                                time = jsonReader.nextString();
-                            } else if(key.equals("time-array")) {
-                                time_array = new ArrayList<>();
-                                jsonReader.beginArray();
-                                while (jsonReader.hasNext()) {
-                                    time_array.add(jsonReader.nextInt());
-                                }
-                                jsonReader.endArray();
-                            } else if (key.equals("isAllDay")) {
-                                isAllDay = jsonReader.nextBoolean();
-                            } else if (key.equals("isAllYear")) {
-                                isAllYear = jsonReader.nextBoolean();
-                            } else if (key.equals("location")) {
-                                location = jsonReader.nextString();
-                            } else if (key.equals("rarity")) {
-                                rarity = jsonReader.nextString();
-                            } else if (key.equals("price")) {
-                                price = jsonReader.nextInt();
-                            } else if (key.equals("shadow")) {
-                                shadow = jsonReader.nextString();
-                            } else if(key.equals("icon_uri")) {
-                                icon_uri = jsonReader.nextString();
-                                fullEntry = true;
-                            } else {
-                                jsonReader.skipValue();
-                            }
-
-                            if(fullEntry) {
-                                name_fr = capitalize(name_fr);
-
-                                Fish fish = new Fish(id, name, name_fr, month_northern, month_array_northern, month_southern, month_array_southern, time, time_array, isAllDay, isAllYear, location, rarity, price, shadow, icon_uri);
-                                fish_dao.insert(fish);
-
-                                fullEntry = false;
-                            }
-
-                            if (jsonReader.peek().equals(JsonToken.END_OBJECT)) {
-                                jsonReader.endObject();
-                            }
-
-                        }
-
-                        jsonReader.close();
-                    } else {
-                        // Error handling code goes here
-                    }
-                    myConnection.disconnect();
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                SeaCreatureDao seaCreatureDao = INSTANCE.seaCreatureDao();
-                seaCreatureDao.deleteAll();
-
-                // Create URL
-                endpoint = null;
-                try {
-                    endpoint = new URL("https://acnhapi.com/v1/sea/");
-
-                    // Create connection
-                    HttpsURLConnection myConnection =
-                            (HttpsURLConnection) endpoint.openConnection();
-
-                    if (myConnection.getResponseCode() == 200) {
-                        // Success
-                        InputStream responseBody = myConnection.getInputStream();
-                        InputStreamReader responseBodyReader =
-                                new InputStreamReader(responseBody, "UTF-8");
-                        JsonReader jsonReader = new JsonReader(responseBodyReader);
-
-                        jsonReader.beginObject(); // Start processing the JSON object
-
-                        int id = -1;
-                        String name = null;
-                        String name_fr = null;
-                        String month_northern = null;
-                        List<Integer> month_array_northern = null;
-                        String month_southern = null;
-                        List<Integer> month_array_southern = null;
-                        String time = null;
-                        List<Integer> time_array = null;
-                        boolean isAllDay = false;
-                        boolean isAllYear = false;
-                        String speed = null;
-                        String shadow = null;
-                        int price = -1;
-                        String icon_uri = null;
-                        String key;
-                        boolean fullEntry = false;
-
-                        while (jsonReader.hasNext()) { // Loop through all keys
-
-                            key = jsonReader.nextName(); // Fetch the next key
-
-                            if (jsonReader.peek().equals(JsonToken.BEGIN_OBJECT)) {
-                                jsonReader.beginObject();
-                                key = jsonReader.nextName(); // Fetch the next key
-
-                            }
-
-                            if (key.equals("id")) {
-                                id = jsonReader.nextInt();
-                            } else if (key.equals("file-name")) {
-                                name = jsonReader.nextString();
-                                if(name.equals("char")) {
-                                    name = "char_fish"; // because APPARENTLY there is a FISH CALLED CHAR
-                                } else {
-                                    Pattern p = Pattern.compile("-");
-                                    Matcher m = p.matcher(name);
-                                    name = m.replaceAll("_");
-                                }
-                            } else if (key.equals("name-EUfr")) {
-                                name_fr = jsonReader.nextString();
-                            } else if (key.equals("month-northern")) {
-                                month_northern = jsonReader.nextString();
-                            } else if (key.equals("month-array-northern")) {
-                                month_array_northern = new ArrayList<>();
-                                jsonReader.beginArray();
-                                while (jsonReader.hasNext()) {
-                                    month_array_northern.add(jsonReader.nextInt());
-                                }
-                                jsonReader.endArray();
-                            } else if (key.equals("month-southern")) {
-                                month_southern = jsonReader.nextString();
-                            } else if (key.equals("month-array-southern")) {
-                                month_array_southern = new ArrayList<>();
-                                jsonReader.beginArray();
-                                while (jsonReader.hasNext()) {
-                                    month_array_southern.add(jsonReader.nextInt());
-                                }
-                                jsonReader.endArray();
-                            } else if (key.equals("time")) {
-                                time = jsonReader.nextString();
-                            } else if(key.equals("time-array")) {
-                                time_array = new ArrayList<>();
-                                jsonReader.beginArray();
-                                while (jsonReader.hasNext()) {
-                                    time_array.add(jsonReader.nextInt());
-                                }
-                                jsonReader.endArray();
-                            } else if (key.equals("isAllDay")) {
-                                isAllDay = jsonReader.nextBoolean();
-                            } else if (key.equals("isAllYear")) {
-                                isAllYear = jsonReader.nextBoolean();
-                            } else if (key.equals("speed")) {
-                                speed = jsonReader.nextString();
-                            } else if (key.equals("price")) {
-                                price = jsonReader.nextInt();
-                            } else if (key.equals("shadow")) {
-                                shadow = jsonReader.nextString();
-                            } else if(key.equals("icon_uri")) {
-                                icon_uri = jsonReader.nextString();
-                                fullEntry = true;
-                            } else {
-                                jsonReader.skipValue();
-                            }
-
-                            if(fullEntry) {
-                                name_fr = capitalize(name_fr);
-
-                                SeaCreature seaCreature = new SeaCreature(id, name, name_fr, month_northern, month_array_northern, month_southern, month_array_southern, time, time_array, isAllDay, isAllYear, speed, shadow, price, icon_uri);
-                                seaCreatureDao.insert(seaCreature);
-                                fullEntry = false;
-                            }
-
-                            if (jsonReader.peek().equals(JsonToken.END_OBJECT)) {
-                                jsonReader.endObject();
-                            }
-
-                        }
-
-                        jsonReader.close();
-                    } else {
-                        // Error handling code goes here
-                    }
-                    myConnection.disconnect();
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-            });
+//            databaseWriteExecutor.execute(() -> {
+//                // Populate the database in the background.
+//                // If you want to start with more bugs, just add them.
+//
+//                BugDao bug_dao = INSTANCE.bugDao();
+//                bug_dao.deleteAll();
+//
+//                // Create URL
+//                URL endpoint = null;
+//                try {
+//                    endpoint = new URL("https://acnhapi.com/v1/bugs/");
+//
+//                    // Create connection
+//                    HttpsURLConnection myConnection =
+//                            (HttpsURLConnection) endpoint.openConnection();
+//
+//                    if (myConnection.getResponseCode() == 200) {
+//                        // Success
+//                        InputStream responseBody = myConnection.getInputStream();
+//                        InputStreamReader responseBodyReader =
+//                                new InputStreamReader(responseBody, "UTF-8");
+//                        JsonReader jsonReader = new JsonReader(responseBodyReader);
+//
+//                        jsonReader.beginObject(); // Start processing the JSON object
+//
+//                        int id = -1;
+//                        String name = null;
+//                        String name_fr = null;
+//                        String month_northern = null;
+//                        List<Integer> month_array_northern = null;
+//                        String month_southern = null;
+//                        List<Integer> month_array_southern = null;
+//                        String time = null;
+//                        List<Integer> time_array = null;
+//                        boolean isAllDay = false;
+//                        boolean isAllYear = false;
+//                        String location = null;
+//                        String rarity = null;
+//                        int price = -1;
+//                        String icon_uri = null;
+//                        String key;
+//                        boolean fullEntry = false;
+//
+//                        while (jsonReader.hasNext()) { // Loop through all keys
+//
+//                            key = jsonReader.nextName(); // Fetch the next key
+//
+//                            if (jsonReader.peek().equals(JsonToken.BEGIN_OBJECT)) {
+//                                jsonReader.beginObject();
+//                                key = jsonReader.nextName(); // Fetch the next key
+//
+//                            }
+//
+//                            if (key.equals("id")) {
+//                                id = jsonReader.nextInt();
+//                            } else if (key.equals("file-name")) {
+//                                name = jsonReader.nextString();
+//                                Pattern p = Pattern.compile("-");
+//                                Matcher m = p.matcher(name);
+//                                name = m.replaceAll("_");
+//                            } else if (key.equals("name-EUfr")) {
+//                                name_fr = jsonReader.nextString();
+//                            } else if (key.equals("month-northern")) {
+//                                month_northern = jsonReader.nextString();
+//                            } else if (key.equals("month-array-northern")) {
+//                                month_array_northern = new ArrayList<>();
+//                                jsonReader.beginArray();
+//                                while (jsonReader.hasNext()) {
+//                                    month_array_northern.add(jsonReader.nextInt());
+//                                }
+//                                jsonReader.endArray();
+//                            } else if (key.equals("month-southern")) {
+//                                month_southern = jsonReader.nextString();
+//                            } else if (key.equals("month-array-southern")) {
+//                                month_array_southern = new ArrayList<>();
+//                                jsonReader.beginArray();
+//                                while (jsonReader.hasNext()) {
+//                                    month_array_southern.add(jsonReader.nextInt());
+//                                }
+//                                jsonReader.endArray();
+//                            } else if (key.equals("time")) {
+//                                time = jsonReader.nextString();
+//                            } else if(key.equals("time-array")) {
+//                                time_array = new ArrayList<>();
+//                                jsonReader.beginArray();
+//                                while (jsonReader.hasNext()) {
+//                                    time_array.add(jsonReader.nextInt());
+//                                }
+//                                jsonReader.endArray();
+//                            } else if (key.equals("isAllDay")) {
+//                                isAllDay = jsonReader.nextBoolean();
+//                            } else if (key.equals("isAllYear")) {
+//                                isAllYear = jsonReader.nextBoolean();
+//                            } else if (key.equals("location")) {
+//                                location = jsonReader.nextString();
+//                            } else if (key.equals("rarity")) {
+//                                rarity = jsonReader.nextString();
+//                            } else if (key.equals("price")) {
+//                                price = jsonReader.nextInt();
+//                            } else if(key.equals("icon_uri")) {
+//                                icon_uri = jsonReader.nextString();
+//                                fullEntry = true;
+//                            } else {
+//                                jsonReader.skipValue();
+//                            }
+//
+//                            if(fullEntry) {
+//                                name_fr = capitalize(name_fr);
+//
+//                                Bug bug = new Bug(id, name, name_fr, month_northern, month_array_northern, month_southern, month_array_southern, time, time_array, isAllDay, isAllYear, location, rarity, price, icon_uri);
+//                                bug_dao.insert(bug);
+//
+//                                fullEntry = false;
+//                            }
+//
+//                            if (jsonReader.peek().equals(JsonToken.END_OBJECT)) {
+//                                jsonReader.endObject();
+//                            }
+//
+//                        }
+//
+//                        jsonReader.close();
+//                    } else {
+//                        // Error handling code goes here
+//                    }
+//                    myConnection.disconnect();
+//                } catch (MalformedURLException e) {
+//                    e.printStackTrace();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                FishDao fish_dao = INSTANCE.fishDao();
+//                fish_dao.deleteAll();
+//
+//                // Create URL
+//                endpoint = null;
+//                try {
+//                    endpoint = new URL("https://acnhapi.com/v1/fish/");
+//
+//                    // Create connection
+//                    HttpsURLConnection myConnection =
+//                            (HttpsURLConnection) endpoint.openConnection();
+//
+//                    if (myConnection.getResponseCode() == 200) {
+//                        // Success
+//                        InputStream responseBody = myConnection.getInputStream();
+//                        InputStreamReader responseBodyReader =
+//                                new InputStreamReader(responseBody, "UTF-8");
+//                        JsonReader jsonReader = new JsonReader(responseBodyReader);
+//
+//                        jsonReader.beginObject(); // Start processing the JSON object
+//
+//                        int id = -1;
+//                        String name = null;
+//                        String name_fr = null;
+//                        String month_northern = null;
+//                        List<Integer> month_array_northern = null;
+//                        String month_southern = null;
+//                        List<Integer> month_array_southern = null;
+//                        String time = null;
+//                        List<Integer> time_array = null;
+//                        boolean isAllDay = false;
+//                        boolean isAllYear = false;
+//                        String location = null;
+//                        String rarity = null;
+//                        int price = -1;
+//                        String shadow = null;
+//                        String icon_uri = null;
+//                        String key;
+//                        boolean fullEntry = false;
+//
+//                        while (jsonReader.hasNext()) { // Loop through all keys
+//
+//                            key = jsonReader.nextName(); // Fetch the next key
+//
+//                            if (jsonReader.peek().equals(JsonToken.BEGIN_OBJECT)) {
+//                                jsonReader.beginObject();
+//                                key = jsonReader.nextName(); // Fetch the next key
+//
+//                            }
+//
+//                            if (key.equals("id")) {
+//                                id = jsonReader.nextInt();
+//                            } else if (key.equals("file-name")) {
+//                                name = jsonReader.nextString();
+//                                if(name.equals("char")) {
+//                                    name = "char_fish"; // because APPARENTLY there is a FISH CALLED CHAR
+//                                } else {
+//                                    Pattern p = Pattern.compile("-");
+//                                    Matcher m = p.matcher(name);
+//                                    name = m.replaceAll("_");
+//                                }
+//                            } else if (key.equals("name-EUfr")) {
+//                                name_fr = jsonReader.nextString();
+//                            } else if (key.equals("month-northern")) {
+//                                month_northern = jsonReader.nextString();
+//                            } else if (key.equals("month-array-northern")) {
+//                                month_array_northern = new ArrayList<>();
+//                                jsonReader.beginArray();
+//                                while (jsonReader.hasNext()) {
+//                                    month_array_northern.add(jsonReader.nextInt());
+//                                }
+//                                jsonReader.endArray();
+//                            } else if (key.equals("month-southern")) {
+//                                month_southern = jsonReader.nextString();
+//                            } else if (key.equals("month-array-southern")) {
+//                                month_array_southern = new ArrayList<>();
+//                                jsonReader.beginArray();
+//                                while (jsonReader.hasNext()) {
+//                                    month_array_southern.add(jsonReader.nextInt());
+//                                }
+//                                jsonReader.endArray();
+//                            } else if (key.equals("time")) {
+//                                time = jsonReader.nextString();
+//                            } else if(key.equals("time-array")) {
+//                                time_array = new ArrayList<>();
+//                                jsonReader.beginArray();
+//                                while (jsonReader.hasNext()) {
+//                                    time_array.add(jsonReader.nextInt());
+//                                }
+//                                jsonReader.endArray();
+//                            } else if (key.equals("isAllDay")) {
+//                                isAllDay = jsonReader.nextBoolean();
+//                            } else if (key.equals("isAllYear")) {
+//                                isAllYear = jsonReader.nextBoolean();
+//                            } else if (key.equals("location")) {
+//                                location = jsonReader.nextString();
+//                            } else if (key.equals("rarity")) {
+//                                rarity = jsonReader.nextString();
+//                            } else if (key.equals("price")) {
+//                                price = jsonReader.nextInt();
+//                            } else if (key.equals("shadow")) {
+//                                shadow = jsonReader.nextString();
+//                            } else if(key.equals("icon_uri")) {
+//                                icon_uri = jsonReader.nextString();
+//                                fullEntry = true;
+//                            } else {
+//                                jsonReader.skipValue();
+//                            }
+//
+//                            if(fullEntry) {
+//                                name_fr = capitalize(name_fr);
+//
+//                                Fish fish = new Fish(id, name, name_fr, month_northern, month_array_northern, month_southern, month_array_southern, time, time_array, isAllDay, isAllYear, location, rarity, price, shadow, icon_uri);
+//                                fish_dao.insert(fish);
+//
+//                                fullEntry = false;
+//                            }
+//
+//                            if (jsonReader.peek().equals(JsonToken.END_OBJECT)) {
+//                                jsonReader.endObject();
+//                            }
+//
+//                        }
+//
+//                        jsonReader.close();
+//                    } else {
+//                        // Error handling code goes here
+//                    }
+//                    myConnection.disconnect();
+//                } catch (MalformedURLException e) {
+//                    e.printStackTrace();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//
+//                SeaCreatureDao seaCreatureDao = INSTANCE.seaCreatureDao();
+//                seaCreatureDao.deleteAll();
+//
+//                // Create URL
+//                endpoint = null;
+//                try {
+//                    endpoint = new URL("https://acnhapi.com/v1/sea/");
+//
+//                    // Create connection
+//                    HttpsURLConnection myConnection =
+//                            (HttpsURLConnection) endpoint.openConnection();
+//
+//                    if (myConnection.getResponseCode() == 200) {
+//                        // Success
+//                        InputStream responseBody = myConnection.getInputStream();
+//                        InputStreamReader responseBodyReader =
+//                                new InputStreamReader(responseBody, "UTF-8");
+//                        JsonReader jsonReader = new JsonReader(responseBodyReader);
+//
+//                        jsonReader.beginObject(); // Start processing the JSON object
+//
+//                        int id = -1;
+//                        String name = null;
+//                        String name_fr = null;
+//                        String month_northern = null;
+//                        List<Integer> month_array_northern = null;
+//                        String month_southern = null;
+//                        List<Integer> month_array_southern = null;
+//                        String time = null;
+//                        List<Integer> time_array = null;
+//                        boolean isAllDay = false;
+//                        boolean isAllYear = false;
+//                        String speed = null;
+//                        String shadow = null;
+//                        int price = -1;
+//                        String icon_uri = null;
+//                        String key;
+//                        boolean fullEntry = false;
+//
+//                        while (jsonReader.hasNext()) { // Loop through all keys
+//
+//                            key = jsonReader.nextName(); // Fetch the next key
+//
+//                            if (jsonReader.peek().equals(JsonToken.BEGIN_OBJECT)) {
+//                                jsonReader.beginObject();
+//                                key = jsonReader.nextName(); // Fetch the next key
+//
+//                            }
+//
+//                            if (key.equals("id")) {
+//                                id = jsonReader.nextInt();
+//                            } else if (key.equals("file-name")) {
+//                                name = jsonReader.nextString();
+//                                if(name.equals("char")) {
+//                                    name = "char_fish"; // because APPARENTLY there is a FISH CALLED CHAR
+//                                } else {
+//                                    Pattern p = Pattern.compile("-");
+//                                    Matcher m = p.matcher(name);
+//                                    name = m.replaceAll("_");
+//                                }
+//                            } else if (key.equals("name-EUfr")) {
+//                                name_fr = jsonReader.nextString();
+//                            } else if (key.equals("month-northern")) {
+//                                month_northern = jsonReader.nextString();
+//                            } else if (key.equals("month-array-northern")) {
+//                                month_array_northern = new ArrayList<>();
+//                                jsonReader.beginArray();
+//                                while (jsonReader.hasNext()) {
+//                                    month_array_northern.add(jsonReader.nextInt());
+//                                }
+//                                jsonReader.endArray();
+//                            } else if (key.equals("month-southern")) {
+//                                month_southern = jsonReader.nextString();
+//                            } else if (key.equals("month-array-southern")) {
+//                                month_array_southern = new ArrayList<>();
+//                                jsonReader.beginArray();
+//                                while (jsonReader.hasNext()) {
+//                                    month_array_southern.add(jsonReader.nextInt());
+//                                }
+//                                jsonReader.endArray();
+//                            } else if (key.equals("time")) {
+//                                time = jsonReader.nextString();
+//                            } else if(key.equals("time-array")) {
+//                                time_array = new ArrayList<>();
+//                                jsonReader.beginArray();
+//                                while (jsonReader.hasNext()) {
+//                                    time_array.add(jsonReader.nextInt());
+//                                }
+//                                jsonReader.endArray();
+//                            } else if (key.equals("isAllDay")) {
+//                                isAllDay = jsonReader.nextBoolean();
+//                            } else if (key.equals("isAllYear")) {
+//                                isAllYear = jsonReader.nextBoolean();
+//                            } else if (key.equals("speed")) {
+//                                speed = jsonReader.nextString();
+//                            } else if (key.equals("price")) {
+//                                price = jsonReader.nextInt();
+//                            } else if (key.equals("shadow")) {
+//                                shadow = jsonReader.nextString();
+//                            } else if(key.equals("icon_uri")) {
+//                                icon_uri = jsonReader.nextString();
+//                                fullEntry = true;
+//                            } else {
+//                                jsonReader.skipValue();
+//                            }
+//
+//                            if(fullEntry) {
+//                                name_fr = capitalize(name_fr);
+//
+//                                SeaCreature seaCreature = new SeaCreature(id, name, name_fr, month_northern, month_array_northern, month_southern, month_array_southern, time, time_array, isAllDay, isAllYear, speed, shadow, price, icon_uri);
+//                                seaCreatureDao.insert(seaCreature);
+//                                fullEntry = false;
+//                            }
+//
+//                            if (jsonReader.peek().equals(JsonToken.END_OBJECT)) {
+//                                jsonReader.endObject();
+//                            }
+//
+//                        }
+//
+//                        jsonReader.close();
+//                    } else {
+//                        // Error handling code goes here
+//                    }
+//                    myConnection.disconnect();
+//                } catch (MalformedURLException e) {
+//                    e.printStackTrace();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            });
         }
     };
 

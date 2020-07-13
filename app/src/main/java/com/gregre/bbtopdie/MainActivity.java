@@ -4,6 +4,7 @@ import android.graphics.PorterDuff;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
@@ -49,10 +50,13 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> {
+//                    tab.setText(TABS_LABEL[position]);
                     tab.setIcon(TABS_ICON[position * 2]);
-                    tab.setText(TABS_LABEL[position]);
-                    }
+                    //TODO: find a way to write in multiline or remove the label
+                }
         ).attach();
+
+
 
         tabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.NH_yellow));
         tabLayout.getTabAt(0).getIcon().setColorFilter(getResources().getColor(R.color.NH_white), PorterDuff.Mode.SRC_IN);
