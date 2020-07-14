@@ -24,19 +24,23 @@
                 android:id="@+id/bug_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:icon="@drawable/ic_bug_yellow"
                 android:text="Insectes"/>
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/fish_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:icon="@drawable/ic_fish_yellow"
                 android:text="poissons"/>
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/sea_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Créatures\n marines"/>
+                android:icon="@drawable/ic_sea_yellow"
+                android:text="Créatures\n marines">
+            </com.google.android.material.tabs.TabItem>
         </com.google.android.material.tabs.TabLayout>
 
         <androidx.viewpager2.widget.ViewPager2

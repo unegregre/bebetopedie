@@ -18,7 +18,7 @@ import androidx.viewpager2.widget.ViewPager2;
 public class MainActivity extends AppCompatActivity {
 
     public static final int NEW_BUG_ACTIVITY_REQUEST_CODE = 1;
-    public static final int[] TABS_ICON = {R.drawable.ic_bug_yellow,R.drawable.ic_time_bug, R.drawable.ic_fish_yellow,R.drawable.ic_time_fish, R.drawable.ic_fish_yellow,R.drawable.ic_time_fish};
+    public static final int[] TABS_ICON = {R.drawable.ic_bug_yellow,R.drawable.ic_time_bug, R.drawable.ic_fish_yellow,R.drawable.ic_time_fish, R.drawable.ic_sea_yellow,R.drawable.ic_time_sea};
     public static final int[] TABS_LABEL = {R.string.tab0,R.string.tab1,R.string.tab2};
 
     private ViewPager2 viewPager;
@@ -50,9 +50,8 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tab_layout);
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> {
-//                    tab.setText(TABS_LABEL[position]);
                     tab.setIcon(TABS_ICON[position * 2]);
-                    //TODO: find a way to write in multiline or remove the label
+                    tab.setText(TABS_LABEL[position]);
                 }
         ).attach();
 
