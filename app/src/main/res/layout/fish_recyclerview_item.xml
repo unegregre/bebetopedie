@@ -34,12 +34,12 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
                 style="@style/bug_attribute_title"
-                android:layout_width="60dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Horaire :"/>
 
@@ -54,12 +54,12 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <TextView
                 style="@style/bug_attribute_title"
-                android:layout_width="60dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Période :" />
 
@@ -82,7 +82,7 @@
 
             <TextView
                 style="@style/bug_attribute_title"
-                android:layout_width="60dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lieu :" />
 
@@ -104,7 +104,7 @@
 
             <TextView
                 style="@style/bug_attribute_title"
-                android:layout_width="60dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Rareté :" />
 
@@ -126,7 +126,7 @@
 
             <TextView
                 style="@style/bug_attribute_title"
-                android:layout_width="60dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ombre :" />
 
@@ -148,7 +148,7 @@
 
             <TextView
                 style="@style/bug_attribute_title"
-                android:layout_width="60dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Prix :" />
 
